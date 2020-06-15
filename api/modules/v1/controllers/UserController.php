@@ -162,13 +162,13 @@ class UserController extends CController
         $user_temp->mobile_no = $request['mobile_number'];
         $user_temp->user_details = Json::encode($request);
         $user_temp->otp = $otp; 
-        if($user_temp->save()) {  
+        if($user_temp->save(false)) {  
             // $mail = \common\helpers\Mailer::getInstance()
             //     ->setTo($request['email'])
             //     ->setSubject('Verify OTP')
             //     ->setMessage(Configuration::get(Configuration::APP_NAME).' - Thank you for registering with us, Please use '.$otp.' to complete your registration')
             //     ->send();
-            SmsGateway::getInstance()->sendSMS($request['mobile_number'], Configuration::get(Configuration::APP_NAME).' - Thank you for registering with us, Please use '.$otp.' to complete you registration');
+            //SmsGateway::getInstance()->sendSMS($request['mobile_number'], Configuration::get(Configuration::APP_NAME).' - Thank you for registering with us, Please use '.$otp.' to complete you registration');
             $this->setMessage(Yii::t('api','OTP send to registered mobile number'));
             return ['otp_id' => $user_temp->otp_temp_id];
         }
