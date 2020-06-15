@@ -2,6 +2,9 @@
 namespace common\models;
 
 use common\models\base\BaseOtpTemp;
+use common\components\AttributeKeyGeneratorBehaviour;
+use Yii;
+use yii\db\ActiveQuery;
 
 /**
  * Class OtpTemp
@@ -13,5 +16,22 @@ class OtpTemp extends BaseOtpTemp
     {
         return '1234';
         //return rand(1000,9999);
+    }
+
+     /**
+     * @return array
+     */
+    public function behaviors()
+    {
+        $behaviors = parent::behaviors();
+
+        $behaviors[] = [
+            'class' => AttributeKeyGeneratorBehaviour::class,
+            'attributes' => [
+                'otp_temp_key'
+            ]
+        ];
+
+        return $behaviors;
     }
 }
