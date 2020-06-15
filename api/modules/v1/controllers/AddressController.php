@@ -36,27 +36,27 @@ class AddressController extends CController
      */
     public function actionGetCountry()
     {
-        $model = Countries::find()->asArray()->all();
-        $CountryArr = ArrayHelper::map($model,'id', 'name');
+        $model = Countries::find()->select(['name', 'id'])->asArray()->all();
+        //$CountryArr = ArrayHelper::map($model,'id', 'name');
         $this->setMessage('Country get successfully');
-        return $CountryArr;
+        return $model;
     }
 
     public function actionGetState($id)
     {
-        $model = States::find()->where(['country_id' => $id])->asArray()->all();
-        $CountryArr = ArrayHelper::map($model,'id', 'name');
+        $model = States::find()->select(['name', 'id'])->where(['country_id' => $id])->asArray()->all();
+        //$CountryArr = ArrayHelper::map($model,'id', 'name');
         $this->setMessage('state get successfully');
-        return $CountryArr;
+        return $model;
     }
 
 
     public function actionGetCity($id)
     {
-        $model = Cities::find()->where(['state_id' => $id])->asArray()->all();
-        $CountryArr = ArrayHelper::map($model,'id', 'name');
+        $model = Cities::find()->select(['name', 'id'])->where(['state_id' => $id])->asArray()->all();
+       // $CountryArr = ArrayHelper::map($model,'id', 'name');
         $this->setMessage('City get successfully');
-        return $CountryArr;
+        return $model;
     }
     
 }
