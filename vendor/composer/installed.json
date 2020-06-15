@@ -1600,6 +1600,17 @@
         "name": "league/omnipay",
         "version": "v3.0.1",
         "version_normalized": "3.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thephpleague/omnipay.git",
+            "reference": "1514469083290aa53102440bae19313b6c8d7900"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thephpleague/omnipay/zipball/1514469083290aa53102440bae19313b6c8d7900",
+            "reference": "1514469083290aa53102440bae19313b6c8d7900",
+            "shasum": ""
+        },
         "require": {
             "omnipay/common": "^3",
             "php": "^5.6|^7",

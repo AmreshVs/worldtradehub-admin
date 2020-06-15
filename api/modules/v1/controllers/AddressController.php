@@ -6,6 +6,7 @@ namespace api\modules\v1\controllers;
 use api\components\CController;
 use api\modules\v1\models\Countries;
 use api\modules\v1\models\States;
+use api\modules\v1\models\Cities;
 use yii\data\ActiveDataProvider;
 use yii\web\UploadedFile;
 use yii\helpers\ArrayHelper;
@@ -45,7 +46,16 @@ class AddressController extends CController
     {
         $model = States::find()->where(['country_id' => $id])->asArray()->all();
         $CountryArr = ArrayHelper::map($model,'id', 'name');
-        $this->setMessage('Country get successfully');
+        $this->setMessage('state get successfully');
+        return $CountryArr;
+    }
+
+
+    public function actionGetCity($id)
+    {
+        $model = Cities::find()->where(['state_id' => $id])->asArray()->all();
+        $CountryArr = ArrayHelper::map($model,'id', 'name');
+        $this->setMessage('City get successfully');
         return $CountryArr;
     }
     

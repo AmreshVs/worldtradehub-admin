@@ -12,6 +12,20 @@ Options -Indexes
 
 # Rewrite example.com → www.example.com
 
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # (1)
+    # RewriteCond %{HTTPS} !=on
+   # RewriteCond %{HTTP_HOST} !^www\. [NC]
+   #RewriteCond %{HTTP_HOST} !^portland.duceapps.* [NC]
+   #RewriteCond %{HTTP_HOST} !^192.168.*$ [NC]
+   #RewriteCond %{HTTP_HOST} !^local.* [NC]
+   #RewriteCond %{HTTP_HOST} !^localhost* [NC]
+   #RewriteCond %{SERVER_ADDR} !=127.0.0.1
+   #RewriteCond %{SERVER_ADDR} !=::1
+   #RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
 
 
 # Preventing Redirect loop

@@ -130,6 +130,8 @@ class UserController extends CController
             'mobile_number', 
             'register_type',
             'country_id',
+            'city_id',
+            'state_id',
         ];
         $this->checkRequiredParam($request, $params);
         $model = User::find()

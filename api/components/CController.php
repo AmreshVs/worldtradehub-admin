@@ -54,17 +54,17 @@ class CController extends Controller
                 'user/verify_otp',
                 'user/resend_otp',
                 'user/forgot-password',
-                'expo/index',
-                'expo/view',
-                'ticket/create',
-                'ticket/update',
-                'favourite/create',
-                'favourite/index',
-                'ticket/view-stall',
-                'ticket/history',
+                //'expo/index',
+                //'expo/view',
+                //'ticket/create',
+                //'ticket/update',
+                //'favourite/create',
+                //'favourite/index',
+                //'ticket/view-stall',
+                //'ticket/history',
                 'address/get-country',
                 'address/get-state',
-
+                'address/get-city'
 
             ]
         ];

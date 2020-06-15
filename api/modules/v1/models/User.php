@@ -38,6 +38,8 @@ class User extends \common\models\User
                     'mobile_number', 
                     'register_type',
                     'country_id',
+                    'state_id',
+                    'city_id'
                 ], 
                     'required', 
                     'on' => [self::SCENARIO_REGISTER_NORMAL]
@@ -74,18 +76,6 @@ class User extends \common\models\User
     {
         $scenarios = parent::scenarios();
 
-        $scenarios[self::SCENARIO_UPDATE] = [
-            'first_name',
-            'last_name',
-            'profile_image',
-            'email',
-            'mobile_number',
-            'DOB',
-            'gender',
-            'area',
-            'city' 
-        ];
-        
         $scenarios[self::SCENARIO_REGISTER_NORMAL] =  [
             'username',
            // 'last_name',
@@ -97,19 +87,11 @@ class User extends \common\models\User
             //'user_type',
            // 'device_type',
             //'device_token'
+            'state_id',
+            'city_id'
         ];
         
-        $scenarios[self::SCENARIO_REGISTER_SOCIAL] =  [
-            'first_name',
-            'last_name',
-            'email', 
-            'password', 
-            'mobile_number',
-            'social_token',
-            'register_type',
-            'device_type',
-            'device_token'
-        ];
+       
         
         return $scenarios;
     }

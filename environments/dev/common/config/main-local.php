@@ -2,14 +2,13 @@
 
 use yii\db\Connection;
 
-
 return [
     'components' => [
         'db' => [
             'class' => Connection::class,
-             'dsn' => 'mysql:host=148.72.88.28;dbname=worldtradehub',
-            'username' => 'worldtradehub_dev',
-            'password' => 'VWpx+W?E7YB}'
+            'dsn' => 'mysql:host=192.168.1.181;dbname=foodpurby_v4_portland',
+            'username' => 'techdevelop',
+            'password' => '&$2fra*2!4gs#4',
             'charset' => 'utf8',
         ],
         // 'rabbitmq' => [

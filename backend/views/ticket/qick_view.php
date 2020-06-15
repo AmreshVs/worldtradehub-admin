@@ -109,7 +109,7 @@ use backend\models\ItemIngredientGroup;
         <thead>
             <tr><th class="text-center"><?= yii::t('backend','S.No.') ?></th>
                 <th class="text-center"><?= yii::t('backend','Event title') ?></th>
-                <th class="text-center"><?= yii::t('backend','Qty') ?></th>
+                <th class="text-center"><?= yii::t('backend','Stall Qty') ?></th>
                 <th class="text-center"><?= yii::t('backend','Price') ?> (<?= Configuration::get(Configuration::APP_CURRENCY_CODE) ?>)</th>
             </tr>
         </thead>

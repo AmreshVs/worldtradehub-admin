@@ -23,7 +23,7 @@ $form = CActiveForm::begin()->setModel($model);
         <div class="col-md-12">
             <?= $form->field($model, 'event_desc')->widget(CKEditor::className(), [
                                 'options' => ['rows' => 3],
-                                'preset' => 'basic'
+                                //'preset' => 'basic'
             ]) ?>
         </div>
     </div>
