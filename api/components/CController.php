@@ -62,6 +62,9 @@ class CController extends Controller
                 'favourite/index',
                 'ticket/view-stall',
                 'ticket/history',
+                'address/get-country',
+                'address/get-state',
+
 
             ]
         ];

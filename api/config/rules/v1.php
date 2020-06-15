@@ -56,6 +56,18 @@ return [
             'GET create' => 'create',
     
         ]
+    ],
+    [
+        'class' => CUrlRule::class,
+        'controller' => [
+            'v1/address'
+        ],
+        'extraPatterns' => [
+            'GET get-country' => 'get-country',
+            'GET get-state' => 'get-state',
+            'GET get-city' => 'get-city',
+    
+        ]
     ]
     
 ];
