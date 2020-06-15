@@ -38,7 +38,7 @@ class CController extends Controller
      */
     private $isObject = false;
 
-    
+
 
     /**
      * @return array
@@ -70,7 +70,23 @@ class CController extends Controller
 
             ]
         ];
-
+        return array_merge($behaviors, [
+    
+            // For cross-domain AJAX request
+            'corsFilter'  => [
+                'class' => \yii\filters\Cors::className(),
+                'cors'  => [
+                    // restrict access to domains:
+                    'Origin'                           => ['*'],
+                    'Access-Control-Request-Method'    => ['POST','GET','PUT','OPTIONS'],
+                    'Access-Control-Allow-Credentials' => false,
+                    'Access-Control-Max-Age'           => 3600,// Cache (seconds)
+                    'Access-Control-Request-Headers' => ['*'],
+                    'Access-Control-Allow-Origin' => false,
+                ],
+            ],
+    
+        ]);
         return $behaviors;
 
     }
