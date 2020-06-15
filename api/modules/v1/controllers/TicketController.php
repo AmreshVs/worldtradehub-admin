@@ -36,7 +36,7 @@ class TicketController extends CController
      * @return User
      */
    
-    public function actionCreate()
+    public function actionExhibitorCompanyInfomration()
     {
       $request = Yii::$app->getRequest()->post();
       $userIdentity = Yii::$app->getUser()->getIdentity();
@@ -66,10 +66,10 @@ class TicketController extends CController
             $this->commonError('Invalid Events');
       }
 
-      $Ticket_model = Ticket::find()->where(['event_id' => $EventModel->event_id])->one();
-      if($Ticket_model != null) {
-            $this->commonError('Event Already Booked');
-      }
+      // $Ticket_model = Ticket::find()->where(['event_id' => $EventModel->event_id])->one();
+      // if($Ticket_model != null) {
+      //       $this->commonError('Event Already Booked');
+      // }
 
       $model = new Ticket();
       $modelUpload = new EventUploadForm();
@@ -86,32 +86,94 @@ class TicketController extends CController
 
             foreach ((array)$files['logo_image_path'] as $dataKey => $dataValue) {
                 $uploadData[$dataKey]['logo_image_path'] = $dataValue;
+                $uploadData[$dataKey]['cover_image_path'] = $dataValue;
             }
 
             $_FILES = ['EventUploadForm' => $uploadData];
 
             $modelUpload->image = UploadedFile::getInstance($modelUpload, 'logo_image_path');
+            $modelUpload->cover_image_path = UploadedFile::getInstance($modelUpload, 'cover_image_path');
+
             if (!$modelUpload->validate()) {
                 return $modelUpload;
             }
-          
-            $uploadHelper = UploadHelper::getInstance();
-            $uploadHelper->setPath($uploadHelper::TICKET);
-            $upload = UploadedFile::getInstance($modelUpload, 'logo_image_path');
+            if($modelUpload->image != ''){
+              $uploadHelper = UploadHelper::getInstance();
+              $uploadHelper->setPath($uploadHelper::TICKET);
+              $upload = UploadedFile::getInstance($modelUpload, 'logo_image_path');
 
-            $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
+              $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
 
-            $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
-            $upload->saveAs($path);
-            $model->logo_image_path = $uploadHelper->getRealPath($path);
+              $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
+              $upload->saveAs($path);
+              $model->logo_image_path = $uploadHelper->getRealPath($path);
+            }
+            if($modelUpload->image != ''){
+              $uploadHelper = UploadHelper::getInstance();
+              $uploadHelper->setPath($uploadHelper::TICKET);
+              $upload = UploadedFile::getInstance($modelUpload, 'cover_image_path');
+
+              $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
+
+              $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
+              $upload->saveAs($path);
+              $model->cover_image_path = $uploadHelper->getRealPath($path);
+            }
             
            
         }
+      $model->event_id = $EventModel->event_id;
       $model->user_id = $userIdentity->getId();
+      $model->ticket_status = 3;
       $model->save(false);
       $this->setMessage('Details added successfully');
      
       $result['ticket_key'] = $model->ticket_key; 
+      // if($modelUser->register_type == 1) {
+      //    $result['exhibitor_platinum_price'] = $EventModel->exhibitor_platinum_price;
+      //    $result['exhibitor_diamond_price'] = $EventModel->exhibitor_diamond_price;
+      //    $result['exhibitor_gold_price'] = $EventModel->exhibitor_gold_price;
+      //    $result['exhibitor_silver_price'] = $EventModel->exhibitor_silver_price;
+
+      // } else {
+      //    $result['visitor_price'] = $EventModel->visitors_package_price;
+      // }
+      return $result;
+    }
+
+    public function actionExhibitorStallBook()
+    {
+      $request = Yii::$app->getRequest()->post();
+      $userIdentity = Yii::$app->getUser()->getIdentity();
+
+      $params = [
+            "ticket_key",
+            "stall_id",
+      //      "stall_name",
+    
+            //'slot_id',
+            //'logo_image_path',
+        ];
+      $this->checkRequiredParam($request, $params);
+
+      $Ticket_model = Ticket::find()->where(['ticket_key' => $request['ticket_key']])->one();
+      if($Ticket_model == null) {
+            $this->commonError('Invalid Ticket');
+      }
+      $Ticket_model->slot_id = $request['stall_id'];
+      $Ticket_model->save(false);
+
+      $modelUser = User::findOne(['user_id' => $userIdentity->getId(),'status' => User::ACTIVE]);
+
+      if ($modelUser === null) {
+        $this->userNotFound();
+      }
+      $EventModel = Events::find()->where(['event_id' => $Ticket_model->event_id])->one();
+      if($EventModel == null) {
+            $this->commonError('Invalid Events');
+      }
+
+      $result['ticket_key'] = $Ticket_model->ticket_key; 
       if($modelUser->register_type == 1) {
          $result['exhibitor_platinum_price'] = $EventModel->exhibitor_platinum_price;
          $result['exhibitor_diamond_price'] = $EventModel->exhibitor_diamond_price;
@@ -121,28 +183,66 @@ class TicketController extends CController
       } else {
          $result['visitor_price'] = $EventModel->visitors_package_price;
       }
+
       return $result;
+    //  $Ticket_model->slot_name = $request['stall_name'];
+
     }
 
-    public function actionUpdate()
+    public function actionExhibitorPackageSelect()
     {
          $request = Yii::$app->request->post();
          $params = [
-            "package_price",
+            "package_type",
             'ticket_key',
          ];
          $this->checkRequiredParam($request, $params);
          $Ticket_model = Ticket::find()->where(['ticket_key' => $request['ticket_key']])->one();
 
          if($Ticket_model == null) {
-            $this->commonError('Invalid Events');
+            $this->commonError('Invalid Ticket');
          }
-         $Ticket_model->subscription_price = $request['package_price'];
-         $Ticket_model->save('false');
+         $EventModel = Events::find()->where(['event_id' => $Ticket_model->event_id])->one();
+          if($EventModel == null) {
+                $this->commonError('Invalid Events');
+          }
+        if($request['package_type'] == 1) {
+            $Ticket_model->subscription_price = $EventModel->exhibitor_platinum_price;
+
+        } else if($request['package_type'] == 2) {
+            $Ticket_model->subscription_price = $EventModel->exhibitor_diamond_price;
+
+        } else if($request['package_type'] == 3) {
+            $Ticket_model->subscription_price = $EventModel->exhibitor_gold_price;
+
+        }else {
+            $Ticket_model->subscription_price = $EventModel->exhibitor_silver_price;
+
+        }
+         $Ticket_model->ticket_status = 1;
+         $Ticket_model->save(false);
          $this->setMessage('Booked successfully');
-         return [];
+         return ['ticket_number' => 14568];
+    }
 
-
+    public function actionVisitorPackageSelect()
+    {
+         $request = Yii::$app->request->post();
+         $params = [
+            //"package_type",
+            'event_key',
+         ];
+         $this->checkRequiredParam($request, $params);
+         $EventModel = Events::find()->where(['event_key' => $request['event_key']])->one();
+          if($EventModel == null) {
+                $this->commonError('Invalid Events');
+          }
+        $Ticket_model = new Ticket();
+        $Ticket_model->subscription_price = $EventModel->visitors_package_price ;
+         $Ticket_model->ticket_status = 1;
+         $Ticket_model->save(false);
+         $this->setMessage('Booked successfully');
+         return ['ticket_number' => 14568];
     }
 
     public function actionGetOrders()
@@ -176,29 +276,30 @@ class TicketController extends CController
               $this->commonError('Invalid Events');
         }
 
-       $blocks = Ticket::getBlocks();
+       $room = Ticket::getBlocks();
+       foreach ($room as $key => $blocks) {
+          foreach ($blocks as $key => $blockName) {
+            foreach ($blockName as $block_key => $stall) {
+               if (strpos($block_key, 'empty') === false) {
+                
+                   $ticket = Ticket::find()
+                      ->where([
+                        'event_id' => $EventModel->event_id
+                        ,'slot_id' => $stall['id']
+                      ])->one();
 
-       foreach ($blocks as $key => $blockName) {
-          foreach ($blockName as $block_key => $stall) {
-             if (strpos($block_key, 'empty') === false) {
-
-                 $ticket = Ticket::find()
-                    ->where([
-                      'event_id' => $EventModel->event_id
-                      ,'slot_id' => $stall['id']
-                    ])->one();
-
-                 if($ticket !== null) {
-                    $blocks[$key][$block_key]['status'] = 1;
+                   if($ticket !== null) {
+                      $blocks[$key][$block_key]['status'] = 1;
+                      
+                   } else {
+                      $blocks[$key][$block_key]['status'] = 0;
                     
-                 } else {
+                   }
+               } else {
                     $blocks[$key][$block_key]['status'] = 0;
                   
-                 }
-             } else {
-                  $blocks[$key][$block_key]['status'] = 0;
-                
-             }
+               }
+            }
           }
        }
 

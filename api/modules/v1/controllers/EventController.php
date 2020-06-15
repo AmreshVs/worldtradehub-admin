@@ -13,11 +13,11 @@ use yii\helpers\Json;
 use api\components\CResponse;
 
 /**
- * Class ExpoController
+ * Class EventController
  * @package api\modules\v1\controllers
  */
 
-class ExpoController extends CController
+class EventController extends CController
 {    
     /**
      * @throws \Exception

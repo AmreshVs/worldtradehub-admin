@@ -58,6 +58,7 @@ class User extends \common\models\User
      */
     public function fields()
     {
+
         return [
             'user_key',
             'username',
@@ -83,7 +84,8 @@ class User extends \common\models\User
                     ->select(['name', 'id'])
                     ->where(['id' => $model->country_id])
                     ->one();
-            }, 
+            },
+            'register_type', 
         ];
     }
 

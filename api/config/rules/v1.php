@@ -28,7 +28,7 @@ return [
     [
         'class' => CUrlRule::class,
         'controller' => [
-            'v1/expo'
+            'v1/event'
         ],
         'extraPatterns' => [
             //'GET' => 'index',
@@ -41,7 +41,10 @@ return [
             'v1/ticket'
         ],
         'extraPatterns' => [
-            'POST update' => 'update',
+            'POST exhibitor-company-infomration' => 'exhibitor-company-infomration',
+            'POST exhibitor-stall-book' => 'exhibitor-stall-book',
+            'POST exhibitor-package-select' => 'exhibitor-package-select',
+            'POST visitor-package-select' => 'visitor-package-select',
             'GET get-orders' => 'get-orders',
             'GET view-stall' => 'view-stall',
             'GET history' => 'history',

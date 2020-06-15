@@ -13,7 +13,7 @@ use common\helpers\Com;
  */
 class EventUploadForm extends Model
 {
-    public $image;
+    public $image, $cover_image_path;
 
     /**
      * @return array
@@ -22,7 +22,7 @@ class EventUploadForm extends Model
     {
         return [
             [
-                ['image'], 
+                ['image','cover_image_path'], 
                 'file',
                 'skipOnEmpty' => true, 
                 'maxSize' => 1024 * 1024 * 10, 
