@@ -45,6 +45,7 @@ return [
             'GET get-orders' => 'get-orders',
             'GET view-stall' => 'view-stall',
             'GET history' => 'history',
+            'POST image-upload' => 'image-upload',
     
         ]
     ],

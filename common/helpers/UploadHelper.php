@@ -20,6 +20,7 @@ class UploadHelper
     const TICKET = 'TICKET';
     const EVENT = 'EVENT';
     const SITE_IMAGES = 'SITE_IMAGES';
+    const COVER_IMAGES = 'COVER_IMAGES';
     
     
     const USER = 'user/profile';
