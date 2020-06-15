@@ -30,7 +30,7 @@ class Ticket extends BaseTicket
         return $behaviors;
     }
 
-    public function getBlocks()
+    public static function getBlocks()
     {
     
         $blocks = [];
