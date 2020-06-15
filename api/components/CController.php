@@ -38,7 +38,7 @@ class CController extends Controller
      */
     private $isObject = false;
 
-    public $enableCsrfValidation = false;
+    
 
     /**
      * @return array
