@@ -5,7 +5,7 @@
  * This GatewayApi is used to send SMS
  * Class SmsGateway (used GuzzleHttp)
  * @package common\helpers
- * @author Baluraj R <baluraj.r@technoduce.com>
+ * @author Baluraj R <baluraj.r@.com>
  */
 
 namespace common\helpers;

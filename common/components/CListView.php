@@ -29,7 +29,7 @@ class CListView extends ListView
      * The return result of the function will be rendered directly.
      * Note: If the function returns `null`, nothing will be rendered before the item.
      * @see renderBeforeItemList
-     * @author A Vijay<vijay.a@technoduce.com>
+     * @author A Vijay<vijay.a@.com>
      */
     public $beforeItemList;
 
@@ -41,7 +41,7 @@ class CListView extends ListView
      * The return result of the function will be rendered directly.
      * Note: If the function returns `null`, nothing will be rendered after the item.
      * @see renderAfterItemList
-     * @author A Vijay<vijay.a@technoduce.com>
+     * @author A Vijay<vijay.a@.com>
      */
     public $afterItemList;
     /**

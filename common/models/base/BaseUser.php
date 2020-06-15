@@ -56,19 +56,19 @@ class BaseUser extends \common\components\CModel
     public function rules()
     {
         return [
-            [['mobile_number', 'tobaogo_point', 'tobaogo_credit', 'status', 'last_read_notification_id', 'promotion_notification_status', 'created_user_id', 'updated_user_id', 'referred_user_id', 'gender', 'default_address'], 'integer'],
+            [['mobile_number',  'status', 'created_user_id', 'updated_user_id'], 'integer'],
             [['auth_key'], 'string'],
             [['last_login', 'created_at', 'updated_at', 'DOB'], 'safe'],
-            [['overall_tabaogo_point'], 'number'],
+            //[['overall_tabaogo_point'], 'number'],
             [['area','city'],'safe'],
             [['user_key'], 'string', 'max' => 16],
-            [['first_name', 'last_name', 'username'], 'string', 'max' => 64],
-            [['email', 'google_token', 'fb_token'], 'string', 'max' => 254],
-            [['password_hash', 'password_reset_token', 'profile_image'], 'string', 'max' => 256],
-            [['referral_code'], 'string', 'max' => 8],
-            [['device_token'], 'string', 'max' => 245],
+            [[ 'username'], 'string', 'max' => 64],
+            [['email'], 'string', 'max' => 254],
+            [['password_hash', 'password_reset_token'], 'string', 'max' => 256],
+            //[['referral_code'], 'string', 'max' => 8],
+            //[['device_token'], 'string', 'max' => 245],
             [['device_type'], 'string', 'max' => 45],
-            [['web_token'], 'string', 'max' => 50],
+            //[['web_token'], 'string', 'max' => 50],
         ];
     }
 

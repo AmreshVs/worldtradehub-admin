@@ -3,7 +3,7 @@
 $constant = [
     'STATUS_SUCCESS' => 1,
     'STATUS_FAIL' => 0,
-    'APP' => 'Delivery-Squad',
+    'APP' => 'Online_EXPO',
     'APP_LANGUAGE' => 'app-language',
     'ACCESS_RULE' => 'ACCESS_RULE',
     'API_HOST' => sprintf('%s', $_SERVER['HTTP_HOST'])

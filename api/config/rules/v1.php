@@ -15,13 +15,14 @@ return [
             'v1/user'
         ],
         'extraPatterns' => [
-            'GET' => 'view',
+            'GET view' => 'view',
             'POST login' => 'login',
             'POST otp-login' => 'otp-login',
             'POST register' => 'register',
             'POST verify_otp' => 'verify_otp',
             'POST resend_otp' => 'resend_otp',
             'POST forgot-password' => 'forgot-password',
+            'POST update' => 'update',
         ]
     ],
     [

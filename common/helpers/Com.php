@@ -449,7 +449,7 @@ class Com
      * @param  string $url [Run URL]
      * @param  array $postArray [POST Array]
      * @return JSON              [JSON Values]
-     * @author Senthil T <senthilkumar.t@technoduce.com>
+     * @author Senthil T <senthilkumar.t@.com>
      */
     public static function getJsonData($type = 'GET', $url = '', $postArray = array(), $body = 0)
     {

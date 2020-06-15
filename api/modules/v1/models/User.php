@@ -65,7 +65,25 @@ class User extends \common\models\User
             'mobile_number',
             'access_token' => function (self $model) {
                 return JwtHelper::getInstance()->token($model->getKey());
-            } 
+            },
+            'country' => function (self $model) {
+                return  Countries::find()
+                    ->select(['name', 'id'])
+                    ->where(['id' => $model->country_id])
+                    ->one();
+            },
+            'state' => function (self $model) {
+                return  States::find()
+                    ->select(['name', 'id'])
+                    ->where(['id' => $model->country_id])
+                    ->one();
+            },
+            'city' => function (self $model) {
+                return  Cities::find()
+                    ->select(['name', 'id'])
+                    ->where(['id' => $model->country_id])
+                    ->one();
+            }, 
         ];
     }
 

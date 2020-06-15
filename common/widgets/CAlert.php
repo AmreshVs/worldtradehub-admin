@@ -9,7 +9,7 @@ use yii\base\Widget;
  * Class CAlert
  * @package common\widgets
  *
- * @author A Vijay<vijay.a@technoduce.com>
+ * @author A Vijay<vijay.a@.com>
  */
 class CAlert extends Widget
 {

@@ -171,7 +171,7 @@ class UploadHelper
      *
      * @deprecated
      *
-     * @author A Vijay<vijay.a@technoduce.com>
+     * @author A Vijay<vijay.a@.com>
      */
     public function crop($path, array $option, $realPath = true)
     {

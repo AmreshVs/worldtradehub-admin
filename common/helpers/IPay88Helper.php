@@ -9,7 +9,7 @@ use yii\helpers\Url;
  * Class IPay88Helper
  * @package common\helpers
  *
- * @author N Manojkumar<manojkumar.n@technoduce.com>
+ * @author N Manojkumar<manojkumar.n@.com>
  */
 
 class IPay88Helper {

@@ -9,7 +9,7 @@ use yii\base\Model;
  * Class LoginForm
  * @package frontend\models
  *
- * @author A Vijay <vijay.a@technoduce.com>
+ * @author A Vijay <vijay.a@.com>
  */
 class LoginForm extends Model
 {

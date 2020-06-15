@@ -277,45 +277,19 @@ class UserController extends CController
         
         $request = Yii::$app->getRequest()->post();
         $params = [
-            'first_name',
-            'last_name',
             'email',
-            'mobile_number',
-            'DOB',
-            'gender',
-            'area',
-            'city'
+            'city_id',
+            'country_id',
+            'state_id',
+            'username',
         ];
 
         $this->checkRequiredParam($request, $params);
 
-        if($model->mobile_number != $request['mobile_number']) {
-            
-            if(isset($request['otp']) && $request['otp'] != '') {
-                
-                if($request['otp'] == $model->otp) {
-                    
-                    $profile_image = $model->profile_image;
-                    $model->setScenario($model::SCENARIO_UPDATE);
-                    $model->load($request, '');
-                    $model->otp = null;
-                    
-                } else {
-                    $this->commonError('INVALID_OTP');
-                }  
-            } else {
-                $this->commonError('OTP_REQUIRED');
-            }  
-        } else {
-            $profile_image = $model->profile_image;
-            $model->setScenario($model::SCENARIO_UPDATE);
-            $model->load($request, ''); 
-        }
-        
         if (!$model->validate()) {
             return $model->getError();
         }
-        $model->save();
+        $model->save(false);
         
         $this->setMessage('Updated successfully');
 

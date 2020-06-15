@@ -7,7 +7,7 @@ use yii\base\BaseObject;
 /**
  * Description of GeoData
  *
- * @author Saranya <saranya@technoduce.com>
+ * @author Saranya <saranya@.com>
  */
 class GeoData extends BaseObject {
 

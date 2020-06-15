@@ -26,7 +26,7 @@ class DeliveryBoyController extends CController {
     /**
      * @return string
      * @throws \yii\base\InvalidParamException
-     * @author Senthil T <senthilkumar.t@technoduce.com>
+     * @author Senthil T <senthilkumar.t@.com>
      *
      * @Title("List/View DeliveryBoy")
      */
@@ -78,7 +78,7 @@ class DeliveryBoyController extends CController {
     /**
      * @return string
      * @throws \yii\base\InvalidParamException
-     * @author Senthil T <senthilkumar.t@technoduce.com>
+     * @author Senthil T <senthilkumar.t@.com>
      *
      * @Title("List/View Create")
      */
@@ -127,7 +127,7 @@ class DeliveryBoyController extends CController {
     /**
      * @return string
      * @throws \yii\base\InvalidParamException
-     * @author Senthil T <senthilkumar.t@technoduce.com>
+     * @author Senthil T <senthilkumar.t@.com>
      *
      * @Title("List/View Update")
      */
@@ -175,7 +175,7 @@ class DeliveryBoyController extends CController {
     /**
      * @return string
      * @throws \yii\base\InvalidParamException
-     * @author Senthil T <senthilkumar.t@technoduce.com>
+     * @author Senthil T <senthilkumar.t@.com>
      *
      * @Title("List/View Track")
      */
@@ -269,7 +269,7 @@ class DeliveryBoyController extends CController {
     /**
      * @return string
      * @throws \yii\base\InvalidParamException
-     * @author Senthil T <senthilkumar.t@technoduce.com>
+     * @author Senthil T <senthilkumar.t@.com>
      *
      * @Title("List/View Assign Order")
      */
@@ -315,7 +315,7 @@ class DeliveryBoyController extends CController {
     /**
      * @return string
      * @throws \yii\base\InvalidParamException
-     * @author Senthil T <senthilkumar.t@technoduce.com>
+     * @author Senthil T <senthilkumar.t@.com>
      *
      * 
      */
@@ -335,7 +335,7 @@ class DeliveryBoyController extends CController {
      *
      * @throws \yii\base\InvalidParamException
      * @throws \yii\base\Exception
-     * @author Senthil T <senthilkumar.t@technoduce.com>
+     * @author Senthil T <senthilkumar.t@.com>
      *
      * @Title("List/View Status Update")
      */
@@ -401,7 +401,7 @@ class DeliveryBoyController extends CController {
      * Get Driver details from api
      * @param  $id [driver key]
      * @return array [Driver Details]
-     * @author Senthil T <senthilkumar.t@technoduce.com>
+     * @author Senthil T <senthilkumar.t@.com>
      */
     public function getDriver($id = '') {
         $responseData = Com::getJsonData('GET', Configuration::get(Configuration::DELIVERY_BOY_ACCESS_URL) . "driver/" . $id . "?company_id=" . Configuration::get(Configuration::COMPANY_KEY));
@@ -446,7 +446,7 @@ class DeliveryBoyController extends CController {
      * @param  string $url       [Run URL]
      * @param  array  $postArray [POST Array]
      * @return JSON              [JSON Values]
-     * @author Senthil T <senthilkumar.t@technoduce.com>
+     * @author Senthil T <senthilkumar.t@.com>
      */
     public function getJsonData($type = 'GET', $url = '', $postArray = array()) {
         $curl = curl_init();

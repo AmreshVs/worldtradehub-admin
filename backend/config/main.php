@@ -95,7 +95,7 @@ $components=[
 //                    'categories' => ['yii\db\*'],
 //                    'message' => [
 //                       'from' => ['log@example.com'],
-//                       'to' => ['admin@example.com', 'gautam.e@technoduce.com'],
+//                       'to' => ['admin@example.com', 'gautam.e@.com'],
 //                       'subject' => 'Database errors at example.com',
 //                    ],
 //                ],
