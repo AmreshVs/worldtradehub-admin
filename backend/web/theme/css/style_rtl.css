@@ -1,0 +1,32 @@
+body{ direction: rtl; text-align: right}
+
+.form-group .pwd-viewer-toggle{ right: auto; left: 0px;}
+.left-sidebar{ left: auto; right: 0px;}
+.lock-nav .topbar{ padding-left: 0px; padding-right: 220px; }
+.lock-nav .footer, .lock-nav .page-wrapper{ margin-left: 0px; margin-right: 220px;}
+.navbar-nav{ padding-right: 0px; padding-left: 30px}
+.custom-dashboard .card .card-body{text-align: right;}
+.custom-dashboard .card i{ right: auto; left: 20px;}
+.navbar-expand-md .navbar-nav .dropdown-menu-right{ right: auto; left: 0px;}
+.dropdown-menu.dropdown-menu-right .with-arrow{ right: auto; left: 20px;}
+.dropdown-item{text-align: right;}
+.topbar .dropdown-menu .dropdown-item i{ float: right;   position: relative;  top: 3px;}
+html body .m-l-10{ margin-left: 0px; margin-right: 10px;}
+.sidebar-nav ul li a i{ float: right;}
+.sidebar-nav .has-arrow[aria-expanded=true]::after, .sidebar-nav li.selected>.has-arrow::after, .sidebar-nav li>.has-arrow.active::after, .sidebar-nav .has-arrow::after{ right: auto; left: 0px;}
+.sidebar-nav ul li a i{ left: auto; right: 0px;}
+.sidebar-nav ul li a{ padding-left: 6px; padding-right: 36px;}
+.fa-pull-right, .pull-right{ float: left;}
+html body .m-r-10{  margin-right: 0px; margin-left: 10px;}
+.select2-container--default .select2-selection--single .select2-selection__arrow{ right: auto; left: 1px; }
+
+.custom-control-label::after, .custom-control-label::before{ left: auto; right: 0px;}
+.custom-control{ padding-left: 0px; padding-right: 1.5rem}
+
+.sidebar-nav ul li ul{ padding: 10px;}
+
+.pagination{ padding: 0;}
+
+@media (min-width: 769px){
+.lock-nav .left-sidebar {  left: auto;  width: 220px; right: 0px;}
+}
