@@ -19,7 +19,6 @@ class Ticket extends BaseTicket
     public function behaviors()
     {
         $behaviors = parent::behaviors();
-
         $behaviors[] = [
             'class' => AttributeKeyGeneratorBehaviour::class,
             'attributes' => [
