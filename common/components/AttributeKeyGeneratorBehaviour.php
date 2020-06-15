@@ -42,7 +42,7 @@ use yii\db\BaseActiveRecord;
  * }
  * ```
  *
- * @author yii2
+ * @author A Vijay <vijay.a@technoduce.com>
  */
 class AttributeKeyGeneratorBehaviour extends Behavior
 {
@@ -175,7 +175,7 @@ class AttributeKeyGeneratorBehaviour extends Behavior
                 $length = $attributeKey['length'];
                 unset($attributeKey['length']);
 
-                list($attribute, $keyCase) = each($attributeKey);
+                list($attribute, $keyCase) = [array_keys($attributeKey)[0], array_values($attributeKey)[0]];
 
                 if (!in_array($attribute, $ownerAttributes, true)) {
                     continue;
