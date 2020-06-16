@@ -36,7 +36,7 @@ class BaseTicket extends \common\components\CModel
     public function rules()
     {
         return [
-            [['meet_id', 'zoom_id'], 'integer'],
+            [['meet_id', 'zoom_id'], 'string', 'max' => 256],
             [['youtupe_link', 'company_desc'], 'string'],
             [['created_at'], 'safe'],
             [['ticket_key'], 'string', 'max' => 16],
