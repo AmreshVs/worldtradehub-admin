@@ -29,6 +29,7 @@ if(AdminUser::isVendor()) {
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+    <script src="https://cdn.ckeditor.com/ckeditor5/19.1.1/classic/ckeditor.js"></script>
 </head>
 <body class="skin-default-dark fixed-layout lock-nav <?php echo $class; ?>">
 

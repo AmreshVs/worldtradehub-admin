@@ -152,7 +152,7 @@ class UserController extends CController
         $modelUser = new User();
         $modelUser->setScenario($modelUser::SCENARIO_REGISTER_NORMAL);
         $modelUser->load($request, "");
-      
+     
         if(!$modelUser->validate()) {
             return $modelUser->getError();
         }

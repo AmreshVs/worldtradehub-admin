@@ -21,6 +21,7 @@ class UploadHelper
     const EVENT = 'EVENT';
     const SITE_IMAGES = 'SITE_IMAGES';
     const COVER_IMAGES = 'COVER_IMAGES';
+    const EVENT_CKEDITOR = 'EVENT_CKEDITOR';
     
     
     const USER = 'user/profile';

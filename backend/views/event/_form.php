@@ -3,7 +3,7 @@
 use backend\components\CActiveForm;
 use yii\helpers\Html;
 use common\helpers\Com;
-use dosamigos\ckeditor\CKEditor;
+use mikeliang\CKEditor5\EditorClassic;
 use common\helpers\UploadHelper;
 
 /* @var $this \yii\web\View  */
@@ -21,10 +21,8 @@ $form = CActiveForm::begin()->setModel($model);
             <?= $form->field($model, 'event_title')->textInput(); ?>
         </div>
         <div class="col-md-12">
-            <?= $form->field($model, 'event_desc')->widget(CKEditor::className(), [
-                                'options' => ['rows' => 3],
-                                //'preset' => 'basic'
-            ]) ?>
+                 <?= $form->field($model, 'event_desc')->textInput(['id' => 'editor']); ?>
+
         </div>
     </div>
     <div class="row p-lg-2">
@@ -93,6 +91,14 @@ $form = CActiveForm::begin()->setModel($model);
          $(".bootstrapMaterialDatePicker").bootstrapMaterialDatePicker({ 
             format: 'YYYY-MM-DD HH:mm:ss',
         });
+         ClassicEditor
+            .create( document.querySelector( '#editor' ), {
+            ckfinder: {
+                uploadUrl: 'upload'
+            }
+        })
+
+
     });
 </script>
 

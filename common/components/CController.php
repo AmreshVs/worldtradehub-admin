@@ -122,6 +122,12 @@ class CController extends Controller
                         'roles' => ['?']
                     ],
                     [
+                        'controllers' => ['payment'],
+                        'actions' => ['index', 'payment-success'],
+                        'allow' => true,
+                        'roles' => ['?']
+                    ],
+                    [
                         'controllers' => ['admin-user'],
                         'actions' => ['forgot-password', 'password-reset'],
                         'allow' => true,

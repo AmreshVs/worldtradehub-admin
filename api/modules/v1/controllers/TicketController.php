@@ -202,6 +202,7 @@ class TicketController extends CController
          if($Ticket_model == null) {
             $this->commonError('Invalid Ticket');
          }
+
          $EventModel = Events::find()->where(['event_id' => $Ticket_model->event_id])->one();
           if($EventModel == null) {
                 $this->commonError('Invalid Events');
@@ -219,10 +220,10 @@ class TicketController extends CController
             $Ticket_model->subscription_price = $EventModel->exhibitor_silver_price;
 
         }
-         $Ticket_model->ticket_status = 1;
+         $Ticket_model->ticket_status = 3;
          $Ticket_model->save(false);
          $this->setMessage('Booked successfully');
-         return ['ticket_number' => 14568];
+         return ['payment_url' => Yii::$app->request->hostInfo.'/admin/payment/index?ticket_key='. $Ticket_model->ticket_key];
     }
 
     public function actionVisitorPackageSelect()
@@ -242,7 +243,7 @@ class TicketController extends CController
          $Ticket_model->ticket_status = 1;
          $Ticket_model->save(false);
          $this->setMessage('Booked successfully');
-         return ['ticket_number' => 14568];
+         return ['payment_url' => Yii::$app->request->hostInfo.'/admin/payment/index?ticket_key='. $Ticket_model->ticket_key];
     }
 
     public function actionGetOrders()

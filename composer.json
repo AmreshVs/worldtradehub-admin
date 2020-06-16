@@ -26,14 +26,15 @@
         "yiisoft/yii2-redis": "^2.0",
         "mikemadisonweb/yii2-rabbitmq": "^1.5.1",
         "giggsey/libphonenumber-for-php": "^8.9",
-        "2amigos/yii2-ckeditor-widget": "^2.1",
         "dektrium/yii2-user": "^0.9.14",
         "phpoffice/phpspreadsheet": "^1.4",
         "league/omnipay": "^3.0",
         "omnipay/stripe": "^3.0",
         "guzzlehttp/oauth-subscriber": "0.3.*",
         "twilio/sdk": "5.0.0",
-        "yiisoft/yii2-authclient": "^2.2"
+        "yiisoft/yii2-authclient": "^2.2",
+        "razorpay/razorpay": "2.*",
+        "mikeliang/yii2-ckeditor5": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

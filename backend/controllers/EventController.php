@@ -6,6 +6,7 @@ use backend\models\Events;
 use backend\models\Language;
 use backend\models\EventSearch;
 use backend\models\EventsUploadForm;
+use backend\models\EventUploadForm;
 use common\components\CController;
 use common\helpers\Com;
 use common\helpers\MailerQueueHelper;
@@ -15,6 +16,8 @@ use yii\web\NotFoundHttpException;
 use yii\web\UploadedFile;
 use common\helpers\UploadHelper;
 use common\helpers\FileUploadHelper;
+use yii\helpers\ArrayHelper;
+
 
 /**
  * class EventController
@@ -24,6 +27,17 @@ use common\helpers\FileUploadHelper;
  */
 class EventController extends CController
 {
+
+     public function beforeAction($action)
+    {
+
+       if (ArrayHelper::isIn($action->getUniqueId(), ['event/upload'])) {
+           
+             $this->enableCsrfValidation = false;
+      
+       }
+       return parent::beforeAction($action);
+    }
     /**
      * 
      * @return string
@@ -195,6 +209,40 @@ class EventController extends CController
         
         skip:
         return $this->asJson($result);
+    }
+
+    public function actionUpload()
+    {
+        $modelUpload = new EventUploadForm();
+        $files = $_FILES;
+        $data['upload'] = '';
+        $uploadData = [];
+   
+         if (array_key_exists('upload', $files)) {
+
+              foreach ((array)$files['upload'] as $dataKey => $dataValue) {
+                  $uploadData[$dataKey]['logo_image_path'] = $dataValue;
+              }
+
+              $_FILES = ['EventUploadForm' => $uploadData];
+
+              $modelUpload->image = UploadedFile::getInstance($modelUpload, 'logo_image_path');
+              if (!$modelUpload->validate()) {
+                  return $modelUpload;
+              }
+            
+              $uploadHelper = UploadHelper::getInstance();
+              $uploadHelper->setPath($uploadHelper::EVENT_CKEDITOR);
+              $upload = UploadedFile::getInstance($modelUpload, 'logo_image_path');
+
+              $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
+
+              $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
+              $upload->saveAs($path);
+              return $this->asJson(['default' => Yii::$app->request->hostInfo.'/'.$uploadHelper->getRealPath($path)]);
+              
+             
+          }
     }
     
 

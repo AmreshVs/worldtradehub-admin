@@ -18,7 +18,7 @@ class User extends \common\models\User
     const SCENARIO_REGISTER_NORMAL = 'register-normal';
     const SCENARIO_REGISTER_SOCIAL = 'register-social';
     
-    public $password, $register_type, $social_token;
+    public $password, $social_token;
 
     /**
      * @return array

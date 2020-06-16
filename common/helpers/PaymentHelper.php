@@ -2,87 +2,83 @@
 
 namespace common\helpers;
 
-use backend\models\Configuration;
-use Omnipay\Omnipay;
-use Omnipay\Stripe\Message\Transfers;
-use common\helpers\Com;
-use common\models\Order;
-use common\models\Vendor;
-use yii;
-class PaymentHelper
-{
-    public function stripePayment($values = [])
+use Yii;
+use yii\helpers\Url;
+use Razorpay\Api\Api;
+
+/**
+ * Class PaymentHelper
+ * @package common\helpers
+ *
+ * @author 
+ */
+class PaymentHelper {
+    
+    private static $instance;
+    /**
+     * @var
+     */
+    private $url = 'https://api.razorpay.com/v1';
+    /**
+     * @var
+     */
+    private $amount;
+    /**
+     * @var
+     */
+    private $currency = 'INR';
+    /**
+     * @var
+     */
+    private $customerName;
+    /**
+     * @var
+     */
+    private $paymentId;
+    
+    
+    /**
+     * @return IPay88Helper
+     * @throws \yii\base\InvalidConfigException
+     */
+    public static function getInstance()
     {
-        $result = ['status' => 422 , 'msg' => 'Bad request'];
-        $params = ['amount',  'stripeToken'];
-
-        foreach ($params as $param) {
-            if (!array_key_exists($param, $values)) {
-                return $result;
-            }
+        if (self::$instance === null) {
+            self::$instance = new self();
         }
-        $gateway = Omnipay::create('Stripe');
-        $gateway->setApiKey(Configuration::get(Configuration::STRIPE_SECRET_KEY));
-        try{
-            $token = $_POST['stripeToken'];
-            $result['response'] = $gateway->purchase([
-                'amount' =>number_format((double)$values['amount'],2),
-                'currency' => Configuration::get(Configuration::STRIPE_CURRENCY),
-                'token' => $values['stripeToken'],
-            ])->send();
-
-            $result['paymentResponse'] = $result['response']->getData();
-            $stripe_respose_filter = $result['paymentResponse']['source'];
-            $result['msg'] = 'Success';
-            if ($stripe_respose_filter['address_zip_check'] == "fail") {
-                 $result['msg']="zip_check_invalid";
-            } else if ($stripe_respose_filter['address_line1_check'] == "fail") {
-                 $result['msg']="address_check_invalid";
-            } else if ($stripe_respose_filter['cvc_check'] == "fail") {
-                 $result['msg']="cvc_check_invalid";
-            }
-            // Payment has succeeded, no exceptions were thrown or otherwise caught
-            if($result['msg'] == 'Success'){
-                $result['status'] = 200;
-            }
-        } catch(\Exception $e) {
-            $result['msg'] = 'Declined';
-        }
-
-        return   $result;
-       
+        return self::$instance;
     }
-    public function stripTransfer($order_id)
+
+    /**
+     * @param mixed $order_total
+     * @return $this
+     */
+    public function setAmount($amount)
     {
-        $order = Order::findOne(['order_key' => $order_id]);
-        $vendor= Vendor::findOne($order->vendor_id);
+        $this->amount = $amount;
 
-        $deliveryCommision = $order->delivery_boy_tip+$order->delivery_fee;
-        // print_r($vendor);die;
+        return $this;
+    }
+    
+    /**
+     * @param mixed $customer_name
+     * @return $this
+     */
+    public function setCustomerName($customerName)
+    {
+        $this->customerName = $customerName;
 
-        // print_r($order);die;
-        $gateway = Omnipay::create('Stripe');
-        $gateway->setApiKey(Configuration::get(Configuration::STRIPE_SECRET_KEY));
+        return $this;
+    }
 
-        // $transaction = $gateway->transfer(array(
-        //     'amount'        => $order->vendor_profit,
-        //     'currency'      => Configuration::get(Configuration::STRIPE_CURRENCY),
-        //     'transferGroup' => $order->order_number,
-        //     'destination'   => 'sk_test_7zxmbL9zYglqkl5BSlnWRaHW',
-        // ))->send();
-
-        // $vendor->
-
-        $transaction = $gateway->transfer(array(
-            'amount'        => $deliveryCommision,
-            'currency'      => Configuration::get(Configuration::STRIPE_CURRENCY),
-            'transferGroup' => $order->order_number,
-            'destination'   => 'cus_DdNEB1RoC1uzHN',
-        ))->send();
-
-
-       print_r( $transaction);
-      
-        die('ee');
+    /**
+     * @param mixed $customer_name
+     * @return $this
+     */
+    public function getPayDetail($paymentId)
+    {
+        $api = new Api('rzp_test_SJUiLCFql9rqkF', 'vTCjkFrgCV5Wq72HoGhHnW5S');
+        $payment  = $api->payment->fetch($paymentId);
+        return $payment;
     }
 }
