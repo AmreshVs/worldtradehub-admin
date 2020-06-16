@@ -76,13 +76,13 @@ class User extends \common\models\User
             'state' => function (self $model) {
                 return  States::find()
                     ->select(['name', 'id'])
-                    ->where(['id' => $model->country_id])
+                    ->where(['id' => $model->state_id])
                     ->one();
             },
             'city' => function (self $model) {
                 return  Cities::find()
                     ->select(['name', 'id'])
-                    ->where(['id' => $model->country_id])
+                    ->where(['id' => $model->city_id])
                     ->one();
             },
             'register_type', 
