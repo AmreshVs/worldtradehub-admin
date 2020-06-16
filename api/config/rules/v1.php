@@ -49,6 +49,8 @@ return [
             'GET view-stall' => 'view-stall',
             'GET history' => 'history',
             'POST image-upload' => 'image-upload',
+            'GET view-stall-details' => 'view-stall-details',
+            'POST update-stall-details' => 'update-stall-details',
     
         ]
     ],

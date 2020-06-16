@@ -21,7 +21,7 @@ $form = CActiveForm::begin()->setModel($model);
             <?= $form->field($model, 'event_title')->textInput(); ?>
         </div>
         <div class="col-md-12">
-                 <?= $form->field($model, 'event_desc')->textInput(['id' => 'editor']); ?>
+                 <?= $form->field($model, 'event_desc')->textArea(['id' => 'editor']); ?>
 
         </div>
     </div>
@@ -87,14 +87,18 @@ $form = CActiveForm::begin()->setModel($model);
 
 
 <script>
+    
+
+
     runOnLoad (function () {
+        
          $(".bootstrapMaterialDatePicker").bootstrapMaterialDatePicker({ 
             format: 'YYYY-MM-DD HH:mm:ss',
         });
          ClassicEditor
             .create( document.querySelector( '#editor' ), {
             ckfinder: {
-                uploadUrl: 'upload'
+                uploadUrl: '/admin/event/upload'
             }
         })
 

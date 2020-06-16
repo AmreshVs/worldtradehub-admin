@@ -33,50 +33,32 @@ class Ticket extends BaseTicket
     {
     
         $blocks = [];
-        $ids = ['empty1', 29, 30, 88, 'empty2', 89, 119, 120, 'empty3'];
+        $ids = [29, 30, 88, 89, 119, 120];
         $tds = [];
         
         foreach ($ids as $key => $value) {
-            if (strpos($value, 'empty') !== false) {
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            } else{
-                $tds['slot'.$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            }
+            $tds[$value] = [
+                'id' => $value,
+                'name' => '',
+                'description' => '',
+                'type' => ''
+            ]; 
         
         }
         $blocks['room1']['first_row'] = $tds;
 
 
-        $ids = [28, 'empty1', 'empty2', 'empty3', 87, 'empty4', 'empty5', 'empty6', 121];
+        $ids = [28, 87, 121];
         $tds = [];
         
         foreach ($ids as $key => $value) {
-            if (strpos($value, 'empty') !== false) {
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            } else{
-                $tds['slot'.$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            }
-        
+            
+            $tds[$value] = [
+                'id' => $value,
+                'name' => '',
+                'description' => '',
+                'type' => ''
+            ];
         }
         $blocks['room1']['second_row'] = $tds;
 
@@ -103,31 +85,31 @@ class Ticket extends BaseTicket
         }
 
         for($i = 0; $i < 26; $i++){
-            $rows['slot'.$r1Arr[$i]] = [
+            $rows[$r1Arr[$i]] = [
                     'id' => $r1Arr[$i],
                     'name' => '',
                     'description' => '',
                     'type' => ''
                 ];
-            $rows['slot'.$r3Arr[$i]] = [
+            $rows[$r3Arr[$i]] = [
                     'id' => $r3Arr[$i],
                     'name' => '',
                     'description' => '',
                     'type' => ''
                 ];
-            $rows['slot'.$r5Arr[$i]] = [
+            $rows[$r5Arr[$i]] = [
                     'id' => $r5Arr[$i],
                     'name' => '',
                     'description' => '',
                     'type' => ''
                 ];
-            $rows['slot'.$r7Arr[$i]] = [
+            $rows[$r7Arr[$i]] = [
                     'id' => $r7Arr[$i],
                     'name' => '',
                     'description' => '',
                     'type' => ''
                 ];
-            $rows['slot'.$r9Arr[$i]] = [
+            $rows[$r9Arr[$i]] = [
                     'id' => $r9Arr[$i],
                     'name' => '',
                     'description' => '',
@@ -142,94 +124,61 @@ class Ticket extends BaseTicket
         }
         $blocks['room1']['normal_row'] = $rows;
 
-        $ids = [1, 'empty1', 57, 'empty2', 'empty3', 'empty4', 92, 'empty5', 148];
+        $ids = [1, 57, 92, 148];
         $tds = [];
         foreach ($ids as $key => $value) {
-            if (strpos($value, 'empty') !== false) {
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            } else{
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            }
-        
+            $tds[$value] = [
+                'id' => $value,
+                'name' => '',
+                'description' => '',
+                'type' => ''
+            ];
+    
         }
 
         $blocks['room1']['second_last_row'] = $tds;
 
-        $ids = [0, 'empty1', 58, 59, 60, 90, 91, 'empty2', 149];
+        $ids = [0, 58, 59, 60, 90, 91,149];
         $tds = [];
         foreach ($ids as $key => $value) {
-            if (strpos($value, 'empty') !== false) {
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            } else{
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            }
+            $tds[$value] = [
+                'id' => $value,
+                'name' => '',
+                'description' => '',
+                'type' => ''
+            ];
+        
         
         }
         $blocks['room1']['last_row'] = $tds;
 
-        $ids = ['empty1', 179, 180, 238, 'empty2', 239, 240, 270, 'empty3'];
+        $ids = [179, 180, 238, 239, 240, 270];
         $tds = [];
         
         foreach ($ids as $key => $value) {
-            if (strpos($value, 'empty') !== false) {
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            } else{
-                $tds['slot'.$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            }
+            $tds[$value] = [
+                'id' => $value,
+                'name' => '',
+                'description' => '',
+                'type' => ''
+            ];
         
         }
         $blocks['room2']['first_row'] = $tds;
 
 
-        $ids = [178, 'empty1', 'empty2', 'empty3', 237, 'empty4', 'empty5', 'empty6', 271];
+        $ids = [178, 237, 271];
         $tds = [];
         
         foreach ($ids as $key => $value) {
-            if (strpos($value, 'empty') !== false) {
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            } else{
-                $tds['slot'.$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            }
+            
+            $tds[$value] = [
+                'id' => $value,
+                'name' => '',
+                'description' => '',
+                'type' => ''
+            ];
+            
         
         }
         $blocks['room2']['second_row'] = $tds;
@@ -257,31 +206,31 @@ class Ticket extends BaseTicket
         }
 
         for($i = 0; $i < 26; $i++){
-            $rows['slot'.$r1Arr[$i]] = [
+            $rows[$r1Arr[$i]] = [
                     'id' => $r1Arr[$i],
                     'name' => '',
                     'description' => '',
                     'type' => ''
                 ];
-            $rows['slot'.$r3Arr[$i]] = [
+            $rows[$r3Arr[$i]] = [
                     'id' => $r3Arr[$i],
                     'name' => '',
                     'description' => '',
                     'type' => ''
                 ];
-            $rows['slot'.$r5Arr[$i]] = [
+            $rows[$r5Arr[$i]] = [
                     'id' => $r5Arr[$i],
                     'name' => '',
                     'description' => '',
                     'type' => ''
                 ];
-            $rows['slot'.$r7Arr[$i]] = [
+            $rows[$r7Arr[$i]] = [
                     'id' => $r7Arr[$i],
                     'name' => '',
                     'description' => '',
                     'type' => ''
                 ];
-            $rows['slot'.$r9Arr[$i]] = [
+            $rows[$r9Arr[$i]] = [
                     'id' => $r9Arr[$i],
                     'name' => '',
                     'description' => '',
@@ -296,47 +245,31 @@ class Ticket extends BaseTicket
         }
         $blocks['room2']['normal_row'] = $rows;
 
-        $ids = [151, 'empty1', 207, 'empty2', 'empty3', 'empty4', 267, 'empty5', 298];
+        $ids = [151, 207, 267, 298];
         $tds = [];
         foreach ($ids as $key => $value) {
-            if (strpos($value, 'empty') !== false) {
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            } else{
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            }
+            
+            $tds[$value] = [
+                'id' => $value,
+                'name' => '',
+                'description' => '',
+                'type' => ''
+            ];
         
         }
 
         $blocks['room_2']['second_last_row'] = $tds;
 
-        $ids = [150, 'empty1', 208, 209, 210, 268, 269, 'empty2', 299];
+        $ids = [150, 208, 209, 210, 268, 269, 299];
         $tds = [];
         foreach ($ids as $key => $value) {
-            if (strpos($value, 'empty') !== false) {
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            } else{
-                $tds[$value] = [
-                    'id' => $value,
-                    'name' => '',
-                    'description' => '',
-                    'type' => ''
-                ];
-            }
+            $tds[$value] = [
+                'id' => $value,
+                'name' => '',
+                'description' => '',
+                'type' => ''
+            ];
+        
         
         }
         $blocks['room_2']['last_row'] = $tds;

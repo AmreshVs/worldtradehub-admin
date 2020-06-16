@@ -32,7 +32,6 @@ class EventController extends CController
     }
     public function actionView($id)
     {
-       
        $model = Events::find()->where(['event_key' => $id])->one();
        return $model;
     }

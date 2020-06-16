@@ -108,6 +108,7 @@ class EventController extends CController
         $model = $this->findModel($id); 
         $modelUploadForm = new EventsUploadForm();      
         $post =  Yii::$app->getRequest()->post(); 
+      //  print_r($post); die;
         if ($model->load($post) && $model->validate()) {
        
             $fileHelper = FileUploadHelper::getInstance()->convertFileArray();
@@ -239,7 +240,8 @@ class EventController extends CController
 
               $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
               $upload->saveAs($path);
-              return $this->asJson(['default' => Yii::$app->request->hostInfo.'/'.$uploadHelper->getRealPath($path)]);
+              return $this->asJson([
+                "uploaded"=> true, 'url' => Yii::$app->request->hostInfo.'/'.$uploadHelper->getRealPath($path)]);
               
              
           }

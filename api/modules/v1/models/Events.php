@@ -31,8 +31,8 @@ class Events extends \common\models\Events
                 ])->one();
 
                 return $model != null ? 1 : 0 ;
-            }
-            //'visitors_package_price',
+            },
+            'visitors_package_price',
         ];
     }
 

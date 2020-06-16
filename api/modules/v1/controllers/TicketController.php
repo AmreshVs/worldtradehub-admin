@@ -5,6 +5,7 @@ namespace api\modules\v1\controllers;
 
 use api\components\CController;
 use api\modules\v1\models\Ticket;
+use api\modules\v1\models\Stall;
 use api\modules\v1\models\Events;
 use api\modules\v1\models\User;
 use api\modules\v1\models\TicketHistory;
@@ -278,7 +279,7 @@ class TicketController extends CController
         }
 
        $room = Ticket::getBlocks();
-       foreach ($room as $key => $blocks) {
+       foreach ($room as $room_key => $blocks) {
           foreach ($blocks as $key => $blockName) {
             foreach ($blockName as $block_key => $stall) {
                if (strpos($block_key, 'empty') === false) {
@@ -290,21 +291,21 @@ class TicketController extends CController
                       ])->one();
 
                    if($ticket !== null) {
-                      $blocks[$key][$block_key]['status'] = 1;
+                      $room[$room_key][$key][$block_key]['status'] = 1;
                       
                    } else {
-                      $blocks[$key][$block_key]['status'] = 0;
+                      $room[$room_key][$key][$block_key]['status'] = 0;
                     
                    }
                } else {
-                    $blocks[$key][$block_key]['status'] = 0;
+                    $room[$room_key][$key][$block_key]['status'] = 0;
                   
                }
             }
           }
        }
 
-      return $blocks;
+      return $room;
     }
 
     public function actionHistory()
@@ -357,6 +358,101 @@ class TicketController extends CController
               
              
           }
+    }
+
+    public function actionViewStallDetails()
+    {
+         $request = Yii::$app->request->get();
+         $params = [
+            'ticket_key',
+         ];
+         $this->checkRequiredParam($request, $params);
+         $ticketModel = Stall::find()->where(['ticket_key' => $request['ticket_key']])->one();
+
+         if($ticketModel == null) {
+            $this->commonError('Invalid Ticket');
+         }
+
+         return $ticketModel;
+    }
+
+    public function actionUpdateStallDetails()
+    {
+         $request = Yii::$app->request->post();
+         $params = [
+            'ticket_key',
+            "company_name",
+            "website",
+            "meet_id",
+            "zoom_id",
+            "whatsapp_number",
+            "fb_url",
+            "youtupe_link",
+            "company_desc",
+         ];
+         $this->checkRequiredParam($request, $params);
+         $model = Stall::find()->where(['ticket_key' => $request['ticket_key']])->one();
+
+         if($model == null) {
+            $this->commonError('Invalid Ticket');
+         }
+
+        $modelUpload = new EventUploadForm();
+
+        $model->load($request, "");
+
+        if (!$model->validate()) {
+            return $model->getError();
+        }
+
+        $files = $_FILES;
+        $data['logo_image_path'] = '';
+        $uploadData = [];
+         if (array_key_exists('logo_image_path', $files)) {
+
+              foreach ((array)$files['logo_image_path'] as $dataKey => $dataValue) {
+                  $uploadData[$dataKey]['logo_image_path'] = $dataValue;
+                  $uploadData[$dataKey]['cover_image_path'] = $dataValue;
+              }
+
+              $_FILES = ['EventUploadForm' => $uploadData];
+
+              $modelUpload->image = UploadedFile::getInstance($modelUpload, 'logo_image_path');
+              $modelUpload->cover_image_path = UploadedFile::getInstance($modelUpload, 'cover_image_path');
+
+              if (!$modelUpload->validate()) {
+                  return $modelUpload;
+              }
+              if($modelUpload->image != ''){
+                $uploadHelper = UploadHelper::getInstance();
+                $uploadHelper->setPath($uploadHelper::TICKET);
+                $upload = UploadedFile::getInstance($modelUpload, 'logo_image_path');
+
+                $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
+
+                $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
+                $upload->saveAs($path);
+                $model->logo_image_path = $uploadHelper->getRealPath($path);
+              }
+              if($modelUpload->image != ''){
+                $uploadHelper = UploadHelper::getInstance();
+                $uploadHelper->setPath($uploadHelper::TICKET);
+                $upload = UploadedFile::getInstance($modelUpload, 'cover_image_path');
+
+                $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
+
+                $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
+                $upload->saveAs($path);
+                $model->cover_image_path = $uploadHelper->getRealPath($path);
+              }
+              
+             
+          }
+      $model->ticket_status = 3;
+      $model->save(false);
+      $this->setMessage('Details added successfully');
+
+      return [];
     }
    
 
