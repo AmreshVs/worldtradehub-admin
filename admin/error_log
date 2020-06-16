@@ -1,0 +1,1463 @@
+[16-Jun-2020 13:47:04 UTC] PHP Warning:  require(/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/../vendor/autoload.php): failed to open stream: No such file or directory in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php on line 5
+[16-Jun-2020 13:47:05 UTC] PHP Fatal error:  require(): Failed opening required '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/../vendor/autoload.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php on line 5
+[16-Jun-2020 13:47:05 UTC] PHP Warning:  require(/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/../vendor/autoload.php): failed to open stream: No such file or directory in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php on line 5
+[16-Jun-2020 13:47:05 UTC] PHP Fatal error:  require(): Failed opening required '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/../vendor/autoload.php' (include_path='.:/opt/alt/php73/usr/share/pear') in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php on line 5
+[16-Jun-2020 13:54:21 UTC] An Error occurred while handling another error:
+PDOException: SQLSTATE[HY000] [2005] Unknown MySQL server host '148.72.88.28s' (0) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#28 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2005] Unknown MySQL server host '148.72.88.28s' (0) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#26 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#27 {main}
+Additional Information:
+
+Previous exception:
+PDOException: SQLSTATE[HY000] [2005] Unknown MySQL server host '148.72.88.28s' (0) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 [internal function]: common\components\CController->__construct('ticket', Object(yii\web\Application), Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('ticket')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [2005] Unknown MySQL server host '148.72.88.28s' (0) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 [internal function]: common\components\CController->__construct('ticket', Object(yii\web\Application), Array)
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('ticket')
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#27 {main}
+Additional Information:
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_HOST' => 'admin.worldtradehub.in',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XujPA81H8lzi1TD6TBt4tAAAAIE',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XujPA81H8lzi1TD6TBt4tAAAAIE',
+    'REDIRECT_SCRIPT_URL' => '/',
+    'REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XujPA81H8lzi1TD6TBt4tAAAAIE',
+    'SCRIPT_URL' => '/',
+    'SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'admin.worldtradehub.in',
+    'SERVER_ADDR' => '148.72.88.28',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '157.46.62.141',
+    'DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'SERVER_ADMIN' => 'webmaster@admin.worldtradehub.in',
+    'SCRIPT_FILENAME' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php',
+    'REMOTE_PORT' => '54136',
+    'REDIRECT_URL' => '/admin/web/index.php/',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/',
+    'SCRIPT_NAME' => '/admin/index.php',
+    'PHP_SELF' => '/admin/index.php',
+    'REQUEST_TIME_FLOAT' => 1592315651.391395092010498046875,
+    'REQUEST_TIME' => 1592315651,
+]
+[16-Jun-2020 13:56:16 UTC] An Error occurred while handling another error:
+PDOException: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#28 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#26 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#27 {main}
+Additional Information:
+
+Previous exception:
+PDOException: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/controllers/LoginController.php(26): common\components\CController->__construct('login', Object(yii\web\Application), Array)
+#20 [internal function]: backend\controllers\LoginController->__construct('login', Object(yii\web\Application), Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('login')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('login', Array)
+#28 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#29 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#30 {main}
+
+Next yii\db\Exception: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/controllers/LoginController.php(26): common\components\CController->__construct('login', Object(yii\web\Application), Array)
+#18 [internal function]: backend\controllers\LoginController->__construct('login', Object(yii\web\Application), Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('login')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('login', Array)
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#28 {main}
+Additional Information:
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8,la;q=0.7',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => 'advanced-Online_EXPO-backend-Admin=c231593af6e18c213a92761e4f1ccbc9; _csrf-Online_EXPO-backend-Admin=b57bb048566a6aa34a1c7b45f3a1804b51edd91b88e7cf8dc9a378b125acfab5a%3A2%3A%7Bi%3A0%3Bs%3A31%3A%22_csrf-Online_EXPO-backend-Admin%22%3Bi%3A1%3Bs%3A32%3A%22zqrZLwR36JbpHPxTcY5ogqWnkD7pefy3%22%3B%7D',
+    'HTTP_HOST' => 'admin.worldtradehub.in',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
+    'HTTP_DNT' => '1',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'REDIRECT_UNIQUE_ID' => 'XujPgC7XoFALe59nPCVuzwAAAUc',
+    'REDIRECT_SCRIPT_URL' => '/admin/login',
+    'REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/admin/login',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XujPgC7XoFALe59nPCVuzwAAAUc',
+    'SCRIPT_URL' => '/admin/login',
+    'SCRIPT_URI' => 'http://admin.worldtradehub.in/admin/login',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'admin.worldtradehub.in',
+    'SERVER_ADDR' => '148.72.88.28',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '106.198.47.29',
+    'DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'SERVER_ADMIN' => 'webmaster@admin.worldtradehub.in',
+    'SCRIPT_FILENAME' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php',
+    'REMOTE_PORT' => '35942',
+    'REDIRECT_URL' => '/admin/login',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/admin/login',
+    'SCRIPT_NAME' => '/admin/index.php',
+    'PHP_SELF' => '/admin/index.php',
+    'REQUEST_TIME_FLOAT' => 1592315776.4720680713653564453125,
+    'REQUEST_TIME' => 1592315776,
+]
+[16-Jun-2020 13:56:22 UTC] An Error occurred while handling another error:
+PDOException: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#28 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#26 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#27 {main}
+Additional Information:
+
+Previous exception:
+PDOException: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 [internal function]: common\components\CController->__construct('ticket', Object(yii\web\Application), Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('ticket')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 [internal function]: common\components\CController->__construct('ticket', Object(yii\web\Application), Array)
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('ticket')
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#27 {main}
+Additional Information:
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8,la;q=0.7',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => 'advanced-Online_EXPO-backend-Admin=c231593af6e18c213a92761e4f1ccbc9; _csrf-Online_EXPO-backend-Admin=b57bb048566a6aa34a1c7b45f3a1804b51edd91b88e7cf8dc9a378b125acfab5a%3A2%3A%7Bi%3A0%3Bs%3A31%3A%22_csrf-Online_EXPO-backend-Admin%22%3Bi%3A1%3Bs%3A32%3A%22zqrZLwR36JbpHPxTcY5ogqWnkD7pefy3%22%3B%7D',
+    'HTTP_HOST' => 'admin.worldtradehub.in',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
+    'HTTP_DNT' => '1',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_PURPOSE' => 'prefetch',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XujPhvAzRb7eIOuefeSNcgAAABA',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XujPhvAzRb7eIOuefeSNcgAAABA',
+    'REDIRECT_SCRIPT_URL' => '/',
+    'REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XujPhvAzRb7eIOuefeSNcgAAABA',
+    'SCRIPT_URL' => '/',
+    'SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'admin.worldtradehub.in',
+    'SERVER_ADDR' => '148.72.88.28',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '106.198.47.29',
+    'DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'SERVER_ADMIN' => 'webmaster@admin.worldtradehub.in',
+    'SCRIPT_FILENAME' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php',
+    'REMOTE_PORT' => '35943',
+    'REDIRECT_URL' => '/admin/web/index.php/',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/',
+    'SCRIPT_NAME' => '/admin/index.php',
+    'PHP_SELF' => '/admin/index.php',
+    'REQUEST_TIME_FLOAT' => 1592315782.36618709564208984375,
+    'REQUEST_TIME' => 1592315782,
+]
+[16-Jun-2020 13:56:22 UTC] An Error occurred while handling another error:
+PDOException: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#28 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#26 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#27 {main}
+Additional Information:
+
+Previous exception:
+PDOException: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 [internal function]: common\components\CController->__construct('ticket', Object(yii\web\Application), Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('ticket')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 [internal function]: common\components\CController->__construct('ticket', Object(yii\web\Application), Array)
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('ticket')
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#27 {main}
+Additional Information:
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8,la;q=0.7',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => 'advanced-Online_EXPO-backend-Admin=c231593af6e18c213a92761e4f1ccbc9; _csrf-Online_EXPO-backend-Admin=b57bb048566a6aa34a1c7b45f3a1804b51edd91b88e7cf8dc9a378b125acfab5a%3A2%3A%7Bi%3A0%3Bs%3A31%3A%22_csrf-Online_EXPO-backend-Admin%22%3Bi%3A1%3Bs%3A32%3A%22zqrZLwR36JbpHPxTcY5ogqWnkD7pefy3%22%3B%7D',
+    'HTTP_HOST' => 'admin.worldtradehub.in',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
+    'HTTP_DNT' => '1',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XujPhvyFVcAREoCQN3t1PwAAAdc',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XujPhvyFVcAREoCQN3t1PwAAAdc',
+    'REDIRECT_SCRIPT_URL' => '/',
+    'REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XujPhvyFVcAREoCQN3t1PwAAAdc',
+    'SCRIPT_URL' => '/',
+    'SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'admin.worldtradehub.in',
+    'SERVER_ADDR' => '148.72.88.28',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '106.198.47.29',
+    'DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'SERVER_ADMIN' => 'webmaster@admin.worldtradehub.in',
+    'SCRIPT_FILENAME' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php',
+    'REMOTE_PORT' => '35945',
+    'REDIRECT_URL' => '/admin/web/index.php/',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/',
+    'SCRIPT_NAME' => '/admin/index.php',
+    'PHP_SELF' => '/admin/index.php',
+    'REQUEST_TIME_FLOAT' => 1592315782.7686650753021240234375,
+    'REQUEST_TIME' => 1592315782,
+]
+[16-Jun-2020 13:56:37 UTC] An Error occurred while handling another error:
+PDOException: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#28 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#26 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#27 {main}
+Additional Information:
+
+Previous exception:
+PDOException: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 [internal function]: common\components\CController->__construct('ticket', Object(yii\web\Application), Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('ticket')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 [internal function]: common\components\CController->__construct('ticket', Object(yii\web\Application), Array)
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('ticket')
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#27 {main}
+Additional Information:
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8,la;q=0.7',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => 'advanced-Online_EXPO-backend-Admin=c231593af6e18c213a92761e4f1ccbc9; _csrf-Online_EXPO-backend-Admin=b57bb048566a6aa34a1c7b45f3a1804b51edd91b88e7cf8dc9a378b125acfab5a%3A2%3A%7Bi%3A0%3Bs%3A31%3A%22_csrf-Online_EXPO-backend-Admin%22%3Bi%3A1%3Bs%3A32%3A%22zqrZLwR36JbpHPxTcY5ogqWnkD7pefy3%22%3B%7D',
+    'HTTP_HOST' => 'admin.worldtradehub.in',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_DNT' => '1',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XujPlU8yBRGbJB4LoOiJnQAAAgE',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XujPlU8yBRGbJB4LoOiJnQAAAgE',
+    'REDIRECT_SCRIPT_URL' => '/',
+    'REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XujPlU8yBRGbJB4LoOiJnQAAAgE',
+    'SCRIPT_URL' => '/',
+    'SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'admin.worldtradehub.in',
+    'SERVER_ADDR' => '148.72.88.28',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '106.198.47.29',
+    'DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'SERVER_ADMIN' => 'webmaster@admin.worldtradehub.in',
+    'SCRIPT_FILENAME' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php',
+    'REMOTE_PORT' => '35534',
+    'REDIRECT_URL' => '/admin/web/index.php/',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/',
+    'SCRIPT_NAME' => '/admin/index.php',
+    'PHP_SELF' => '/admin/index.php',
+    'REQUEST_TIME_FLOAT' => 1592315797.4648940563201904296875,
+    'REQUEST_TIME' => 1592315797,
+]
+[16-Jun-2020 13:56:47 UTC] An Error occurred while handling another error:
+PDOException: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#28 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 [internal function]: common\components\CController->__construct('site', Object(yii\web\Application), Array)
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('site')
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('error')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\db\Exception))
+#26 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\db\Exception))
+#27 {main}
+Additional Information:
+
+Previous exception:
+PDOException: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:705
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(705): PDO->__construct('mysql:host=148....', 'worldtradehub_d...', 'VWpx+W?E7YB}', NULL)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(626): yii\db\Connection->createPdoInstance()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#19 [internal function]: common\components\CController->__construct('ticket', Object(yii\web\Application), Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('ticket')
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#28 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#29 {main}
+
+Next yii\db\Exception: SQLSTATE[28000] [1045] Access denied for user 'worldtradehub_dev'@'ip-148-72-88-28.ip.secureserver.net' (using password: YES) in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php:637
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1022): yii\db\Connection->open()
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(1009): yii\db\Connection->getMasterPdo()
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(406): yii\db\Connection->getSlavePdo()
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(430): yii\db\mysql\QueryBuilder->supportsFractionalSeconds()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/QueryBuilder.php(59): yii\db\mysql\QueryBuilder->defaultTimeTypeMap()
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): yii\db\mysql\QueryBuilder->init()
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/QueryBuilder.php(116): yii\base\BaseObject->__construct(Array)
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/mysql/Schema.php(217): yii\db\QueryBuilder->__construct(Object(yii\db\Connection))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Schema.php(248): yii\db\mysql\Schema->createQueryBuilder()
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Connection.php(856): yii\db\Schema->getQueryBuilder()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(328): yii\db\Connection->getQueryBuilder()
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/Query.php(248): yii\db\ActiveQuery->createCommand(Object(yii\db\Connection))
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(181): yii\db\ActiveQuery->all()
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/ConfigurationMethod.php(158): common\models\Configuration::loadConfigIntoSession()
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(200): common\models\Configuration::get('TIME_ZONE')
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CController.php(57): common\components\CController->setTimeZone()
+#17 [internal function]: common\components\CController->__construct('ticket', Object(yii\web\Application), Array)
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('backend\\control...', Array, Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(345): yii\di\Container->get('backend\\control...', Array)
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(642): yii\BaseYii::createObject('backend\\control...', Array)
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(596): yii\base\Module->createControllerByID('ticket')
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(522): yii\base\Module->createController('')
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('', Array)
+#25 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#27 {main}
+Additional Information:
+
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8,la;q=0.7',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => 'advanced-Online_EXPO-backend-Admin=c231593af6e18c213a92761e4f1ccbc9; _csrf-Online_EXPO-backend-Admin=b57bb048566a6aa34a1c7b45f3a1804b51edd91b88e7cf8dc9a378b125acfab5a%3A2%3A%7Bi%3A0%3Bs%3A31%3A%22_csrf-Online_EXPO-backend-Admin%22%3Bi%3A1%3Bs%3A32%3A%22zqrZLwR36JbpHPxTcY5ogqWnkD7pefy3%22%3B%7D',
+    'HTTP_HOST' => 'admin.worldtradehub.in',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_DNT' => '1',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XujPn@dzHDerqQJtMk@xmAAAAQE',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XujPn@dzHDerqQJtMk@xmAAAAQE',
+    'REDIRECT_SCRIPT_URL' => '/',
+    'REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XujPn@dzHDerqQJtMk@xmAAAAQE',
+    'SCRIPT_URL' => '/',
+    'SCRIPT_URI' => 'http://admin.worldtradehub.in/',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'admin.worldtradehub.in',
+    'SERVER_ADDR' => '148.72.88.28',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '106.198.47.29',
+    'DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'SERVER_ADMIN' => 'webmaster@admin.worldtradehub.in',
+    'SCRIPT_FILENAME' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php',
+    'REMOTE_PORT' => '35533',
+    'REDIRECT_URL' => '/admin/web/index.php/',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/',
+    'SCRIPT_NAME' => '/admin/index.php',
+    'PHP_SELF' => '/admin/index.php',
+    'REQUEST_TIME_FLOAT' => 1592315807.65869808197021484375,
+    'REQUEST_TIME' => 1592315807,
+]
+[16-Jun-2020 19:27:36 Asia/Kolkata] PHP Notice:  Undefined property: yii\base\ErrorException::$statusCode in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CErrorAction.php on line 27
+[16-Jun-2020 19:27:36 Asia/Kolkata] An Error occurred while handling another error:
+yii\base\InvalidArgumentException: The file or directory to be published does not exist: /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/bower/jquery/dist in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php:455
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetBundle.php(185): yii\web\AssetManager->publish('/home/otlxg2aub...', Array)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(287): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...')
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(456): yii\web\AssetBundle::register(Object(yii\web\View))
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/assets/CoreAsset.php(55): yii\web\View->registerJs('exeOnLoad.apply...')
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): common\assets\CoreAsset->init()
+#8 [internal function]: yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('common\\assets\\C...', Array, Array)
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('common\\assets\\C...', Array, Array)
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(264): yii\BaseYii::createObject(Array)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(237): yii\web\AssetManager->loadBundle('common\\assets\\C...', Array, true)
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(287): yii\web\AssetManager->getBundle('common\\assets\\C...')
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(292): yii\web\View->registerAssetBundle('common\\assets\\C...', NULL)
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('backend\\assets\\...')
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/views/layouts/404.php(11): yii\web\AssetBundle::register(Object(yii\web\View))
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(348): require('/home/otlxg2aub...')
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/otlxg2aub...', Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(401): yii\base\View->renderFile('/home/otlxg2aub...', Array, Object(backend\controllers\SiteController))
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(387): yii\base\Controller->renderContent('<div class="sit...')
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CErrorAction.php(31): yii\web\ErrorAction->renderHtmlResponse()
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorAction.php(118): common\components\CErrorAction->renderHtmlResponse()
+#25 [internal function]: yii\web\ErrorAction->run()
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#28 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#29 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#30 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\base\ErrorException))
+#31 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(233): yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#32 [internal function]: yii\base\ErrorHandler->handleError(256, 'An internal ser...', '/home/otlxg2aub...', 331, Array)
+#33 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(331): trigger_error('An internal ser...', 256)
+#34 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/widgets/ActiveField.php(178): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\InvalidArgumentException))
+#35 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/views/login/index.php(16): yii\widgets\ActiveField->__toString()
+#36 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(348): require('/home/otlxg2aub...')
+#37 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/otlxg2aub...', Array)
+#38 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/otlxg2aub...', Array, Object(backend\controllers\LoginController))
+#39 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('index', Array, Object(backend\controllers\LoginController))
+#40 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/controllers/LoginController.php(44): yii\base\Controller->render('index', Array)
+#41 [internal function]: backend\controllers\LoginController->actionIndex()
+#42 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#43 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#44 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#45 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('login', Array)
+#46 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#47 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#48 {main}
+Previous exception:
+yii\base\ErrorException: An internal server error occurred. in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php:331
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(256, 'An internal ser...', '/home/otlxg2aub...', 331, Array)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(331): trigger_error('An internal ser...', 256)
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/widgets/ActiveField.php(178): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\InvalidArgumentException))
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/views/login/index.php(16): yii\widgets\ActiveField->__toString()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(348): require('/home/otlxg2aub...')
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/otlxg2aub...', Array)
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/otlxg2aub...', Array, Object(backend\controllers\LoginController))
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('index', Array, Object(backend\controllers\LoginController))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/controllers/LoginController.php(44): yii\base\Controller->render('index', Array)
+#9 [internal function]: backend\controllers\LoginController->actionIndex()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('login', Array)
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#16 {main}
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => 'advanced-Online_EXPO-backend-Admin=d59f34cd931987775a19ba9dcd8a90ef',
+    'HTTP_HOST' => 'admin.worldtradehub.in',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:72.0) Gecko/20100101 Firefox/72.0',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'REDIRECT_UNIQUE_ID' => 'XujP0M1H8lzi1TD6TBt56wAAAJE',
+    'REDIRECT_SCRIPT_URL' => '/admin/login',
+    'REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/admin/login',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XujP0M1H8lzi1TD6TBt56wAAAJE',
+    'SCRIPT_URL' => '/admin/login',
+    'SCRIPT_URI' => 'http://admin.worldtradehub.in/admin/login',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'admin.worldtradehub.in',
+    'SERVER_ADDR' => '148.72.88.28',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '157.46.62.141',
+    'DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'SERVER_ADMIN' => 'webmaster@admin.worldtradehub.in',
+    'SCRIPT_FILENAME' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php',
+    'REMOTE_PORT' => '54174',
+    'REDIRECT_URL' => '/admin/login',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/admin/login',
+    'SCRIPT_NAME' => '/admin/index.php',
+    'PHP_SELF' => '/admin/index.php',
+    'REQUEST_TIME_FLOAT' => 1592315856.57863903045654296875,
+    'REQUEST_TIME' => 1592315856,
+]
+[16-Jun-2020 19:27:41 Asia/Kolkata] PHP Notice:  Undefined property: yii\base\ErrorException::$statusCode in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CErrorAction.php on line 27
+[16-Jun-2020 19:27:41 Asia/Kolkata] An Error occurred while handling another error:
+yii\base\InvalidArgumentException: The file or directory to be published does not exist: /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/bower/jquery/dist in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php:455
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetBundle.php(185): yii\web\AssetManager->publish('/home/otlxg2aub...', Array)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(287): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...')
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(456): yii\web\AssetBundle::register(Object(yii\web\View))
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/assets/CoreAsset.php(55): yii\web\View->registerJs('exeOnLoad.apply...')
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): common\assets\CoreAsset->init()
+#8 [internal function]: yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('common\\assets\\C...', Array, Array)
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('common\\assets\\C...', Array, Array)
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(264): yii\BaseYii::createObject(Array)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(237): yii\web\AssetManager->loadBundle('common\\assets\\C...', Array, true)
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(287): yii\web\AssetManager->getBundle('common\\assets\\C...')
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(292): yii\web\View->registerAssetBundle('common\\assets\\C...', NULL)
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('backend\\assets\\...')
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/views/layouts/404.php(11): yii\web\AssetBundle::register(Object(yii\web\View))
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(348): require('/home/otlxg2aub...')
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/otlxg2aub...', Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(401): yii\base\View->renderFile('/home/otlxg2aub...', Array, Object(backend\controllers\SiteController))
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(387): yii\base\Controller->renderContent('<div class="sit...')
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CErrorAction.php(31): yii\web\ErrorAction->renderHtmlResponse()
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorAction.php(118): common\components\CErrorAction->renderHtmlResponse()
+#25 [internal function]: yii\web\ErrorAction->run()
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#28 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#29 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#30 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\base\ErrorException))
+#31 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(233): yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#32 [internal function]: yii\base\ErrorHandler->handleError(256, 'An internal ser...', '/home/otlxg2aub...', 331, Array)
+#33 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(331): trigger_error('An internal ser...', 256)
+#34 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/widgets/ActiveField.php(178): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\InvalidArgumentException))
+#35 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/views/login/index.php(16): yii\widgets\ActiveField->__toString()
+#36 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(348): require('/home/otlxg2aub...')
+#37 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/otlxg2aub...', Array)
+#38 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/otlxg2aub...', Array, Object(backend\controllers\LoginController))
+#39 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('index', Array, Object(backend\controllers\LoginController))
+#40 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/controllers/LoginController.php(44): yii\base\Controller->render('index', Array)
+#41 [internal function]: backend\controllers\LoginController->actionIndex()
+#42 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#43 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#44 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#45 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('login', Array)
+#46 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#47 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#48 {main}
+Previous exception:
+yii\base\ErrorException: An internal server error occurred. in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php:331
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(256, 'An internal ser...', '/home/otlxg2aub...', 331, Array)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(331): trigger_error('An internal ser...', 256)
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/widgets/ActiveField.php(178): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\InvalidArgumentException))
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/views/login/index.php(16): yii\widgets\ActiveField->__toString()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(348): require('/home/otlxg2aub...')
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/otlxg2aub...', Array)
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/otlxg2aub...', Array, Object(backend\controllers\LoginController))
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('index', Array, Object(backend\controllers\LoginController))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/controllers/LoginController.php(44): yii\base\Controller->render('index', Array)
+#9 [internal function]: backend\controllers\LoginController->actionIndex()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('login', Array)
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#16 {main}
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8,la;q=0.7',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => 'advanced-Online_EXPO-backend-Admin=c231593af6e18c213a92761e4f1ccbc9; _csrf-Online_EXPO-backend-Admin=b57bb048566a6aa34a1c7b45f3a1804b51edd91b88e7cf8dc9a378b125acfab5a%3A2%3A%7Bi%3A0%3Bs%3A31%3A%22_csrf-Online_EXPO-backend-Admin%22%3Bi%3A1%3Bs%3A32%3A%22zqrZLwR36JbpHPxTcY5ogqWnkD7pefy3%22%3B%7D',
+    'HTTP_HOST' => 'admin.worldtradehub.in',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_DNT' => '1',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'REDIRECT_UNIQUE_ID' => 'XujP1fAzRb7eIOuefeSOAwAAAAs',
+    'REDIRECT_SCRIPT_URL' => '/admin/login',
+    'REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/admin/login',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XujP1fAzRb7eIOuefeSOAwAAAAs',
+    'SCRIPT_URL' => '/admin/login',
+    'SCRIPT_URI' => 'http://admin.worldtradehub.in/admin/login',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'admin.worldtradehub.in',
+    'SERVER_ADDR' => '148.72.88.28',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '106.198.47.29',
+    'DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'SERVER_ADMIN' => 'webmaster@admin.worldtradehub.in',
+    'SCRIPT_FILENAME' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php',
+    'REMOTE_PORT' => '35556',
+    'REDIRECT_URL' => '/admin/login',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/admin/login',
+    'SCRIPT_NAME' => '/admin/index.php',
+    'PHP_SELF' => '/admin/index.php',
+    'REQUEST_TIME_FLOAT' => 1592315861.7966148853302001953125,
+    'REQUEST_TIME' => 1592315861,
+]
+[16-Jun-2020 19:27:47 Asia/Kolkata] PHP Notice:  Undefined property: yii\base\ErrorException::$statusCode in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CErrorAction.php on line 27
+[16-Jun-2020 19:27:47 Asia/Kolkata] An Error occurred while handling another error:
+yii\base\InvalidArgumentException: The file or directory to be published does not exist: /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/bower/jquery/dist in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php:455
+Stack trace:
+#0 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetBundle.php(185): yii\web\AssetManager->publish('/home/otlxg2aub...', Array)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(266): yii\web\AssetBundle->publish(Object(yii\web\AssetManager))
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(237): yii\web\AssetManager->loadBundle('yii\\web\\JqueryA...', Array, true)
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(287): yii\web\AssetManager->getBundle('yii\\web\\JqueryA...')
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('yii\\web\\JqueryA...')
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(456): yii\web\AssetBundle::register(Object(yii\web\View))
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/assets/CoreAsset.php(55): yii\web\View->registerJs('exeOnLoad.apply...')
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/BaseObject.php(109): common\assets\CoreAsset->init()
+#8 [internal function]: yii\base\BaseObject->__construct(Array)
+#9 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(392): ReflectionClass->newInstanceArgs(Array)
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/di/Container.php(159): yii\di\Container->build('common\\assets\\C...', Array, Array)
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/BaseYii.php(365): yii\di\Container->get('common\\assets\\C...', Array, Array)
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(264): yii\BaseYii::createObject(Array)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetManager.php(237): yii\web\AssetManager->loadBundle('common\\assets\\C...', Array, true)
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(287): yii\web\AssetManager->getBundle('common\\assets\\C...')
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/View.php(292): yii\web\View->registerAssetBundle('common\\assets\\C...', NULL)
+#16 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/AssetBundle.php(125): yii\web\View->registerAssetBundle('backend\\assets\\...')
+#17 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/views/layouts/404.php(11): yii\web\AssetBundle::register(Object(yii\web\View))
+#18 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(348): require('/home/otlxg2aub...')
+#19 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/otlxg2aub...', Array)
+#20 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(401): yii\base\View->renderFile('/home/otlxg2aub...', Array, Object(backend\controllers\SiteController))
+#21 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(387): yii\base\Controller->renderContent('<div class="sit...')
+#22 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#23 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/common/components/CErrorAction.php(31): yii\web\ErrorAction->renderHtmlResponse()
+#24 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorAction.php(118): common\components\CErrorAction->renderHtmlResponse()
+#25 [internal function]: yii\web\ErrorAction->run()
+#26 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#27 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#28 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#29 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/ErrorHandler.php(109): yii\base\Module->runAction('site/error')
+#30 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(123): yii\web\ErrorHandler->renderException(Object(yii\base\ErrorException))
+#31 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(233): yii\base\ErrorHandler->handleException(Object(yii\base\ErrorException))
+#32 [internal function]: yii\base\ErrorHandler->handleError(256, 'An internal ser...', '/home/otlxg2aub...', 331, Array)
+#33 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(331): trigger_error('An internal ser...', 256)
+#34 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/widgets/ActiveField.php(178): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\InvalidArgumentException))
+#35 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/views/login/index.php(16): yii\widgets\ActiveField->__toString()
+#36 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(348): require('/home/otlxg2aub...')
+#37 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/otlxg2aub...', Array)
+#38 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/otlxg2aub...', Array, Object(backend\controllers\LoginController))
+#39 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('index', Array, Object(backend\controllers\LoginController))
+#40 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/controllers/LoginController.php(44): yii\base\Controller->render('index', Array)
+#41 [internal function]: backend\controllers\LoginController->actionIndex()
+#42 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#43 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#44 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#45 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('login', Array)
+#46 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#47 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#48 {main}
+Previous exception:
+yii\base\ErrorException: An internal server error occurred. in /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php:331
+Stack trace:
+#0 [internal function]: yii\base\ErrorHandler->handleError(256, 'An internal ser...', '/home/otlxg2aub...', 331, Array)
+#1 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/ErrorHandler.php(331): trigger_error('An internal ser...', 256)
+#2 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/widgets/ActiveField.php(178): yii\base\ErrorHandler::convertExceptionToError(Object(yii\base\InvalidArgumentException))
+#3 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/views/login/index.php(16): yii\widgets\ActiveField->__toString()
+#4 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(348): require('/home/otlxg2aub...')
+#5 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(257): yii\base\View->renderPhpFile('/home/otlxg2aub...', Array)
+#6 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/otlxg2aub...', Array, Object(backend\controllers\LoginController))
+#7 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(386): yii\base\View->render('index', Array, Object(backend\controllers\LoginController))
+#8 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/backend/controllers/LoginController.php(44): yii\base\Controller->render('index', Array)
+#9 [internal function]: backend\controllers\LoginController->actionIndex()
+#10 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/InlineAction.php(57): call_user_func_array(Array, Array)
+#11 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\InlineAction->runWithParams(Array)
+#12 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('', Array)
+#13 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('login', Array)
+#14 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#15 /home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php(24): yii\base\Application->run()
+#16 {main}
+$_SERVER = [
+    'LSPHP_ENABLE_USER_INI' => 'on',
+    'PATH' => '/usr/local/bin:/usr/bin:/bin',
+    'TEMP' => '/tmp',
+    'TMP' => '/tmp',
+    'TMPDIR' => '/tmp',
+    'PWD' => '/',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.9,ta;q=0.8,la;q=0.7',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '0',
+    'HTTP_COOKIE' => 'advanced-Online_EXPO-backend-Admin=c231593af6e18c213a92761e4f1ccbc9; _csrf-Online_EXPO-backend-Admin=b57bb048566a6aa34a1c7b45f3a1804b51edd91b88e7cf8dc9a378b125acfab5a%3A2%3A%7Bi%3A0%3Bs%3A31%3A%22_csrf-Online_EXPO-backend-Admin%22%3Bi%3A1%3Bs%3A32%3A%22zqrZLwR36JbpHPxTcY5ogqWnkD7pefy3%22%3B%7D',
+    'HTTP_HOST' => 'admin.worldtradehub.in',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.97 Safari/537.36',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_DNT' => '1',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'REDIRECT_UNIQUE_ID' => 'XujP281H8lzi1TD6TBt6BQAAAIU',
+    'REDIRECT_SCRIPT_URL' => '/admin/login',
+    'REDIRECT_SCRIPT_URI' => 'http://admin.worldtradehub.in/admin/login',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XujP281H8lzi1TD6TBt6BQAAAIU',
+    'SCRIPT_URL' => '/admin/login',
+    'SCRIPT_URI' => 'http://admin.worldtradehub.in/admin/login',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'admin.worldtradehub.in',
+    'SERVER_ADDR' => '148.72.88.28',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '106.198.47.29',
+    'DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '',
+    'CONTEXT_DOCUMENT_ROOT' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in',
+    'SERVER_ADMIN' => 'webmaster@admin.worldtradehub.in',
+    'SCRIPT_FILENAME' => '/home/otlxg2aubfh4/public_html/admin.worldtradehub.in/admin/index.php',
+    'REMOTE_PORT' => '35557',
+    'REDIRECT_URL' => '/admin/login',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/admin/login',
+    'SCRIPT_NAME' => '/admin/index.php',
+    'PHP_SELF' => '/admin/index.php',
+    'REQUEST_TIME_FLOAT' => 1592315867.03128910064697265625,
+    'REQUEST_TIME' => 1592315867,
+]

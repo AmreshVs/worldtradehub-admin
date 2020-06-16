@@ -1,0 +1,41 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^(.+)$index.php?url=$1 [
+
+Options -Indexes
+
+# ----------------------------------------------------------------------
+# | Forcing the `www.` at the beginning of URLs                        |
+# ----------------------------------------------------------------------
+
+# Rewrite example.com → www.example.com
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    # (1)
+    # RewriteCond %{HTTPS} !=on
+   # RewriteCond %{HTTP_HOST} !^www\. [NC]
+   #RewriteCond %{HTTP_HOST} !^portland.duceapps.* [NC]
+   #RewriteCond %{HTTP_HOST} !^192.168.*$ [NC]
+   #RewriteCond %{HTTP_HOST} !^local.* [NC]
+   #RewriteCond %{HTTP_HOST} !^localhost* [NC]
+   #RewriteCond %{SERVER_ADDR} !=127.0.0.1
+   #RewriteCond %{SERVER_ADDR} !=::1
+   #RewriteRule ^ http://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+</IfModule>
+
+
+
+# Preventing Redirect loop
+RewriteRule ^(frontend|backend)/web/ - [L]
+RewriteRule ^(common)/web/ - [L]
+
+RewriteCond %{REQUEST_URI} !^/api
+RewriteCond %{REQUEST_URI} !^/admin
+RewriteCond %{REQUEST_URI} !^/app
+RewriteCond %{REQUEST_URI} !^/backend
+RewriteCond %{REQUEST_URI} !^/uploads
+
+RewriteRule ^(.*)$ /admin/web/index.php/$1 [L]

@@ -1,0 +1,12 @@
+.skin-default-dark .left-sidebar { background: #ffffff }
+.sidebar-nav ul li a i { float: left }
+.skin-default-dark .left-sidebar .sidebar-nav ul li a, .skin-default-dark .left-sidebar .sidebar-nav>ul>li>a, .skin-default-dark .left-sidebar .sidebar-nav ul li a i, .skin-default-dark .left-sidebar .sidebar-nav>ul>li>a i { color: #03211c; }
+.sidebar-nav .has-arrow[aria-expanded=true]::after, .sidebar-nav li.selected>.has-arrow::after, .sidebar-nav li>.has-arrow.active::after, .sidebar-nav .has-arrow::after { right: 10px; }
+.sidebar-nav .has-arrow::after { border-color: #0f2c27 }
+.sidebar-nav>ul>li.selected, #cancel-order-modal { background: #ff0000; }
+.skin-default-dark .left-sidebar .nav-text-box { background: #23acc5; text-align: center; display: block !important; border-bottom: 1px solid #ddd; padding: 19px 0; }
+.table td, .table th { vertical-align: middle; }
+.btn-secondary { background: #dee0e2 !important; }
+td a.quick-view { margin: 0 5px 0 0; white-space: nowrap; }
+.card .custom-card-body .custom-card-title { display: inline-block; margin-bottom: 10px; width: 100%; margin-left: 0; }
+skin-default-dark .left-sidebar .sidebar-nav ul li a i, .skin-default-dark .left-sidebar .sidebar-nav>ul>li>a i { color: #828282 }
