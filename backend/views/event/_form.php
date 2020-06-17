@@ -95,15 +95,15 @@ $form = CActiveForm::begin()->setModel($model);
             format: 'YYYY-MM-DD HH:mm:ss',
         });
         
-        //  ClassicEditor
-        //     .create( document.querySelector( '#editor' ), {
-        //     ckfinder: {
-        //         uploadUrl: '/admin/event/upload'
-        //     },
-        //      image: {
-        //         resizeUnit: 'px'
-        //     }
-        // });
+         ClassicEditor
+            .create( document.querySelector( '#editor' ), {
+            ckfinder: {
+                uploadUrl: '/admin/event/upload'
+            },
+             image: {
+                resizeUnit: 'px'
+            }
+        });
 
 
     });
