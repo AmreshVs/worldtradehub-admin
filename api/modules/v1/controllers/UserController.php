@@ -285,7 +285,8 @@ class UserController extends CController
         ];
 
         $this->checkRequiredParam($request, $params);
-
+        $model->load($request, "");
+        
         if (!$model->validate()) {
             return $model->getError();
         }
