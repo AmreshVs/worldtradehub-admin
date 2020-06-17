@@ -24,7 +24,7 @@ class PaymentController extends CController
     * @param array $config
     */
     public function __construct($id, $module, $config = array()) {
-        $this->layout = 'login';
+        $this->layout = 'payment';
 
         parent::__construct($id, $module, $config);
     }

@@ -35,7 +35,7 @@ $logo = $uploadHelper->get(Configuration::get(Configuration::APP_LOGO_PATH));
                             data-image="<?= $logo ?>"
                             data-prefill.name="<?= $modelUser->username ?>"
                             data-prefill.email="<?= $modelUser->email ?>"
-                            data-theme.color="#d00"
+                            data-theme.color="#635CD"
                         ></script>
                         <input type="hidden" value="<?= $_GET['ticket_key'] ?>" name="order_key">
                         </form>
@@ -50,7 +50,7 @@ $logo = $uploadHelper->get(Configuration::get(Configuration::APP_LOGO_PATH));
         window.top.postMessage(
               JSON.stringify({
                 error: false,
-                message: "Hello World"
+                message: "Payment Success"
               }),
               '*'
             );
