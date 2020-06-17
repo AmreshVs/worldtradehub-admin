@@ -37,6 +37,7 @@ class FavouriteController extends CController
      */
     public function actionIndex()
     {
+      
       $request = Yii::$app->getRequest()->get();
       $userIdentity = Yii::$app->getUser()->getIdentity();
       $model = Events::find()
