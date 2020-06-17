@@ -36,9 +36,6 @@ $class = '';
         <section id="wrapper">
             <div class="login-register" style="">
                 <div class="login-box card">
-                <div class="login-header">
-                    <img class="login-logo" src="<?=Configuration::get(Configuration::APP_LOGO_PATH)?>">
-                </div>
                     <div class="card-body">
                 
                         <?= $content; ?>

@@ -47,5 +47,6 @@ $logo = $uploadHelper->get(Configuration::get(Configuration::APP_LOGO_PATH));
 <script type="text/javascript">
     runOnLoad(function() {
         $('.razorpay-payment-button').click();
+        
     });
 </script>

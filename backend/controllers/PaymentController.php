@@ -78,7 +78,12 @@ class PaymentController extends CController
             $model->payment_response = json_encode($payDetail); 
             $model->save(false);
 
-            return $this->render('success');   
+            return $this->render('success', [
+                'id' => $payDetail->id,
+                'amount' => $payDetail->amount,
+                'event_key' => 'testkey',
+                'event_name' => 'Test Event',
+            ]);   
         }
         
 

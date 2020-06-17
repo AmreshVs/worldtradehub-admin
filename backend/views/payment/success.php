@@ -4,7 +4,11 @@
         window.top.postMessage(
               JSON.stringify({
                 error: false,
-                message: "Payment Success"
+                message: "Payment Success",
+                id: '<?= $id ?>',
+                amount: '<?= $amount ?>',
+                event_key: '<?= $event_key?>',
+                event_name: '<?= $event_name ?>'
               }),
               '*'
             );
