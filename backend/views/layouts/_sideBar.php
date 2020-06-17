@@ -27,12 +27,12 @@ use backend\models\Configuration;
                 $settingsId = SidebarMenu::add(yii::t('backend','Settings'), '#', 'gears');
                 SidebarMenu::addSub($settingsId, yii::t('backend','Application Configuration'), Url::to(['/configuration/app-config']) );
 
-                SidebarMenu::add(yii::t('backend','Orders Management'), Url::to(['/ticket/']), 'shopping-cart');
-                SidebarMenu::add(yii::t('backend','Event'), Url::to(['/event/']), 'cutlery');
+                SidebarMenu::add(yii::t('backend','Booking Stall Management'), Url::to(['/ticket/']), 'building');
+                SidebarMenu::add(yii::t('backend','Event'), Url::to(['/event/']), 'plus-circle');
 
                 SidebarMenu::add(yii::t('backend','Vistor Management'), Url::to(['/user/']), 'group');
 
-                SidebarMenu::add(yii::t('backend','Exhibitor Management'), Url::to(['/exhibitor/']), 'building');
+                SidebarMenu::add(yii::t('backend','Exhibitor Management'), Url::to(['/exhibitor/']), 'user');
 
 
 

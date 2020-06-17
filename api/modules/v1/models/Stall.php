@@ -16,6 +16,7 @@ class Stall extends \common\models\Ticket
     public function fields()
     {
         return [
+            'ticket_key',
             'logo_image_path',
             'cover_image_path',
             'company_name',

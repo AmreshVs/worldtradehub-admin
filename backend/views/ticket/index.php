@@ -5,11 +5,7 @@ use backend\models\Ticket;
 use yii\helpers\Html;
 use yii\helpers\Url;
 
-/* @var $this \yii\web\View  */
-/* @var $model \backend\models\Cms */
-/* @var $dataProvider \backend\models\CmsSearch */
-
-$this->title = yii::t('backend','Order Management');
+$this->title = yii::t('backend','Booking Stall Management');
 ?>
 
 <div class="card cms">
