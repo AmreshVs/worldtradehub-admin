@@ -37,12 +37,12 @@ class FavouriteController extends CController
      */
     public function actionIndex()
     {
-      
+
       $request = Yii::$app->getRequest()->get();
       $userIdentity = Yii::$app->getUser()->getIdentity();
       $model = Events::find()
                     ->alias('E')
-                    ->leftJoin(['F' => Favorite::tableName()], 'F.user_id = E.user_id')
+                    ->leftJoin(['F' => Favorite::tableName()], 'F.event_id = E.event_id')
                     ->where([
                         'E.event_status' => Events::ACTIVE,
                         'F.status' => Events::ACTIVE,
