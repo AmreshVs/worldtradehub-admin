@@ -300,7 +300,7 @@ class TicketController extends CController
                         'event_id' => $EventModel->event_id,
                         'slot_id' => $stall['id'],
                         'user_id' => $userIdentity->getId(),
-                        'T.ticket_status' => 1
+                        'ticket_status' => 1
                       ])->one();
 
                    if($ticket !== null) {
