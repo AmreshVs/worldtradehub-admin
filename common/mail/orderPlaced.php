@@ -4,7 +4,8 @@ use common\helpers\Com;
 use common\models\Configuration;
 $appName = Configuration::get(Configuration::APP_NAME);
 
-$this->title = 'Thank you for your Order!';
+$this->title = 'Thank you for your Booking!';
+
 ?>
 <p style="margin:0px 0px 10px 0px;">Dear <b>saravana</b>, </p>
 <p style="margin:0px 0px 5px 0px;">Thank you for placing order at
@@ -17,7 +18,7 @@ $this->title = 'Thank you for your Order!';
     <tr>
         <th colspan="3" style="padding:15px 15px 0px 15px; text-align:left; 
             color:#1189BC; font-size:14px; font-weight:600; text-transform:uppercase">
-             Order Information:  
+             Booking Information:  
         </th>
    </tr>
    <tr>
@@ -25,15 +26,41 @@ $this->title = 'Thank you for your Order!';
             <table cellpadding="0" cellspacing="0" width="100%" border="0">
                 <td style="padding:15px; text-align:left;">
                         <p style="margin:0px 0px 4px 0px; text-transform:uppercase; color:#7d7d7d; font-size:12px">Paymenet ID</p>
-                        <b style="font-size:15px; font-weight:bold">100</b>
+                        <b style="font-size:15px; font-weight:bold"><?=$id ?></b>
                 </td>
                 <td style="padding:15px 0px; text-align:right">
                         <p style="margin:0px 0px 5px 0px; text-transform:uppercase; color:#7d7d7d; font-size:12px">Date Added</p>
-                        <b style="font-size:15px; font-weight:bold"><?= Date('Y-M-d') ?></b>
+                        <b style="font-size:15px; font-weight:bold"><?= Date('d-M-Y') ?></b>
                 </td>
                 <td style="padding:15px; text-align:right">
                         <p style="margin:0px 0px 5px 0px; text-transform:uppercase; color:#7d7d7d; font-size:12px">Payment Method</p>
                         <b style="font-size:15px; font-weight:bold"> Online </b>
+                </td>
+            </table>
+        </td>
+    </tr>
+</table>
+<table cellpadding="0" cellspacing="0" width="100%" border="0" style="background-color:#fff; margin-bottom:20px; border: 1px solid #d3d4d8;">
+    <tr>
+        <th colspan="3" style="padding:15px 15px 0px 15px; text-align:left; 
+            color:#1189BC; font-size:14px; font-weight:600; text-transform:uppercase">
+             Stall Information:  
+        </th>
+   </tr>
+   <tr>
+        <td>
+            <table cellpadding="0" cellspacing="0" width="100%" border="0">
+                <td style="padding:15px; text-align:left;">
+                        <p style="margin:0px 0px 4px 0px; text-transform:uppercase; color:#7d7d7d; font-size:12px">Company Name</p>
+                        <b style="font-size:15px; font-weight:bold"><?= $email['company_name'] ?></b>
+                </td>
+                <td style="padding:15px 0px; text-align:right">
+                        <p style="margin:0px 0px 5px 0px; text-transform:uppercase; color:#7d7d7d; font-size:12px">Short Desc</p>
+                        <b style="font-size:15px; font-weight:bold"><?= $email['short_desc'] ?></b>
+                </td>
+                <td style="padding:15px; text-align:right">
+                        <p style="margin:0px 0px 5px 0px; text-transform:uppercase; color:#7d7d7d; font-size:12px">Whatsapp number</p>
+                        <b style="font-size:15px; font-weight:bold"> <?= $email['whatsapp_number'] ?> </b>
                 </td>
             </table>
         </td>
@@ -60,17 +87,17 @@ $this->title = 'Thank you for your Order!';
     <table cellpadding="0" cellspacing="0" width="100%" border="0" >
     <tr>
         <thead style="background:#e1e2e4; text-transform:uppercase; font-size:12px; font-weight:bold">
-            <th style="padding:10px 15px; text-align:left;">Product</th>
-            <th style="padding:10px 0px; text-align:center;">Qty</th>
+            <th style="padding:10px 15px; text-align:left;">Event Title</th>
+            <th style="padding:10px 0px; text-align:center;">No Stall</th>
             <th style="padding:10px 15px; text-align:right">Price</th>
         </thead>
     </tr>
     
     <tr style="background:#fff;">
         <td style="padding:12px 15px; border-bottom:1px solid #e1e2e4; border-left:1px solid #d3d4d8;">             
-            <p style="margin:0; font-weight:bold">Product Name</p>
+            <p style="margin:0; font-weight:bold">Event Title</p>
             <p style="margin:0px; color:#666; font-size:12px">
-                <span style="margin:5px 5px 0px 0px"><?= $email['event_title'] ?><b style="color:#333;">100</b></span>
+                <span style="margin:5px 5px 0px 0px"><?= $email['event_title'] ?><b style="color:#333;"></b></span>
             </p>          
         </td>  
         <td width="50" style="padding:12px 0px; text-align:center; border-bottom:1px solid #e1e2e4; vertical-align:top; font-weight:bold">         

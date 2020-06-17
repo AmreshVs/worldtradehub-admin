@@ -77,7 +77,7 @@ $uploadHelper = \common\helpers\UploadHelper::getInstance();
                             <tbody>
                             <tr>
                                 <td valign="middle"
-                                    style="background-color:#f15247; color:#fff; padding:15px 20px; border-top-left-radius:8px; border-top-right-radius:8px">
+                                    style="background-color:#47c9f1; color:#fff; padding:15px 20px; border-top-left-radius:8px; border-top-right-radius:8px">
                                     <h1 style="margin:0px; line-height:normal; font-weight:normal; font-size:20px">
                                         <?= $this->title ?>
                                     </h1>
@@ -99,7 +99,7 @@ $uploadHelper = \common\helpers\UploadHelper::getInstance();
                             </tr>
                             <tr>
                                 <td valign="middle"
-                                    style="background-color:#f15247; color:#fff; padding:15px 20px; border-bottom-left-radius:8px; border-bottom-right-radius:8px">
+                                    style="background-color:#47c9f1; color:#fff; padding:15px 20px; border-bottom-left-radius:8px; border-bottom-right-radius:8px">
                                     <table cellpadding="0" cellspacing="0" width="100%" border="0">
                                         <td>
                                             <span style="font-weight:300; font-size:13px">

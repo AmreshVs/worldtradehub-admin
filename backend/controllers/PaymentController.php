@@ -9,6 +9,7 @@ use backend\models\Events;
 use backend\models\User;
 use Yii;
 use common\helpers\PaymentHelper;
+use common\helpers\MailerQueueHelper;
 
 
 /**
@@ -74,30 +75,33 @@ class PaymentController extends CController
         $payDetail = $razorpayHelper->getPayDetail($request['razorpay_payment_id']);
       
         if ($payDetail->status == "authorized") {
-            // $emailResponse = Events::find()
-            //         ->alias('E')
-            //         ->select(['E.*', 'T.*'])
-            //         ->leftJoin(['T' => Ticket::tableName()], 'T.event_id = E.event_id')
-            //         ->where([
-            //             'E.event_status' => Events::ACTIVE,
-            //             //'T.ticket_status' => 1,
-            //             'T.ticket_key' => $request['order_key'],
-            //         ])
-            //         ->asArray()
-            //         ->all();
-            // print_r($emailResponse); die;
-            //  MailerQueueHelper::getInstance()
-            //         ->setTo($modelUser->email)
-            //         ->setSubject('Order Placed')
-            //         ->setView('orderPlaced',[
-                        
-            //         ])->push();
-
-
             $model = Ticket::find()->where(['ticket_key' => $request['order_key']])->one();
             $model->ticket_status = 1;
             $model->payment_response = json_encode($payDetail); 
             $model->save(false);
+
+            $emailResponse = Events::find()
+                    ->alias('E')
+                    ->select(['E.*', 'T.*'])
+                    ->leftJoin(['T' => Ticket::tableName()], 'T.event_id = E.event_id')
+                    ->where([
+                        'E.event_status' => Events::ACTIVE,
+                        //'T.ticket_status' => 1,
+                        'T.ticket_key' => $request['order_key'],
+                    ])
+                    ->asArray()
+                    ->one();
+            $user = User::find()->where(['user_id' => $model->user_id])->one();
+
+
+            MailerQueueHelper::getInstance()
+                    ->setTo($user->email)
+                    ->setSubject('Stall Booking ')
+                    ->setView('orderPlaced',[
+                        'email' => $emailResponse,
+                        'id' => $request['razorpay_payment_id']
+                    ])->push();
+
 
             $event = Events::find()->where(['event_id' => $model->event_id])->one();
 
