@@ -50,7 +50,7 @@ class FavouriteController extends CController
                     ])
                     ->all();
 
-        $this->setMessage('Upcomming Event get successfully');
+        $this->setMessage('Favorite get successfully');
         return $model;
 
     }
