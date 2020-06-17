@@ -5,9 +5,9 @@ namespace api\modules\v1\models;
  * Class Events
  * @package api\modules\v1\models
  */
-class TicketHistory extends \common\models\Events
+class TicketHistory extends \common\models\Ticket
 {
-    public $subscription_price, $created_at;
+    public $event_key, $event_title;
 
     /**
      *

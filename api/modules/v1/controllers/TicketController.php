@@ -268,9 +268,9 @@ class TicketController extends CController
 
         //$model = Ticket::find()->where(['user_id' => $userIdentity->getId()])->all();
         $model = TicketEvents::find()
-                    ->alias('E')
+                    ->alias('T')
                     ->select(['E.*', 'T.ticket_key'])
-                    ->leftJoin(['T' => Ticket::tableName()], 'T.event_id = E.event_id')
+                    ->leftJoin(['E' => Events::tableName()], 'T.event_id = E.event_id')
                     ->where([
                         'E.event_status' => Events::ACTIVE,
                         'T.ticket_status' => 1,
@@ -362,13 +362,15 @@ class TicketController extends CController
     {
         $userIdentity = Yii::$app->getUser()->getIdentity();
         $model = TicketHistory::find()
-                    ->alias('E')
+                    ->alias('T')
                     ->select(['E.*', 'T.subscription_price','T.created_at'])
-                    ->leftJoin(['T' => Ticket::tableName()], 'T.event_id = E.event_id')
+                    ->leftJoin(['E' => Events::tableName()], 'T.event_id = E.event_id')
                     ->where([
                         'E.event_status' => Events::ACTIVE,
-                        'user_id' => $userIdentity->getId()
+                       'T.user_id' => $userIdentity->getId(),
+                       'T.ticket_status' => 1
                     ])
+                    //->groupBy('T.ticket_key')
                     //->asArray()
                     ->all();
 

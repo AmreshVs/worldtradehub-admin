@@ -6,9 +6,9 @@ use Yii;
  * Class Events
  * @package api\modules\v1\models
  */
-class TicketEvents extends \common\models\Events
+class TicketEvents extends \common\models\Ticket
 {
-    public $ticket_key;
+    public $event_key, $event_title, $event_start_date, $event_end_date, $event_image;
     /**
      *
      * @return array
