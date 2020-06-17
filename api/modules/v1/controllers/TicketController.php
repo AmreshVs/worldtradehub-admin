@@ -98,8 +98,13 @@ class TicketController extends CController
 
             $_FILES = ['EventUploadForm' => $uploadData];
 
-            $modelUpload->image = UploadedFile::getInstance($modelUpload, 'logo_image_path');
-            $modelUpload->cover_image = UploadedFile::getInstance($modelUpload, 'cover_image_path');
+             if (array_key_exists('logo_image_path', $files)) {
+                $modelUpload->image = UploadedFile::getInstance($modelUpload, 'logo_image_path');
+            }
+
+            if (array_key_exists('cover_image_path', $files)) {
+                $modelUpload->cover_image = UploadedFile::getInstance($modelUpload, 'cover_image_path');
+            }
 
             if (!$modelUpload->validate()) {
                 return $modelUpload;
@@ -453,7 +458,8 @@ class TicketController extends CController
         $files = $_FILES;
         $data['logo_image_path'] = '';
         $uploadData = [];
-         if (array_key_exists('logo_image_path', $files)) {
+          if (array_key_exists('logo_image_path', $files)) {
+
               foreach ((array)$files['logo_image_path'] as $dataKey => $dataValue) {
                   $uploadData[$dataKey]['logo_image_path'] = $dataValue;
               }
@@ -465,11 +471,14 @@ class TicketController extends CController
               }
           }
 
-              $_FILES = ['EventUploadForm' => $uploadData];
+            $_FILES = ['EventUploadForm' => $uploadData];
+            if (array_key_exists('logo_image_path', $files)) {
+                $modelUpload->image = UploadedFile::getInstance($modelUpload, 'logo_image_path');
+            }
 
-              $modelUpload->image = UploadedFile::getInstance($modelUpload, 'logo_image_path');
-              $modelUpload->cover_image = UploadedFile::getInstance($modelUpload, 'cover_image_path');
-
+            if (array_key_exists('cover_image_path', $files)) {
+                $modelUpload->cover_image = UploadedFile::getInstance($modelUpload, 'cover_image_path');
+            }
 
               if (!$modelUpload->validate()) {
                   return $modelUpload;
