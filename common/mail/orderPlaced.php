@@ -18,7 +18,7 @@ $this->title = 'Thank you for your Booking!';
     <tr>
         <th colspan="3" style="padding:15px 15px 0px 15px; text-align:left; 
             color:#1189BC; font-size:14px; font-weight:600; text-transform:uppercase">
-             Booking Information:  
+             Payment Information:  
         </th>
    </tr>
    <tr>
@@ -88,7 +88,7 @@ $this->title = 'Thank you for your Booking!';
     <tr>
         <thead style="background:#e1e2e4; text-transform:uppercase; font-size:12px; font-weight:bold">
             <th style="padding:10px 15px; text-align:left;">Event Title</th>
-            <th style="padding:10px 0px; text-align:center;">No Stall</th>
+            <th style="padding:10px 0px; text-align:center;">Stall no</th>
             <th style="padding:10px 15px; text-align:right">Price</th>
         </thead>
     </tr>
@@ -101,7 +101,7 @@ $this->title = 'Thank you for your Booking!';
             </p>          
         </td>  
         <td width="50" style="padding:12px 0px; text-align:center; border-bottom:1px solid #e1e2e4; vertical-align:top; font-weight:bold">         
-             1  </td>         
+             <?= 'Stall -'$email['slot_id'] ?>  </td>         
         <td width="80" style="padding:12px 15px; text-align:right; border-bottom:1px solid #e1e2e4; border-right:1px solid #d3d4d8; vertical-align:top; font-weight:bold"> <?= $email['subscription_price'] ?></td>					            
     </tr>    
 
