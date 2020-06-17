@@ -7,6 +7,7 @@ use api\components\CController;
 use api\modules\v1\models\Ticket;
 use api\modules\v1\models\Stall;
 use api\modules\v1\models\Events;
+use api\modules\v1\models\TicketEvents;
 use api\modules\v1\models\User;
 use api\modules\v1\models\TicketHistory;
 use yii\data\ActiveDataProvider;
@@ -258,7 +259,7 @@ class TicketController extends CController
         $userIdentity = Yii::$app->getUser()->getIdentity();
 
         //$model = Ticket::find()->where(['user_id' => $userIdentity->getId()])->all();
-        $model = Events::find()
+        $model = TicketEvents::find()
                     ->alias('E')
                     ->select(['E.*', 'T.ticket_key'])
                     ->leftJoin(['T' => Ticket::tableName()], 'T.event_id = E.event_id')

@@ -6,9 +6,9 @@ use Yii;
  * Class Events
  * @package api\modules\v1\models
  */
-class Events extends \common\models\Events
+class TicketEvents extends \common\models\Events
 {
-    
+    public $ticket_key;
     /**
      *
      * @return array
@@ -16,11 +16,12 @@ class Events extends \common\models\Events
     public function fields()
     {
         return [
+            'ticket_key',
             'event_key',
             'event_title',
             'event_start_date',
             'event_end_date',
-            'event_desc',
+            //'event_desc',
             'event_image',
             'is_fav' => function (Self $model) {
                 $model = Favorite::find()->where([
@@ -31,7 +32,7 @@ class Events extends \common\models\Events
 
                 return $model != null ? 1 : 0 ;
             },
-            'visitors_package_price',
+            //'visitors_package_price',
         ];
     }
 
