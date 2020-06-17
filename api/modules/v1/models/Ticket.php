@@ -29,7 +29,7 @@ class Ticket extends \common\models\Ticket
             		//'slot_id',
             	], 'required'
             ],
-            ['subscription_type', 'safe']
+            [['subscription_type','short_desc'], 'safe']
         ];
         
         return ArrayHelper::merge(parent::rules(), $rules);
