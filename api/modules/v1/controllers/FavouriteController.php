@@ -45,7 +45,7 @@ class FavouriteController extends CController
                     ->where([
                         'E.event_status' => Events::ACTIVE,
                         'F.status' => Events::ACTIVE,
-                        'user_id' => $userIdentity->getId()
+                        'F.user_id' => $userIdentity->getId()
                     ])
                     ->all();
 
