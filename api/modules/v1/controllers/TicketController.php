@@ -274,6 +274,9 @@ class TicketController extends CController
     public function actionViewStall()
     {
         $request = Yii::$app->request->get();
+        $userIdentity = Yii::$app->getUser()->getIdentity();
+
+
         $params = [
           'event_key',
        ];
@@ -291,33 +294,40 @@ class TicketController extends CController
                 
                    $ticket = Ticket::find()
                       ->where([
-                        'event_id' => $EventModel->event_id
-                        ,'slot_id' => $stall['id']
+                        'event_id' => $EventModel->event_id,
+                        'slot_id' => $stall['id'],
+                        'user_id' => $userIdentity->getId()
                       ])->one();
 
                    if($ticket !== null) {
                       $room[$room_key][$key][$block_key]['status'] = 1;
-                      $room[$room_key][$key][$block_key]['name'] = $ticket->company_name;
-                      $room[$room_key][$key][$block_key]['description'] = $ticket->short_desc;
-                      $room[$room_key][$key][$block_key]['ticket_key'] = $ticket->ticket_key;
+                      
+                      if($ticket->user_id == $userIdentity->getId()) {
+                          $room[$room_key][$key][$block_key]['name'] = $ticket->company_name;
+                          $room[$room_key][$key][$block_key]['description'] = $ticket->short_desc;
+                          $room[$room_key][$key][$block_key]['ticket_key'] = $ticket->ticket_key;
 
-                      if($ticket->subscription_type == 1) {
-                          $room[$room_key][$key][$block_key]['type'] = 'Platinum';
+                          if($ticket->subscription_type == 1) {
+                              $room[$room_key][$key][$block_key]['type'] = 'Platinum';
 
-                      } else if($ticket->subscription_type == 2) {
-                          $room[$room_key][$key][$block_key]['type'] = 'Diamond';
+                          } else if($ticket->subscription_type == 2) {
+                              $room[$room_key][$key][$block_key]['type'] = 'Diamond';
 
-                      } else if($ticket->subscription_type == 3) {
-                          $room[$room_key][$key][$block_key]['type'] = 'Gold';
+                          } else if($ticket->subscription_type == 3) {
+                              $room[$room_key][$key][$block_key]['type'] = 'Gold';
 
-                      } else if($ticket->subscription_type == 4) {
-                          $room[$room_key][$key][$block_key]['type'] = 'Silver';
+                          } else if($ticket->subscription_type == 4) {
+                              $room[$room_key][$key][$block_key]['type'] = 'Silver';
 
+                          } else {
+                              $room[$room_key][$key][$block_key]['type'] = 'Visitor Fee';
+                          }
                       } else {
-                          $room[$room_key][$key][$block_key]['type'] = 'Visitor Fee';
+                          $room[$room_key][$key][$block_key]['status'] = 0;
+                          $room[$room_key][$key][$block_key]['ticket_key'] = "";
+                          $room[$room_key][$key][$block_key]['type'] = "";
                       }
 
-                      
                    } else {
                       $room[$room_key][$key][$block_key]['status'] = 0;
                       $room[$room_key][$key][$block_key]['ticket_key'] = "";
