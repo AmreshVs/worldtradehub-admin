@@ -94,13 +94,13 @@ class PaymentController extends CController
             $user = User::find()->where(['user_id' => $model->user_id])->one();
 
 
-            MailerQueueHelper::getInstance()
-                    ->setTo($user->email)
-                    ->setSubject('Stall Booking ')
-                    ->setView('orderPlaced',[
-                        'email' => $emailResponse,
-                        'id' => $request['razorpay_payment_id']
-                    ])->push();
+            // MailerQueueHelper::getInstance()
+            //         ->setTo($user->email)
+            //         ->setSubject('Stall Booking ')
+            //         ->setView('orderPlaced',[
+            //             'email' => $emailResponse,
+            //             'id' => $request['razorpay_payment_id']
+            //         ])->push();
 
 
             $event = Events::find()->where(['event_id' => $model->event_id])->one();
