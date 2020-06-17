@@ -84,17 +84,22 @@ class TicketController extends CController
       $files = $_FILES;
       $data['logo_image_path'] = '';
       $uploadData = [];
-       if (array_key_exists('logo_image_path', $files)) {
+          if (array_key_exists('logo_image_path', $files)) {
+              foreach ((array)$files['logo_image_path'] as $dataKey => $dataValue) {
+                  $uploadData[$dataKey]['logo_image_path'] = $dataValue;
+              }
+          }
 
-            foreach ((array)$files['logo_image_path'] as $dataKey => $dataValue) {
-                $uploadData[$dataKey]['logo_image_path'] = $dataValue;
-                $uploadData[$dataKey]['cover_image_path'] = $dataValue;
-            }
+          if (array_key_exists('cover_image_path', $files)) {
+           foreach ((array)$files['cover_image_path'] as $dataKey => $dataValue) {
+                  $uploadData[$dataKey]['cover_image_path'] = $dataValue;
+              }
+          }
 
             $_FILES = ['EventUploadForm' => $uploadData];
 
             $modelUpload->image = UploadedFile::getInstance($modelUpload, 'logo_image_path');
-            $modelUpload->cover_image_path = UploadedFile::getInstance($modelUpload, 'cover_image_path');
+            $modelUpload->cover_image = UploadedFile::getInstance($modelUpload, 'cover_image_path');
 
             if (!$modelUpload->validate()) {
                 return $modelUpload;
@@ -110,7 +115,7 @@ class TicketController extends CController
               $upload->saveAs($path);
               $model->logo_image_path = $uploadHelper->getRealPath($path);
             }
-            if($modelUpload->cover_image_path != ''){
+            if($modelUpload->cover_image != ''){
               $uploadHelper = UploadHelper::getInstance();
               $uploadHelper->setPath($uploadHelper::TICKET);
               $upload = UploadedFile::getInstance($modelUpload, 'cover_image_path');
@@ -122,8 +127,6 @@ class TicketController extends CController
               $model->cover_image_path = $uploadHelper->getRealPath($path);
             }
             
-           
-        }
       $model->event_id = $EventModel->event_id;
       $model->user_id = $userIdentity->getId();
       $model->ticket_status = 3;
@@ -451,16 +454,22 @@ class TicketController extends CController
         $data['logo_image_path'] = '';
         $uploadData = [];
          if (array_key_exists('logo_image_path', $files)) {
-
               foreach ((array)$files['logo_image_path'] as $dataKey => $dataValue) {
                   $uploadData[$dataKey]['logo_image_path'] = $dataValue;
+              }
+          }
+
+          if (array_key_exists('cover_image_path', $files)) {
+           foreach ((array)$files['cover_image_path'] as $dataKey => $dataValue) {
                   $uploadData[$dataKey]['cover_image_path'] = $dataValue;
               }
+          }
 
               $_FILES = ['EventUploadForm' => $uploadData];
 
               $modelUpload->image = UploadedFile::getInstance($modelUpload, 'logo_image_path');
-              $modelUpload->cover_image_path = UploadedFile::getInstance($modelUpload, 'cover_image_path');
+              $modelUpload->cover_image = UploadedFile::getInstance($modelUpload, 'cover_image_path');
+
 
               if (!$modelUpload->validate()) {
                   return $modelUpload;
@@ -476,11 +485,13 @@ class TicketController extends CController
                 $upload->saveAs($path);
                 $model->logo_image_path = $uploadHelper->getRealPath($path);
               }
-              if($modelUpload->cover_image_path != ''){
+
+          
+             
+              if($modelUpload->cover_image != ''){
                 $uploadHelper = UploadHelper::getInstance();
                 $uploadHelper->setPath($uploadHelper::TICKET);
                 $upload = UploadedFile::getInstance($modelUpload, 'cover_image_path');
-
                 $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
 
                 $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
@@ -489,7 +500,6 @@ class TicketController extends CController
               }
               
              
-          }
       $model->ticket_status = 3;
       $model->save(false);
       $this->setMessage('Details added successfully');

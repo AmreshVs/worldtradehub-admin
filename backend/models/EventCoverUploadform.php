@@ -11,9 +11,9 @@ use common\helpers\Com;
  * Class EventUploadForm
  * @package backend\models
  */
-class EventUploadForm extends Model
+class EventCoverUploadform extends Model
 {
-    public $image, $cover_image;
+    public $cover_image;
 
     /**
      * @return array
@@ -21,13 +21,6 @@ class EventUploadForm extends Model
     public function rules()
     {
         return [
-            [
-                ['image'], 
-                'file',
-                'skipOnEmpty' => true, 
-                'maxSize' => 1024 * 1024 * 10, 
-                'mimeTypes' => ['image/png', 'image/jpg', 'image/jpeg']
-            ],
             [
                 ['cover_image'], 
                 'file',
