@@ -265,6 +265,7 @@ class TicketController extends CController
                     ->leftJoin(['T' => Ticket::tableName()], 'T.event_id = E.event_id')
                     ->where([
                         'E.event_status' => Events::ACTIVE,
+                        'T.ticket_status' => 1
                         'user_id' => $userIdentity->getId()
                     ])
                     ->all();
@@ -299,7 +300,7 @@ class TicketController extends CController
                         'event_id' => $EventModel->event_id,
                         'slot_id' => $stall['id'],
                         'user_id' => $userIdentity->getId(),
-                        'event_status' => Events::ACTIVE
+                        'T.ticket_status' => 1
                       ])->one();
 
                    if($ticket !== null) {
