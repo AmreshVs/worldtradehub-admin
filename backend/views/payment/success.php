@@ -4,7 +4,7 @@
         window.top.postMessage(
               JSON.stringify({
                 error: false,
-                message: "Hello World"
+                message: "Payment Success"
               }),
               '*'
             );
