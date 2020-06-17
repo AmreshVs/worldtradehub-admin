@@ -266,19 +266,23 @@ class UserController extends CController
             $result['msg'] = Yii::t('backend', 'Invalid user key');
             goto skip;
         }
-
+        $resposeArray = $resposeArray->toArray();
         $aData['user'] = [
-            'user_key' => $resposeArray->user_key,
-            'user_id' => $resposeArray->user_id,
-            'email' => $resposeArray->email,
-            'mobile_number' => $resposeArray->mobile_number,
-            'status' => $resposeArray->status,
-            'username' => $resposeArray->username
+            'user_key' => $resposeArray['user_key'],
+            //'user_id' => $resposeArray['user_id'],
+            'email' => $resposeArray['email'],
+            'mobile_number' => $resposeArray['mobile_number'],
+            'status' => $resposeArray['status'],
+            'username' => $resposeArray['username'],
+            'country' => isset($resposeArray['country']['name']) ? $resposeArray['country']['name'] : '-',
+            'state' => isset($resposeArray['state']['name']) ? $resposeArray['state']['name'] : '-',
+            'city' =>isset($resposeArray['city']['name']) ? $resposeArray['city']['name'] : '-',
+
         ];
 
     
         $result['status'] = STATUS_SUCCESS;
-        $result['response'] = json_encode($resposeArray->toArray());
+        $result['response'] = json_encode($resposeArray);
         $result['data']  = $this->renderPartial('quick-view', ['resposeArray' => $aData]);
 
         skip:

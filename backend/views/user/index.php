@@ -11,7 +11,7 @@ use common\helpers\UploadHelper;
 /* @var $model \backend\models\User*/
 /* @var $dataProvider \backend\models\UserSearch */
 
-$this->title = yii::t('backend','Visiter Management');
+$this->title = yii::t('backend','Visitor Management');
 ?>
 
 <div class="card user-icon">

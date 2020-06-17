@@ -69,6 +69,41 @@ class User extends \common\models\User
         
         return ArrayHelper::merge(parent::rules(), $rules);
     }
+
+    /**
+     *
+     * @return array
+     */
+    public function fields()
+    {
+
+        return [
+            'user_key',
+            'username',
+            'email',
+            'mobile_number',
+            'status',
+            'country' => function (self $model) {
+                return  Countries::find()
+                    ->select(['name', 'id'])
+                    ->where(['id' => $model->country_id])
+                    ->one();
+            },
+            'state' => function (self $model) {
+                return  States::find()
+                    ->select(['name', 'id'])
+                    ->where(['id' => $model->state_id])
+                    ->one();
+            },
+            'city' => function (self $model) {
+                return  Cities::find()
+                    ->select(['name', 'id'])
+                    ->where(['id' => $model->city_id])
+                    ->one();
+            },
+            'register_type', 
+        ];
+    }
     
     /**
     * 

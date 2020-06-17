@@ -27,7 +27,7 @@ class UserSearch extends User
      * @param type $params
      * @return ActiveDataProvider
      */
-    public function search($params, $type = 1)
+    public function search($params, $type = 2)
     {
         $query = User::find()
             ->select('*')

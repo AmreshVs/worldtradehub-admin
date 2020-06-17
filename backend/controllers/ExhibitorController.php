@@ -35,7 +35,7 @@ class ExhibitorController extends CController
         return $this->render('index',
             [
                 'searchModel' => $searchModel,
-                'dataProvider' => $searchModel->search(Yii::$app->request->queryParams, 2)
+                'dataProvider' => $searchModel->search(Yii::$app->request->queryParams, 1)
             ]
         );
     }  

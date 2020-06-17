@@ -33,15 +33,12 @@ $class = '';
                 <p class="loader__label"><?= Configuration::get(Configuration::APP_NAME) ?></p>
             </div>
         </div>
-        <section id="wrapper">
-            <div class="login-register" style="">
-                <div class="login-box card">
+        <section id="wrapperq">
                     <div class="card-body">
-                
                         <?= $content; ?>
                     </div>
-                </div>
-            </div>
+    
+       
         </section>
         <?php $this->endBody() ?>
     </body>

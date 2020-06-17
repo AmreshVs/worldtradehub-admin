@@ -11,7 +11,7 @@ $this->title = 'Thank you for your Order!';
     <b style="color:#000"><?= $appName ?></b>.
 </p>
 <p style="margin:0px">Exciting to have you here. Your order has been successfully
-    placed and please allow us sometime to confirm your order.
+    placed and Payment get successfully.
 </p>
 <table cellpadding="0" cellspacing="0" width="100%" border="0" style="background-color:#fff; margin-bottom:20px; border: 1px solid #d3d4d8;">
     <tr>
@@ -24,16 +24,16 @@ $this->title = 'Thank you for your Order!';
         <td>
             <table cellpadding="0" cellspacing="0" width="100%" border="0">
                 <td style="padding:15px; text-align:left;">
-                        <p style="margin:0px 0px 4px 0px; text-transform:uppercase; color:#7d7d7d; font-size:12px">Order ID</p>
+                        <p style="margin:0px 0px 4px 0px; text-transform:uppercase; color:#7d7d7d; font-size:12px">Paymenet ID</p>
                         <b style="font-size:15px; font-weight:bold">100</b>
                 </td>
                 <td style="padding:15px 0px; text-align:right">
                         <p style="margin:0px 0px 5px 0px; text-transform:uppercase; color:#7d7d7d; font-size:12px">Date Added</p>
-                        <b style="font-size:15px; font-weight:bold">10.12.0</b>
+                        <b style="font-size:15px; font-weight:bold"><?= Date('Y-M-d') ?></b>
                 </td>
                 <td style="padding:15px; text-align:right">
                         <p style="margin:0px 0px 5px 0px; text-transform:uppercase; color:#7d7d7d; font-size:12px">Payment Method</p>
-                        <b style="font-size:15px; font-weight:bold"> online </b>
+                        <b style="font-size:15px; font-weight:bold"> Online </b>
                 </td>
             </table>
         </td>
@@ -70,19 +70,19 @@ $this->title = 'Thank you for your Order!';
         <td style="padding:12px 15px; border-bottom:1px solid #e1e2e4; border-left:1px solid #d3d4d8;">             
             <p style="margin:0; font-weight:bold">Product Name</p>
             <p style="margin:0px; color:#666; font-size:12px">
-                <span style="margin:5px 5px 0px 0px">test<b style="color:#333;">100</b></span>
+                <span style="margin:5px 5px 0px 0px"><?= $email['event_title'] ?><b style="color:#333;">100</b></span>
             </p>          
         </td>  
         <td width="50" style="padding:12px 0px; text-align:center; border-bottom:1px solid #e1e2e4; vertical-align:top; font-weight:bold">         
-             2  </td>         
-        <td width="80" style="padding:12px 15px; text-align:right; border-bottom:1px solid #e1e2e4; border-right:1px solid #d3d4d8; vertical-align:top; font-weight:bold"> 200</td>					            
+             1  </td>         
+        <td width="80" style="padding:12px 15px; text-align:right; border-bottom:1px solid #e1e2e4; border-right:1px solid #d3d4d8; vertical-align:top; font-weight:bold"> <?= $email['subscription_price'] ?></td>					            
     </tr>    
 
      
     <tr style="text-align:right; font-weight:500; color:#fff; text-transform:uppercase; font-size:13px">
         <td style="border-right:1px solid #1189BC;"></td>
         <td width="80" style="padding:12px 15px; background:#f5af19">Sub Total</td>
-        <td width="100" style="padding:12px 15px; background:#f5af19; font-size:18px">200</td>					
+        <td width="100" style="padding:12px 15px; background:#f5af19; font-size:18px"><?= $email['subscription_price'] ?></td>					
     </tr>
     </table>
 </table>

@@ -3,12 +3,12 @@
         $('.razorpay-payment-button').click();
         window.top.postMessage(
               JSON.stringify({
-                error: false,
                 message: "Payment Success",
                 id: '<?= $id ?>',
                 amount: '<?= $amount ?>',
                 event_key: '<?= $event_key?>',
-                event_name: '<?= $event_name ?>'
+                event_name: '<?= $event_name ?>',
+                ticket_key: '<?= $ticket_key ?>'
               }),
               '*'
             );

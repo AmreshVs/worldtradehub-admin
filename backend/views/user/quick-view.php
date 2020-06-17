@@ -46,6 +46,30 @@ use backend\models\ItemIngredientGroup;
                         <p><?= ($resposeArray['user']['status'] == \common\models\User::ACTIVE) ? 'Active': 'Inactive'; ?></p>
                     </td>
                 </tr>
+                <tr>
+                    <td>
+                        <b><p><?= yii::t('backend','Country:') ?></p></b>
+                    </td>
+                    <td>
+                        <p><?= $resposeArray['user']['country'] ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b><p><?= yii::t('backend','State:') ?></p></b>
+                    </td>
+                    <td>
+                        <p><?= $resposeArray['user']['state']  ?></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <b><p><?= yii::t('backend','City:') ?></p></b>
+                    </td>
+                    <td>
+                        <p><?= $resposeArray['user']['city'] ?></p>
+                    </td>
+                </tr>
                
             </tbody>
         </table>
