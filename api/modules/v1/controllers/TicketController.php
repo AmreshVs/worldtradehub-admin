@@ -476,7 +476,7 @@ class TicketController extends CController
                 $upload->saveAs($path);
                 $model->logo_image_path = $uploadHelper->getRealPath($path);
               }
-              if($modelUpload->image != ''){
+              if($modelUpload->cover_image_path != ''){
                 $uploadHelper = UploadHelper::getInstance();
                 $uploadHelper->setPath($uploadHelper::TICKET);
                 $upload = UploadedFile::getInstance($modelUpload, 'cover_image_path');
