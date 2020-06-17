@@ -202,7 +202,7 @@ class Ticket extends BaseTicket
           array_push($r5Arr, $r5);
           array_push($r7Arr, $r7);
           array_push($r9Arr, $r9);
-          $r1--; $r3++; $r5--; $r7--; $r9++;
+          $r1--; $r3++; $r5--; $r7++; $r9++;
         }
 
         for($i = 0; $i < 26; $i++){
@@ -258,7 +258,7 @@ class Ticket extends BaseTicket
         
         }
 
-        $blocks['room_2']['second_last_row'] = $tds;
+        $blocks['room2']['second_last_row'] = $tds;
 
         $ids = [150, 208, 209, 210, 268, 269, 299];
         $tds = [];
@@ -272,7 +272,7 @@ class Ticket extends BaseTicket
         
         
         }
-        $blocks['room_2']['last_row'] = $tds;
+        $blocks['room2']['last_row'] = $tds;
 
         return $blocks;
     }
