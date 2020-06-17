@@ -273,7 +273,8 @@ class UserController extends CController
 
         if ($model === null) {
             $this->userNotFound();
-        }       
+        }
+         $model->setScenario($model::SCENARIO_REGISTER_NORMAL);       
         
         $request = Yii::$app->getRequest()->post();
         $params = [
@@ -286,7 +287,7 @@ class UserController extends CController
 
         $this->checkRequiredParam($request, $params);
         $model->load($request, "");
-        
+
         if (!$model->validate()) {
             return $model->getError();
         }
