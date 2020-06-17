@@ -255,7 +255,8 @@ class TicketController extends CController
          $Ticket_model = new Ticket();
          $Ticket_model->subscription_price = $EventModel->visitors_package_price ;
          $Ticket_model->subscription_type = 5;
-         $Ticket_model->ticket_status = 1;
+          $Ticket_model->user_id = $userIdentity->getId();
+          $Ticket_model->ticket_status = 3;
          $Ticket_model->save(false);
          $this->setMessage('Booked successfully');
          return ['payment_url' => Yii::$app->request->hostInfo.'/admin/payment/index?ticket_key='. $Ticket_model->ticket_key];
