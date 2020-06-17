@@ -265,7 +265,7 @@ class TicketController extends CController
                     ->leftJoin(['T' => Ticket::tableName()], 'T.event_id = E.event_id')
                     ->where([
                         'E.event_status' => Events::ACTIVE,
-                        'T.ticket_status' => 1
+                        'T.ticket_status' => 1,
                         'user_id' => $userIdentity->getId()
                     ])
                     ->all();
