@@ -27,10 +27,10 @@ $form = CActiveForm::begin()->setModel($model);
     </div>
     <div class="row p-lg-2">
         <div class="col-md-6">
-               <?= $form->field($model, 'event_start_date')->textInput(['class' => 'bootstrapMaterialDatePicker form-control']); ?>
+               <?= $form->field($model, 'event_start_date')->textInput(['class' => 'bootstrapMaterialDatePicker form-control', 'value' => $model->getIsNewRecord() ? Date('Y-m-d H:i:s') : $model->event_start_date]); ?>
         </div>
         <div class="col-md-6">
-            <?= $form->field($model, 'event_end_date')->textInput(['class' => 'bootstrapMaterialDatePicker form-control']); ?>
+            <?= $form->field($model, 'event_end_date')->textInput(['class' => 'bootstrapMaterialDatePicker form-control', 'value' => $model->getIsNewRecord() ? Date('Y-m-d H:i:s') : $model->event_end_date]); ?>
         </div>
     </div>
  
@@ -91,19 +91,19 @@ $form = CActiveForm::begin()->setModel($model);
 
 
     runOnLoad (function () {
-        
          $(".bootstrapMaterialDatePicker").bootstrapMaterialDatePicker({ 
             format: 'YYYY-MM-DD HH:mm:ss',
         });
-         ClassicEditor
-            .create( document.querySelector( '#editor' ), {
-            ckfinder: {
-                uploadUrl: '/admin/event/upload'
-            },
-             image: {
-                resizeUnit: 'px'
-            }
-        })
+        
+        //  ClassicEditor
+        //     .create( document.querySelector( '#editor' ), {
+        //     ckfinder: {
+        //         uploadUrl: '/admin/event/upload'
+        //     },
+        //      image: {
+        //         resizeUnit: 'px'
+        //     }
+        // });
 
 
     });
