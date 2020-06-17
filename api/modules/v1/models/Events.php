@@ -9,7 +9,7 @@ use Yii;
 class Events extends \common\models\Events
 {
     
-
+    public $ticket_key;
     /**
      *
      * @return array

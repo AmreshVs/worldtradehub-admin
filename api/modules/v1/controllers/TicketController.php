@@ -260,6 +260,7 @@ class TicketController extends CController
         //$model = Ticket::find()->where(['user_id' => $userIdentity->getId()])->all();
         $model = Events::find()
                     ->alias('E')
+                    ->select(['E.*', 'T.ticket_key'])
                     ->leftJoin(['T' => Ticket::tableName()], 'T.event_id = E.event_id')
                     ->where([
                         'E.event_status' => Events::ACTIVE,
