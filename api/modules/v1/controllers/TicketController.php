@@ -302,7 +302,7 @@ class TicketController extends CController
                    if($ticket !== null) {
                       $room[$room_key][$key][$block_key]['status'] = 1;
                       
-                      if($ticket->user_id == $userIdentity->getId()) {
+                      //if($ticket->user_id == $userIdentity->getId()) {
                           $room[$room_key][$key][$block_key]['name'] = $ticket->company_name;
                           $room[$room_key][$key][$block_key]['description'] = $ticket->short_desc;
                           $room[$room_key][$key][$block_key]['ticket_key'] = $ticket->ticket_key;
@@ -322,11 +322,11 @@ class TicketController extends CController
                           } else {
                               $room[$room_key][$key][$block_key]['type'] = 'Visitor Fee';
                           }
-                      } else {
-                          $room[$room_key][$key][$block_key]['status'] = 0;
-                          $room[$room_key][$key][$block_key]['ticket_key'] = "";
-                          $room[$room_key][$key][$block_key]['type'] = "";
-                      }
+                      // } else {
+                      //     $room[$room_key][$key][$block_key]['status'] = 0;
+                      //     $room[$room_key][$key][$block_key]['ticket_key'] = "";
+                      //     $room[$room_key][$key][$block_key]['type'] = "";
+                      // }
 
                    } else {
                       $room[$room_key][$key][$block_key]['status'] = 0;
