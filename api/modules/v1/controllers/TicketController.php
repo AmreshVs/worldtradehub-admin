@@ -78,7 +78,7 @@ class TicketController extends CController
       $model->load($request, "");
 
       if (!$model->validate()) {
-          return $model->getError();
+          return $model;
       }
 
       $files = $_FILES;
