@@ -46,7 +46,7 @@ use backend\models\ItemIngredientGroup;
     
             </tbody>
         </table>
-    
+    <?php if($resposeArray['customer']['register_type'] == 1) { ?>
         <h3 class="text-info"><b><?= yii::t('backend','Ticket Details' ) ?></b></h3> 
         <table class="table table-grid table-bordered">
             <tbody>
@@ -102,6 +102,7 @@ use backend\models\ItemIngredientGroup;
                 
             </tbody>
         </table>
+    <?php } ?>
         
     </div>
     <div class="overallTable">
