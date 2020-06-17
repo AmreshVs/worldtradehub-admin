@@ -27,7 +27,9 @@ class Ticket extends \common\models\Ticket
             		'youtupe_link',
             		'company_desc',
             		//'slot_id',
-            	], 'required']
+            	], 'required'
+            ],
+            ['subscription_type', 'safe']
         ];
         
         return ArrayHelper::merge(parent::rules(), $rules);

@@ -210,17 +210,21 @@ class TicketController extends CController
           }
         if($request['package_type'] == 1) {
             $Ticket_model->subscription_price = $EventModel->exhibitor_platinum_price;
+            $Ticket_model->subscription_type = 1;
 
         } else if($request['package_type'] == 2) {
             $Ticket_model->subscription_price = $EventModel->exhibitor_diamond_price;
+            $Ticket_model->subscription_type = 2;
 
         } else if($request['package_type'] == 3) {
             $Ticket_model->subscription_price = $EventModel->exhibitor_gold_price;
+            $Ticket_model->subscription_type = 3;
 
         }else {
             $Ticket_model->subscription_price = $EventModel->exhibitor_silver_price;
-
+            $Ticket_model->subscription_type = 4;
         }
+
          $Ticket_model->ticket_status = 3;
          $Ticket_model->save(false);
          $this->setMessage('Booked successfully');
@@ -239,8 +243,9 @@ class TicketController extends CController
           if($EventModel == null) {
                 $this->commonError('Invalid Events');
           }
-        $Ticket_model = new Ticket();
-        $Ticket_model->subscription_price = $EventModel->visitors_package_price ;
+         $Ticket_model = new Ticket();
+         $Ticket_model->subscription_price = $EventModel->visitors_package_price ;
+         $Ticket_model->subscription_type = 5;
          $Ticket_model->ticket_status = 1;
          $Ticket_model->save(false);
          $this->setMessage('Booked successfully');
@@ -292,14 +297,37 @@ class TicketController extends CController
 
                    if($ticket !== null) {
                       $room[$room_key][$key][$block_key]['status'] = 1;
+                      $room[$room_key][$key][$block_key]['name'] = $ticket->company_name;
+                      $room[$room_key][$key][$block_key]['description'] = $ticket->short_desc;
+                      $room[$room_key][$key][$block_key]['ticket_key'] = $ticket->ticket_key;
+
+                      if($ticket->subscription_type == 1) {
+                          $room[$room_key][$key][$block_key]['type'] = 'Platinum';
+
+                      } else if($ticket->subscription_type == 2) {
+                          $room[$room_key][$key][$block_key]['type'] = 'Diamond';
+
+                      } else if($ticket->subscription_type == 3) {
+                          $room[$room_key][$key][$block_key]['type'] = 'Gold';
+
+                      } else if($ticket->subscription_type == 4) {
+                          $room[$room_key][$key][$block_key]['type'] = 'Silver';
+
+                      } else {
+                          $room[$room_key][$key][$block_key]['type'] = 'Visitor Fee';
+                      }
+
                       
                    } else {
                       $room[$room_key][$key][$block_key]['status'] = 0;
-                    
+                      $room[$room_key][$key][$block_key]['ticket_key'] = "";
+                      $room[$room_key][$key][$block_key]['type'] = "";
                    }
                } else {
                     $room[$room_key][$key][$block_key]['status'] = 0;
-                  
+                    $room[$room_key][$key][$block_key]['ticket_key'] = "";
+                    $room[$room_key][$key][$block_key]['type'] = "";
+
                }
             }
           }
