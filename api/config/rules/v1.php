@@ -80,6 +80,7 @@ return [
             'v1/favourite'
         ],
         'extraPatterns' => [
+            'OPTIONS create' => 'options',
             'GET create' => 'create',
     
         ]
@@ -90,8 +91,13 @@ return [
             'v1/address'
         ],
         'extraPatterns' => [
+            'OPTIONS get-country' => 'options',
             'GET get-country' => 'get-country',
+
+            'OPTIONS get-state' => 'options',
             'GET get-state' => 'get-state',
+
+            'OPTIONS get-city' => 'options',
             'GET get-city' => 'get-city',
 
     
