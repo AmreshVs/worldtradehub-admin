@@ -12,7 +12,12 @@ use common\helpers\UploadHelper;
 
 $form = CActiveForm::begin()->setModel($model);
 ?>
-
+<style type="text/css">
+    .ck-content figure.image.my-contact-side-image {
+      float: right;
+      width: 100px;
+}
+</style>
 <div class="card-body">
     <h4 class="card-title"><?= $this->title; ?></h4>
     <hr>
@@ -100,9 +105,10 @@ $form = CActiveForm::begin()->setModel($model);
             ckfinder: {
                 uploadUrl: '/admin/event/upload'
             },
-             image: {
-                resizeUnit: 'px'
-            }
+            styles: [
+              // Pottentially some other style can go here. E.g. the `full` or `side`.
+              { name: 'contact', icon: 'right', title: 'My contact style', className: 'my-contact-side-image' }
+            ]
         });
 
 

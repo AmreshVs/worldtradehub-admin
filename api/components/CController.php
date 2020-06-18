@@ -8,6 +8,8 @@ use common\models\Configuration;
 use Yii;
 use yii\rest\Controller;
 use yii\web\UnauthorizedHttpException;  
+use yii\rest\OptionsAction;
+use yii\filters\Cors;
 
 /**
  * Class CController
@@ -46,7 +48,29 @@ class CController extends Controller
     public function behaviors()
     {
         $behaviors = parent::behaviors();
+         unset($behaviors['authenticator']);
+        // unset($behaviors['verbFilter']);
 
+        $behaviors['corsFilter'] = [
+            'class' => Cors::class,
+            'cors' => [
+                'Origin' => ['*'],
+                'Access-Control-Request-Method' => ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+                'Access-Control-Request-Headers' => [
+                    'Authorization',
+                    'Cache-Control',
+                    'Accept',
+                    'Content-Type'
+                ],
+                'Access-Control-Expose-Headers' => [
+                    'X-Pagination-Current-Page',
+                    'X-Pagination-Total-Count',
+                    'X-Pagination-Page-Count',
+                    'X-Pagination-Per-Page'
+                ],
+
+            ]
+        ];
         $behaviors['authenticator'] = [
             'class' => CHttpBearerAuth::class,
             'optional' => [
@@ -56,6 +80,7 @@ class CController extends Controller
                 'user/verify_otp',
                 'user/resend_otp',
                 'user/forgot-password',
+               // 'ticket/*',
                 //'expo/index',
                 //'expo/view',
                 //'ticket/create',
@@ -70,23 +95,7 @@ class CController extends Controller
 
             ]
         ];
-        return array_merge($behaviors, [
-    
-            // For cross-domain AJAX request
-            'corsFilter'  => [
-                'class' => \yii\filters\Cors::className(),
-                'cors'  => [
-                    // restrict access to domains:
-                    'Origin'                           => ['*'],
-                    'Access-Control-Request-Method'    => ['POST','GET','PUT','OPTIONS'],
-                    'Access-Control-Allow-Credentials' => false,
-                    'Access-Control-Max-Age'           => 3600,// Cache (seconds)
-                    'Access-Control-Request-Headers' => ['*'],
-                    'Access-Control-Allow-Origin' => false,
-                ],
-            ],
-    
-        ]);
+      
         return $behaviors;
 
     }
@@ -103,6 +112,17 @@ class CController extends Controller
 
         $this->setTimeZone();
 
+    }
+    
+    /**
+     * @return array
+     */
+    public function actions()
+    {
+        return [
+            'options' => OptionsAction::class,
+            // 'collectionOptions' => ['GET', 'PUT', 'PATCH', 'DELETE', 'HEAD', 'OPTIONS']
+        ];
     }
 
 

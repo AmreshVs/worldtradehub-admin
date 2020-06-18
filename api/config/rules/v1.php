@@ -41,15 +41,35 @@ return [
             'v1/ticket'
         ],
         'extraPatterns' => [
-            'POST exhibitor-company-infomration' => 'exhibitor-company-infomration',
-            'POST exhibitor-stall-book' => 'exhibitor-stall-book',
-            'POST exhibitor-package-select' => 'exhibitor-package-select',
-            'POST visitor-package-select' => 'visitor-package-select',
+            //'GET get-orders' => 'get-orders',
+            'OPTIONS get-orders' => 'options',
             'GET get-orders' => 'get-orders',
+
+            'OPTIONS exhibitor-company-infomration' => 'options',
+            'POST exhibitor-company-infomration' => 'exhibitor-company-infomration',
+
+            'OPTIONS exhibitor-stall-book' => 'options',
+            'POST exhibitor-stall-book' => 'exhibitor-stall-book',
+
+            'OPTIONS exhibitor-package-select' => 'options',
+            'POST exhibitor-package-select' => 'exhibitor-package-select',
+
+            'OPTIONS visitor-package-select' => 'options',
+            'POST visitor-package-select' => 'visitor-package-select',
+
+            'OPTIONS view-stall' => 'options',
             'GET view-stall' => 'view-stall',
+
+            'OPTIONS history' => 'options',
             'GET history' => 'history',
+
+            'OPTIONS image-upload' => 'options',
             'POST image-upload' => 'image-upload',
+
+            'OPTIONS view-stall-details' => 'options',
             'GET view-stall-details' => 'view-stall-details',
+
+            'OPTIONS update-stall-details' => 'options',
             'POST update-stall-details' => 'update-stall-details',
     
         ]
