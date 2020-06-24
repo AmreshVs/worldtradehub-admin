@@ -14,8 +14,8 @@ class OtpTemp extends BaseOtpTemp
 {
     public static function generateOtp()
     {
-        return '1234';
-        //return rand(1000,9999);
+        //return '1234';
+        return rand(1000,9999);
     }
 
      /**
