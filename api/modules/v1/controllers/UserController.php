@@ -175,7 +175,20 @@ class UserController extends CController
         $user_temp->mobile_no = $request['mobile_number'];
         $user_temp->user_details = Json::encode($request);
         $user_temp->otp = $otp; 
-        if($user_temp->save(false)) {  
+        if($user_temp->save(false)) {
+             $msg = "Use " . $user_temp->otp . " as your OTP to confirm login to World Trade Hub. Do not share this with anyone. Our representatives will not ask for OTP.";
+            $curl = curl_init();
+            // Set some options - we are passing in a useragent too here
+            curl_setopt_array($curl, [
+                CURLOPT_RETURNTRANSFER => 1,
+                CURLOPT_URL => 'http://sms.acceptsms.com/app/smsapi/index.php?key=55EF2E65139DBD&campaign=0&routeid=35&type=text&contacts='.$request['mobile_number'].'&senderid=TECHIT&msg='.urlencode($msg),
+                //CURLOPT_USERAGENT => 'Codular Sample cURL Request'
+            ]);
+            // Send the request & save response to $resp
+            $resp = curl_exec($curl);
+        
+            // Close request to clear up some resources
+            curl_close($curl);  
             // $mail = \common\helpers\Mailer::getInstance()
             //     ->setTo($request['email'])
             //     ->setSubject('Verify OTP')
