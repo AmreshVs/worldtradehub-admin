@@ -308,13 +308,18 @@ class UserController extends CController
             'country_id',
             'state_id',
             'username',
+            'password',
         ];
 
         $this->checkRequiredParam($request, $params);
-        $model->load($request, "");
+        $oldPassword = $model->password;
 
+        $model->load($request, "");
         if (!$model->validate()) {
             return $model->getError();
+        }
+        if($model->password != null) {
+            $model->password = $model->setPassword($model->password);
         }
         $model->save(false);
         
