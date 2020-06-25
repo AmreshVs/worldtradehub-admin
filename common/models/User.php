@@ -96,7 +96,7 @@ class User extends BaseUser implements IdentityInterface
     {
 
         return static::find()
-            ->where(['OR', ['mobile_number' => $username]])
+            ->where(['OR', ['email' => $username]])
             ->andWhere(['OR',
                 ['status' => 2 ],
                 ['status' => 1]
