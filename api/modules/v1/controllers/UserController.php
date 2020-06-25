@@ -46,7 +46,7 @@ class UserController extends CController
     {
         $request = Yii::$app->getRequest()->post();
 
-        $this->checkRequiredParam($request, ['username']);
+        $this->checkRequiredParam($request, ['username','password']);
       
         return $this->login(LoginForm::SCENARIO_LOGIN_DEFAULT, $request);
     }
@@ -145,6 +145,7 @@ class UserController extends CController
             'country_id',
             'city_id',
             'state_id',
+            'password'
         ];
         $this->checkRequiredParam($request, $params);
         $model = User::find()
@@ -176,27 +177,25 @@ class UserController extends CController
         $user_temp->user_details = Json::encode($request);
         $user_temp->otp = $otp; 
         if($user_temp->save(false)) {
-             $msg = "Use " . $user_temp->otp . " as your OTP to confirm login to World Trade Hub. Do not share this with anyone. Our representatives will not ask for OTP.";
-            $curl = curl_init();
-            // Set some options - we are passing in a useragent too here
-            curl_setopt_array($curl, [
-                CURLOPT_RETURNTRANSFER => 1,
-                CURLOPT_URL => 'http://sms.acceptsms.com/app/smsapi/index.php?key=55EF2E65139DBD&campaign=0&routeid=9&type=text&contacts='.$request['mobile_number'].'&senderid=TECHIT&msg='.urlencode($msg),
-                //CURLOPT_USERAGENT => 'Codular Sample cURL Request'
-            ]);
-            // Send the request & save response to $resp
-            $resp = curl_exec($curl);
-        
-            // Close request to clear up some resources
-            curl_close($curl);  
-            // $mail = \common\helpers\Mailer::getInstance()
-            //     ->setTo($request['email'])
-            //     ->setSubject('Verify OTP')
-            //     ->setMessage(Configuration::get(Configuration::APP_NAME).' - Thank you for registering with us, Please use '.$otp.' to complete your registration')
-            //     ->send();
-            //SmsGateway::getInstance()->sendSMS($request['mobile_number'], Configuration::get(Configuration::APP_NAME).' - Thank you for registering with us, Please use '.$otp.' to complete you registration');
-            $this->setMessage(Yii::t('api','OTP send to registered mobile number'));
-            return ['otp_id' => $user_temp->otp_temp_id];
+            $data['User'] = Json::Decode($user_temp->user_details);
+            $modelUser = new User();
+            $modelUser->setScenario($modelUser::SCENARIO_REGISTER_NORMAL);
+            $modelUser->load($data);
+            //$modelUser->otp = $request['otp'];
+            if($modelUser->validate()) {
+                
+               $modelUser->setPassword($data['User']['password']);
+                $modelUser->status = $modelUser::STATUS_ACTIVE;
+                $modelUser->save();
+                
+                $loginData = [
+                    'username' => $data['User']['mobile_number'],
+                    "password" => $data['User']['password'],
+                ];
+
+                $this->setMessage('User registered successfully');
+                return $this->login(LoginForm::SCENARIO_LOGIN_DEFAULT, $loginData);
+            }
         }
         return [];
     }
@@ -222,7 +221,7 @@ class UserController extends CController
         $modelUser->otp = $request['otp'];
         if($modelUser->validate()) {
             
-           // $modelUser->setPassword($data['User']['password']);
+           $modelUser->setPassword($data['User']['password']);
             $modelUser->status = $modelUser::STATUS_ACTIVE;
             $modelUser->save();
             
@@ -322,6 +321,48 @@ class UserController extends CController
         $this->setMessage('Updated successfully');
 
         return $model;
+    }
+
+    /**
+     * 
+     * @return type
+     */
+    public function actionForgotPassword()
+    {
+        $request = Yii::$app->getRequest()->post();
+        
+        $this->checkRequiredParam($request, ['email']);
+        
+       // $model = User::findOne(['email' => $request['email']]);
+        $model = User::find()->where(['status' => User::ACTIVE,'email' => $request['email']])->one();
+  
+        if ($model === null) {
+            $this->commonError('EMAIL_NOT_FOUND');
+        }
+        
+        //$model->generatePasswordResetToken();
+        
+        // $model->save(false);
+           
+        // MailerQueueHelper::getInstance()
+        //     ->setTo($request['email'])
+        //     ->setSubject('Password Reset Link')
+        //     ->setView(
+        //         'forgotPassword',
+        //         [
+        //             'name' => $model->first_name,
+        //             'resetLink' => 
+        //                 Url::to(
+        //                 '/user/reset-password?reset_token=' . $model->password_reset_token,
+        //                 true
+        //             )
+        //         ]
+        //     )->push();
+        
+        $this->setMessage(Yii::t('api','PASSWORD_RESET_LINK_SENT_SUCCESSFULLY'));
+        $this->setIsObject(true);
+        
+        return [];
     }
 
    

@@ -21,7 +21,7 @@ class LoginForm extends Model
     const SOCIAL_MEDIA_FB = 2;
     const SOCIAL_MEDIA_GOOGLE = 3;
     
-    public $username;
+    public $username, $password;
     public $otp;
     public $login_type;
     public $social_token;
@@ -39,12 +39,13 @@ class LoginForm extends Model
     {
         return [
             // username and password are both required
-            [['username'], 'required'],
+            [['username','password'], 'required'],
 
             // [['device_token', 'device_type_id'], 'safe'],
             // // rememberMe must be a boolean value
             // ['rememberMe', 'boolean'],
             ['username', 'validateUsername'],
+            ['password', 'validatePassword'],
             // password is validated by validatePassword()
             //['otp', 'validatePassword'],
         ];
@@ -59,6 +60,7 @@ class LoginForm extends Model
 
         $scenarios[self::SCENARIO_LOGIN_DEFAULT] = [
             'username',
+            'password',
             'rememberMe',
             'login_type'
         ];
@@ -97,7 +99,8 @@ class LoginForm extends Model
         if (!$this->hasErrors()) {
 
             $user = $this->getUser();
-            if (!$user || !$user->validatePassword($this->password)) {
+            //print_r($user); die;
+            if (!$user ||$user->password_hash == null || !$user->validatePassword($this->password)) {
                 $this->addError($attribute, 'Incorrect username or password.');
             }
         }
