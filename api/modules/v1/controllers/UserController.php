@@ -78,7 +78,7 @@ class UserController extends CController
             // Set some options - we are passing in a useragent too here
             curl_setopt_array($curl, [
                 CURLOPT_RETURNTRANSFER => 1,
-                CURLOPT_URL => 'http://sms.acceptsms.com/app/smsapi/index.php?key=55EF2E65139DBD&campaign=0&routeid=35&type=text&contacts='.$request['mobile_number'].'&senderid=TECHIT&msg='.urlencode($msg),
+                CURLOPT_URL => 'http://sms.acceptsms.com/app/smsapi/index.php?key=55EF2E65139DBD&campaign=0&routeid=9&type=text&contacts='.$request['mobile_number'].'&senderid=TECHIT&msg='.urlencode($msg),
                 //CURLOPT_USERAGENT => 'Codular Sample cURL Request'
             ]);
             // Send the request & save response to $resp
@@ -123,7 +123,7 @@ class UserController extends CController
         $model = User::findOne($user->getPrimaryKey());
         // $model->device_type = $data['device_type'];
         // $model->device_token = $data['device_token'];    
-        $model->update(false);
+        //$model->update(false);
 
         $this->setMessage(Yii::t('api','Logged in successfully'));
 
@@ -181,7 +181,7 @@ class UserController extends CController
             // Set some options - we are passing in a useragent too here
             curl_setopt_array($curl, [
                 CURLOPT_RETURNTRANSFER => 1,
-                CURLOPT_URL => 'http://sms.acceptsms.com/app/smsapi/index.php?key=55EF2E65139DBD&campaign=0&routeid=35&type=text&contacts='.$request['mobile_number'].'&senderid=TECHIT&msg='.urlencode($msg),
+                CURLOPT_URL => 'http://sms.acceptsms.com/app/smsapi/index.php?key=55EF2E65139DBD&campaign=0&routeid=9&type=text&contacts='.$request['mobile_number'].'&senderid=TECHIT&msg='.urlencode($msg),
                 //CURLOPT_USERAGENT => 'Codular Sample cURL Request'
             ]);
             // Send the request & save response to $resp
