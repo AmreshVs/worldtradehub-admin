@@ -279,7 +279,7 @@ class TicketController extends CController
                         'E.event_status' => Events::ACTIVE,
                         'T.ticket_status' => 1,
                         'user_id' => $userIdentity->getId(),
-                        'T.ticket_status' => 1
+                        //'T.ticket_status' => 1
                     ])
                     ->all();
 

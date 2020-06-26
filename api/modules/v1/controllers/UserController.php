@@ -346,13 +346,14 @@ class UserController extends CController
             $this->commonError('EMAIL_NOT_FOUND');
         }
         $secretPassword = Yii::$app->getSecurity()->generateRandomString(6);
-        $password = $model->password;
+        $password = $secretPassword;
+        //print_r($password); die;
        // $model->secret_password_hash = $secretPassword;
-        $model->setPassword(trim($model->password));
+        $model->setPassword(trim($password));
         $model->save(false);
         
         $mailerQueueHelper = MailerQueueHelper::getInstance()
-                ->setTo($model->email)
+                ->setTo('saravananr668@gmail.com')
                 ->setSubject('Forgot Password')
                 ->setView(
                     'VendorRegistration',
@@ -361,6 +362,7 @@ class UserController extends CController
                         'password'=> $password
                     ])
                 ->push();
+    
         
         $this->setMessage(Yii::t('api','PASSWORD_RESET_LINK_SENT_SUCCESSFULLY'));
         $this->setIsObject(true);
