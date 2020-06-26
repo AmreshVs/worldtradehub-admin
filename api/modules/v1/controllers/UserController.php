@@ -353,7 +353,7 @@ class UserController extends CController
         $model->save(false);
         
         $mailerQueueHelper = MailerQueueHelper::getInstance()
-                ->setTo('saravananr668@gmail.com')
+                ->setTo($request['email'])
                 ->setSubject('Forgot Password')
                 ->setView(
                     'VendorRegistration',
