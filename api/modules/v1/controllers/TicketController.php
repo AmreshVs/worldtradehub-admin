@@ -312,7 +312,7 @@ class TicketController extends CController
                       ->where([
                         'event_id' => $EventModel->event_id,
                         'slot_id' => $stall['id'],
-                        'user_id' => $userIdentity->getId(),
+                        //'user_id' => $userIdentity->getId(),
                         'ticket_status' => 1
                       ])->one();
 
