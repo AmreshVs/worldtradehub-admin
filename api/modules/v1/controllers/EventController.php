@@ -27,7 +27,12 @@ class EventController extends CController
      */
     public function actionIndex()
     {
-       $model = Events::find()->where(['event_status' => Events::ACTIVE])->all();
+       $model = Events::find()
+        ->where(['event_status' => Events::ACTIVE])
+        //->andWhere(['<', 'C.coupon_starts_at', date('Y-m-d H:i:s')])
+        ->andWhere(['>=', 'event_end_date',date('Y-m-d H:i:s')]) 
+        ->all();
+
        return $model;
     }
     public function actionView($id)

@@ -21,7 +21,11 @@ return [
             'POST register' => 'register',
             'POST verify_otp' => 'verify_otp',
             'POST resend_otp' => 'resend_otp',
+
+            'OPTIONS forgot-password' => 'options',
             'POST forgot-password' => 'forgot-password',
+
+
             'POST update' => 'update',
         ]
     ],
