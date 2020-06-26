@@ -32,6 +32,12 @@ class TicketEvents extends \common\models\Ticket
 
                 return $model != null ? 1 : 0 ;
             },
+            'status' => function (self $model) {
+                if($model->event_start_date <= date('Y-m-d H:i:s') && $model->event_end_date >= date('Y-m-d H:i:s')) {
+                    return 1;
+                }
+                return 2;
+            }
             //'visitors_package_price',
         ];
     }
