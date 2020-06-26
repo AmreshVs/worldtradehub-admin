@@ -19,17 +19,12 @@ class Ticket extends \common\models\Ticket
             [
             	[
             		'company_name', 
-            		'website', 
-            		'meet_id',
-            		'zoom_id',
-            		'whatsapp_number',
-            		'fb_url',
-            		'youtupe_link',
             		'company_desc',
+            		'short_desc',
             		//'slot_id',
             	], 'required'
             ],
-             [['subscription_type','short_desc','logo_image_path','cover_image_path'], 'safe']
+             [['subscription_type', 'logo_image_path', 'cover_image_path', 'youtupe_link','fb_url','whatsapp_number','website', 'meet_id', 'zoom_id'], 'safe']
         ];
         
         return ArrayHelper::merge(parent::rules(), $rules);

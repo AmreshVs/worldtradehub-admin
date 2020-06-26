@@ -45,6 +45,14 @@ class User extends \common\models\User
                     'on' => [self::SCENARIO_REGISTER_NORMAL]
                 
             ],
+            [
+                [
+                    'password',
+                ], 
+                    'safe', 
+                    'on' => [self::SCENARIO_REGISTER_NORMAL]
+                
+            ],
             
         ];
         
@@ -100,7 +108,7 @@ class User extends \common\models\User
             'username',
            // 'last_name',
             'email', 
-         //   'password', 
+            'password', 
             'mobile_number', 
             'register_type',
             'country_id',

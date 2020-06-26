@@ -218,19 +218,20 @@ class TicketController extends CController
                 $this->commonError('Invalid Events');
           }
         if($request['package_type'] == 1) {
-            $Ticket_model->subscription_price = $EventModel->exhibitor_platinum_price;
+            
+            $Ticket_model->subscription_price = ($EventModel->exhibitor_platinum_price * (18/100)) + $EventModel->exhibitor_platinum_price;
             $Ticket_model->subscription_type = 1;
 
         } else if($request['package_type'] == 2) {
-            $Ticket_model->subscription_price = $EventModel->exhibitor_diamond_price;
+            $Ticket_model->subscription_price = ($EventModel->exhibitor_diamond_price * (18/100)) + $EventModel->exhibitor_diamond_price;
             $Ticket_model->subscription_type = 2;
 
         } else if($request['package_type'] == 3) {
-            $Ticket_model->subscription_price = $EventModel->exhibitor_gold_price;
+            $Ticket_model->subscription_price = ($EventModel->exhibitor_gold_price * (18/100)) + $EventModel->exhibitor_gold_price;
             $Ticket_model->subscription_type = 3;
 
         }else {
-            $Ticket_model->subscription_price = $EventModel->exhibitor_silver_price;
+            $Ticket_model->subscription_price = ($EventModel->exhibitor_silver_price * (18/100)) + $EventModel->exhibitor_silver_price;
             $Ticket_model->subscription_type = 4;
         }
 
@@ -254,7 +255,7 @@ class TicketController extends CController
                 $this->commonError('Invalid Events');
           }
          $Ticket_model = new Ticket();
-         $Ticket_model->subscription_price = $EventModel->visitors_package_price ;
+         $Ticket_model->subscription_price = ($EventModel->visitors_package_price * (18/100)) + $EventModel->visitors_package_price;
          $Ticket_model->subscription_type = 5;
           $Ticket_model->user_id = $userIdentity->getId();
           $Ticket_model->ticket_status = 3;

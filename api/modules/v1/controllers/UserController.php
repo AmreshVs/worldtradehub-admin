@@ -189,7 +189,7 @@ class UserController extends CController
                 $modelUser->save();
                 
                 $loginData = [
-                    'username' => $data['User']['mobile_number'],
+                    'username' => $data['User']['email'],
                     "password" => $data['User']['password'],
                 ];
 
