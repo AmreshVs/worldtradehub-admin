@@ -328,6 +328,7 @@ class UserController extends CController
         return $model;
     }
 
+
     /**
      * 
      * @return type
@@ -344,25 +345,22 @@ class UserController extends CController
         if ($model === null) {
             $this->commonError('EMAIL_NOT_FOUND');
         }
+        $secretPassword = Yii::$app->getSecurity()->generateRandomString(6);
+        $password = $model->password;
+       // $model->secret_password_hash = $secretPassword;
+        $model->setPassword(trim($model->password));
+        $model->save(false);
         
-        //$model->generatePasswordResetToken();
-        
-        // $model->save(false);
-           
-        // MailerQueueHelper::getInstance()
-        //     ->setTo($request['email'])
-        //     ->setSubject('Password Reset Link')
-        //     ->setView(
-        //         'forgotPassword',
-        //         [
-        //             'name' => $model->first_name,
-        //             'resetLink' => 
-        //                 Url::to(
-        //                 '/user/reset-password?reset_token=' . $model->password_reset_token,
-        //                 true
-        //             )
-        //         ]
-        //     )->push();
+        $mailerQueueHelper = MailerQueueHelper::getInstance()
+                ->setTo($model->email)
+                ->setSubject('Forgot Password')
+                ->setView(
+                    'VendorRegistration',
+                    [
+                        'username'=> $model->email,
+                        'password'=> $password
+                    ])
+                ->push();
         
         $this->setMessage(Yii::t('api','PASSWORD_RESET_LINK_SENT_SUCCESSFULLY'));
         $this->setIsObject(true);
