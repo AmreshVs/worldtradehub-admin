@@ -22,6 +22,7 @@ class UploadHelper
     const SITE_IMAGES = 'SITE_IMAGES';
     const COVER_IMAGES = 'COVER_IMAGES';
     const EVENT_CKEDITOR = 'EVENT_CKEDITOR';
+    const TICKET_FILES = 'Ticket_files';
     
     
     const USER = 'user/profile';

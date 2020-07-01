@@ -9,6 +9,7 @@ use api\modules\v1\models\Stall;
 use api\modules\v1\models\Events;
 use api\modules\v1\models\TicketEvents;
 use api\modules\v1\models\User;
+use api\modules\v1\models\TicketImages;
 use api\modules\v1\models\TicketHistory;
 use yii\data\ActiveDataProvider;
 use yii\web\UploadedFile;
@@ -40,6 +41,7 @@ class TicketController extends CController
    
     public function actionExhibitorCompanyInfomration()
     {
+     // print_r($_FILES); die;
       $request = Yii::$app->getRequest()->post();
       $userIdentity = Yii::$app->getUser()->getIdentity();
 
@@ -52,7 +54,7 @@ class TicketController extends CController
             "fb_url",
             "youtupe_link",
             "company_desc",
-            'event_key'
+            'ticket_key'
             //'slot_id',
             //'logo_image_path',
         ];
@@ -63,17 +65,18 @@ class TicketController extends CController
         $this->userNotFound();
       }
 
-      $EventModel = Events::find()->where(['event_key' => $request['event_key']])->one();
-      if($EventModel == null) {
-            $this->commonError('Invalid Events');
-      }
+        $model = Ticket::find()->where(['ticket_key' => $request['ticket_key']])->one();
+
+         if($model == null) {
+            $this->commonError('Invalid Ticket');
+         }
 
       // $Ticket_model = Ticket::find()->where(['event_id' => $EventModel->event_id])->one();
       // if($Ticket_model != null) {
       //       $this->commonError('Event Already Booked');
       // }
 
-      $model = new Ticket();
+     
       $modelUpload = new EventUploadForm();
       $model->load($request, "");
 
@@ -96,6 +99,12 @@ class TicketController extends CController
               }
           }
 
+           if (array_key_exists('images', $files)) {
+           foreach ((array)$files['images'] as $dataKey => $dataValue) {
+                  $uploadData[$dataKey]['images'] = $dataValue;
+              }
+          }
+
             $_FILES = ['EventUploadForm' => $uploadData];
 
              if (array_key_exists('logo_image_path', $files)) {
@@ -105,10 +114,34 @@ class TicketController extends CController
             if (array_key_exists('cover_image_path', $files)) {
                 $modelUpload->cover_image = UploadedFile::getInstance($modelUpload, 'cover_image_path');
             }
-
             if (!$modelUpload->validate()) {
                 return $modelUpload;
             }
+
+            if (array_key_exists('images', $files)) {
+              $i = 0;
+              //print_r($files['images']); die;
+              foreach ($files['images']['name'] as $key => $file) {
+              //  echo $key;
+                  $modelUpload->images = UploadedFile::getInstance($modelUpload, 'images['.$key.']');
+                  $uploadHelper = UploadHelper::getInstance();
+                  $uploadHelper->setPath($uploadHelper::TICKET_FILES);
+                  $upload = UploadedFile::getInstance($modelUpload, 'images['.$key.']');
+
+                  $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
+
+                  $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
+                  $upload->saveAs($path);
+                  $modelImage = new TicketImages();
+                  $modelImage->image_path  = $uploadHelper->getRealPath($path);
+                  $modelImage->ticket_id = $model->ticket_id;
+                  $modelImage->save();
+                  $i++;
+              }
+
+            }
+        // die('wrk');
+
             if($modelUpload->image != ''){
               $uploadHelper = UploadHelper::getInstance();
               $uploadHelper->setPath($uploadHelper::TICKET);
@@ -132,7 +165,7 @@ class TicketController extends CController
               $model->cover_image_path = $uploadHelper->getRealPath($path);
             }
             
-      $model->event_id = $EventModel->event_id;
+      //$model->event_id = $EventModel->event_id;
       $model->user_id = $userIdentity->getId();
       $model->ticket_status = 3;
       $model->save(false);
@@ -214,11 +247,11 @@ class TicketController extends CController
             'event_key',
          ];
          $this->checkRequiredParam($request, $params);
-         $Ticket_model = Ticket::find()->where(['ticket_key' => $request['ticket_key']])->one();
+         // $Ticket_model = Ticket::find()->where(['ticket_key' => $request['ticket_key']])->one();
 
-         if($Ticket_model == null) {
-            $this->commonError('Invalid Ticket');
-         }
+         // if($Ticket_model == null) {
+         //    $this->commonError('Invalid Ticket');
+         // }
 
          $EventModel = Events::find()->where(['event_id' => $Ticket_model->event_id])->one();
           if($EventModel == null) {

@@ -7,6 +7,9 @@ use backend\models\User;
 use backend\models\UserSearch;
 use backend\models\UserAddress;
 use backend\models\ActivityLog;
+use backend\models\Cities;
+use backend\models\States;
+use backend\models\Countries;
 use common\components\CController;
 use common\helpers\Com;
 use common\helpers\MailerQueueHelper;
@@ -310,13 +313,16 @@ class UserController extends CController
         $theading = [
             'User Name',
             'Email',
-            'mobile_number',
+            'Mobile Number',
+            'City',
+            'State',
+            'Country',
         ];
 
         $spreadsheet = new Spreadsheet();
         $sheet = $spreadsheet->getActiveSheet();
         
-        $writer = new \PhpOffice\PhpSpreadsheet\Writer\csv($spreadsheet);
+        $writer = new \PhpOffice\PhpSpreadsheet\Writer\Xlsx($spreadsheet);
         
         $index = 1;
         foreach ($theading as $key => $value) {
@@ -324,13 +330,17 @@ class UserController extends CController
             $index++;
         }
         
-        $fileName = 'Vendor-Order-Report'.'-'.date('Y-m-d').'.csv';
+        $fileName = 'Visitor'.'-'.date('Y-m-d').'.Xlsx';
         
         $positionValue = 2;
         foreach ($model as $key => $value) {
-            $sheet->setCellValue("A$positionValue",  $value['user_name'])
-                ->setCellValue("B$positionValue", $value['Email'])
-                ->setCellValue("C$positionValue", round($value['mobile_number'],  2));
+        
+            $sheet->setCellValue("A$positionValue",  $value['username'])
+                ->setCellValue("B$positionValue", $value['email'])
+                ->setCellValue("C$positionValue", $value['mobile_number'])
+                ->setCellValue("D$positionValue", Cities::getName($value['city_id']))
+                ->setCellValue("E$positionValue", States::getName($value['state_id']))
+                ->setCellValue("F$positionValue", Countries::getName($value['country_id']));
             
             ++$positionValue;
         }
@@ -339,7 +349,7 @@ class UserController extends CController
         header('Content-type: text/x-csv');
 
         // It will be called file.xls
-        header("Content-Disposition: attachment; filename=.$fileName");
+        header("Content-Disposition: attachment; filename=$fileName");
         $writer->save('php://output');
         
         exit;
