@@ -61,7 +61,9 @@ class Stall extends \common\models\Ticket
             'features',
             'locality',
             'shipment',
-            'package_type' => 'dimond',
+            'package_type' => function (self $model) {
+                return 'Gold';
+            },
             'image_files' => function (self $model) {
                 return TicketImages::find()->where(['ticket_id' => $this->ticket_id])->all();
             }

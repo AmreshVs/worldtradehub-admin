@@ -48,7 +48,9 @@ class StallNextView extends \common\models\Ticket
             'cover_image_path',
             'company_name',
             'short_desc',
-            'package_type' => 'dimond',
+            'package_type' => function (self $model) {
+                return 'Gold';
+            },
             // 'website',
             // 'meet_id',
             // 'zoom_id',
