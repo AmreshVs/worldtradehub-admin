@@ -99,7 +99,7 @@ class TicketController extends CController
               }
           }
 
-           if (array_key_exists('images', $files)) {
+          if (array_key_exists('images', $files)) {
            foreach ((array)$files['images'] as $dataKey => $dataValue) {
                   $uploadData[$dataKey]['images'] = $dataValue;
               }
@@ -519,6 +519,12 @@ class TicketController extends CController
               }
           }
 
+          if (array_key_exists('images', $files)) {
+           foreach ((array)$files['images'] as $dataKey => $dataValue) {
+                  $uploadData[$dataKey]['images'] = $dataValue;
+              }
+          }
+
             $_FILES = ['EventUploadForm' => $uploadData];
             if (array_key_exists('logo_image_path', $files)) {
                 $modelUpload->image = UploadedFile::getInstance($modelUpload, 'logo_image_path');
@@ -531,6 +537,28 @@ class TicketController extends CController
               if (!$modelUpload->validate()) {
                   return $modelUpload;
               }
+              if (array_key_exists('images', $files)) {
+              $i = 0;
+              //print_r($files['images']); die;
+              foreach ($files['images']['name'] as $key => $file) {
+              //  echo $key;
+                  $modelUpload->images = UploadedFile::getInstance($modelUpload, 'images['.$key.']');
+                  $uploadHelper = UploadHelper::getInstance();
+                  $uploadHelper->setPath($uploadHelper::TICKET_FILES);
+                  $upload = UploadedFile::getInstance($modelUpload, 'images['.$key.']');
+
+                  $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
+
+                  $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
+                  $upload->saveAs($path);
+                  $modelImage = new TicketImages();
+                  $modelImage->image_path  = $uploadHelper->getRealPath($path);
+                  $modelImage->ticket_id = $model->ticket_id;
+                  $modelImage->save();
+                  $i++;
+              }
+
+            }
               if($modelUpload->image != ''){
                 $uploadHelper = UploadHelper::getInstance();
                 $uploadHelper->setPath($uploadHelper::TICKET);
@@ -557,7 +585,7 @@ class TicketController extends CController
               }
               
              
-      $model->ticket_status = 3;
+      $model->ticket_status = 1;
       $model->save(false);
       $this->setMessage('Details added successfully');
 
