@@ -3,6 +3,7 @@ namespace api\modules\v1\models;
 
 use yii\helpers\ArrayHelper;
 use Yii;
+use api\modules\v1\models\TicketImages;
 /**
  * Class Ticket
  * @package api\modules\v1\models
@@ -54,6 +55,15 @@ class Stall extends \common\models\Ticket
             'fb_url',
             'youtupe_link',
             'company_desc',
+            'whytoconsider',
+            'features',
+            'youtube_links',
+            'features',
+            'locality',
+            'shipment',
+            'image_files' => function (self $model) {
+                return TicketImages::find()->where(['ticket_id' => $this->tickt_id])->all();
+            }
         ];
     }
 }

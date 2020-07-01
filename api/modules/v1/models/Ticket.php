@@ -33,7 +33,13 @@ class Ticket extends \common\models\Ticket
                 'whatsapp_number',
                 'website', 
                 'meet_id', 
-                'zoom_id'
+                'zoom_id',
+                'whytoconsider',
+                'features',
+                'youtube_links',
+                'features',
+                'locality',
+                'shipment',
             ], 'safe']
         ];
         
