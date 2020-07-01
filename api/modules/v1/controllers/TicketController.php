@@ -120,8 +120,9 @@ class TicketController extends CController
            // return $_FILES;
             if (array_key_exists('images', $files)) {
               $i = 0;
+              return $files->images;
               //print_r($files['images']); die;
-              foreach ($files['images']['name'] as $key => $file) {
+              foreach ($files->images->name as $key => $file) {
               //  echo $key;
                   $modelUpload->images = UploadedFile::getInstance($modelUpload, 'images['.$key.']');
                   $uploadHelper = UploadHelper::getInstance();
