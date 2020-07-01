@@ -245,15 +245,16 @@ class TicketController extends CController
          $params = [
             "package_type",
             'event_key',
+            'ticket_key',
          ];
          $this->checkRequiredParam($request, $params);
-         // $Ticket_model = Ticket::find()->where(['ticket_key' => $request['ticket_key']])->one();
+         $Ticket_model = Ticket::find()->where(['ticket_key' => $request['ticket_key']])->one();
 
-         // if($Ticket_model == null) {
-         //    $this->commonError('Invalid Ticket');
-         // }
+         if($Ticket_model == null) {
+            $this->commonError('Invalid Ticket');
+         }
 
-         $EventModel = Events::find()->where(['event_id' => $Ticket_model->event_id])->one();
+         $EventModel = Events::find()->where(['event_key' => $request['event_key']])->one();
           if($EventModel == null) {
                 $this->commonError('Invalid Events');
           }
