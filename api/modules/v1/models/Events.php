@@ -37,7 +37,7 @@ class Events extends \common\models\Events
                     'event_id' => $model->event_id,
                     'user_id' => Yii::$app->getUser()->getIdentity()->getId(),
                     'payment_status' => TicketPending::PAYMENT_SUCCESS,
-                    'ticket_status' => 1
+                    'ticket_status' => 2
                 ])->all();
             }
         ];
