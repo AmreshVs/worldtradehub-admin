@@ -167,7 +167,7 @@ class TicketController extends CController
             
       //$model->event_id = $EventModel->event_id;
       $model->user_id = $userIdentity->getId();
-      $model->ticket_status = 3;
+      $model->ticket_status = 1;
       $model->save(false);
       $this->setMessage('Details added successfully');
      
