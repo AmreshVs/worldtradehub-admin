@@ -102,6 +102,9 @@ $form = CActiveForm::begin()->setModel($model);
         
          ClassicEditor
             .create( document.querySelector( '#editor' ), {
+            image: {
+               resizeUnit: 'px'
+            }
             ckfinder: {
                 uploadUrl: '/admin/event/upload'
             },

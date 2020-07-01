@@ -46,7 +46,7 @@ class TicketSearch extends Ticket
                 'U.register_type',
                 'E.event_title',
             ])
-            ->where(['ticket_status' => [Events::ACTIVE,  Events::INACTIVE]])
+            ->where(['ticket_status' => 1])
             ->leftJoin(['U' => User::tableName()],'U.user_id = T.user_id')
             ->leftJoin(['E' => Events::tableName()],'E.event_id = T.event_id');
             
