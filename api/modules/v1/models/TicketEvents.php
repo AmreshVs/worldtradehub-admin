@@ -38,14 +38,14 @@ class TicketEvents extends \common\models\Ticket
                 }
                 return 2;
             },
-            'pending_stall_booking' => function (Self $model) {
-                return TicketPending::find()->select(['ticket_key'])->where([
-                    'event_id' => $model->event_id,
-                    'user_id' => Yii::$app->getUser()->getIdentity()->getId(),
-                    'payment_status' => TicketPending::PAYMENT_SUCCESS,
-                    'ticket_status' => 3
-                ])->asArray()->all();
-            }
+            // 'pending_stall_booking' => function (Self $model) {
+            //     return TicketPending::find()->select(['ticket_key'])->where([
+            //         'event_id' => $model->event_id,
+            //         'user_id' => Yii::$app->getUser()->getIdentity()->getId(),
+            //         'payment_status' => TicketPending::PAYMENT_SUCCESS,
+            //         'ticket_status' => 3
+            //     ])->asArray()->all();
+            // }
             //'visitors_package_price',
         ];
     }

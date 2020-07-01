@@ -12,6 +12,9 @@ use api\modules\v1\models\StallNextView;
 use api\modules\v1\models\User;
 use api\modules\v1\models\TicketImages;
 use api\modules\v1\models\TicketHistory;
+use api\modules\v1\models\TicketPending;
+
+
 use yii\data\ActiveDataProvider;
 use yii\web\UploadedFile;
 use yii\helpers\ArrayHelper;
@@ -369,7 +372,7 @@ class TicketController extends CController
         $userIdentity = Yii::$app->getUser()->getIdentity();
 
         //$model = Ticket::find()->where(['user_id' => $userIdentity->getId()])->all();
-        $model = TicketEvents::find()
+        $result['upcomming'] = TicketEvents::find()
                     ->alias('T')
                     ->select(['E.*', 'T.ticket_key'])
                     ->leftJoin(['E' => Events::tableName()], 'T.event_id = E.event_id')
@@ -380,9 +383,16 @@ class TicketController extends CController
                         //'T.ticket_status' => 1
                     ])
                     ->all();
+        $result['pending_stall_booking'] =  TicketPending::find()->select(['ticket_key'])->where([
+                    //'event_id' => $model->event_id,
+                    'user_id' => Yii::$app->getUser()->getIdentity()->getId(),
+                    'payment_status' => TicketPending::PAYMENT_SUCCESS,
+                    'ticket_status' => 3
+                ])->asArray()->all();
+            }
 
         $this->setMessage('Upcomming Event get successfully');
-        return $model;
+        return $result;
     }
 
     public function actionViewStall()
