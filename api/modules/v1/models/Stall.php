@@ -74,7 +74,7 @@ class Stall extends \common\models\Ticket
             },
             'image_files' => function (self $model) {
                 return TicketImages::find()->where(['ticket_id' => $this->ticket_id])->all();
-            }
+            },
             'attachment',
         ];
     }
