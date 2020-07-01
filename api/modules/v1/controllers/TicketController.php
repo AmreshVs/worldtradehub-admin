@@ -135,7 +135,7 @@ class TicketController extends CController
                   $modelImage = new TicketImages();
                   $modelImage->image_path  = $uploadHelper->getRealPath($path);
                   $modelImage->ticket_id = $model->ticket_id;
-                  $modelImage->save();
+                  $modelImage->save(false);
                   $i++;
               }
 
