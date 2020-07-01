@@ -216,6 +216,8 @@ class TicketController extends CController
           $model->ticket_status = 1;
           $model->slot_id = $request['stall_id'];
           $model->save(false);
+          $this->setMessage('Booking successfully');
+          return [];
 
       } else {
           $model = Ticket::find()->where([
@@ -224,6 +226,7 @@ class TicketController extends CController
             'payment_status' => Ticket::PAYMENT_PENDING,
             'ticket_status' => 3
          ])->one();
+        //$result['ticket_key'] = $model->ticket_key; 
 
         if($model == null) {
              $model = new Ticket();
