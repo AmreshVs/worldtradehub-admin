@@ -104,7 +104,13 @@ class TicketController extends CController
            foreach ((array)$files['images'] as $dataKey => $dataValue) {
                   $uploadData[$dataKey]['images'] = $dataValue;
               }
-          }
+           }
+
+           if (array_key_exists('attachment', $files)) {
+           foreach ((array)$files['attachment'] as $dataKey => $dataValue) {
+                  $uploadData[$dataKey]['attachment'] = $dataValue;
+              }
+           }
 
             $_FILES = ['EventUploadForm' => $uploadData];
 
@@ -114,6 +120,10 @@ class TicketController extends CController
 
             if (array_key_exists('cover_image_path', $files)) {
                 $modelUpload->cover_image = UploadedFile::getInstance($modelUpload, 'cover_image_path');
+            }
+
+            if (array_key_exists('attachment', $files)) {
+                $modelUpload->attachment = UploadedFile::getInstance($modelUpload, 'attachment');
             }
             if (!$modelUpload->validate()) {
                 return $modelUpload;
@@ -144,6 +154,30 @@ class TicketController extends CController
 
             }
         // die('wrk');
+
+            if($modelUpload->image != ''){
+              $uploadHelper = UploadHelper::getInstance();
+              $uploadHelper->setPath($uploadHelper::TICKET);
+              $upload = UploadedFile::getInstance($modelUpload, 'logo_image_path');
+
+              $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
+
+              $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
+              $upload->saveAs($path);
+              $model->logo_image_path = $uploadHelper->getRealPath($path);
+            }
+
+            if($modelUpload->attachment != ''){
+              $uploadHelper = UploadHelper::getInstance();
+              $uploadHelper->setPath($uploadHelper::TICKET);
+              $upload = UploadedFile::getInstance($modelUpload, 'attachment');
+
+              $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
+
+              $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
+              $upload->saveAs($path);
+              $model->attachment = $uploadHelper->getRealPath($path);
+            }
 
             if($modelUpload->image != ''){
               $uploadHelper = UploadHelper::getInstance();

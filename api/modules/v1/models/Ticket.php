@@ -40,6 +40,7 @@ class Ticket extends \common\models\Ticket
                 'features',
                 'locality',
                 'shipment',
+                'attachment'
             ], 'safe']
         ];
         

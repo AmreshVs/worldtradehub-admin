@@ -62,11 +62,20 @@ class Stall extends \common\models\Ticket
             'locality',
             'shipment',
             'package_type' => function (self $model) {
-                return 'Gold';
+                if($this->subscription_type == 1) {
+                    return 'Platinum';
+                } else if($this->subscription_type == 2) {
+                    return 'Diamond';
+                } else if($this->subscription_type == 3) {
+                    return 'Gold';
+                }else {
+                    return ;
+                }
             },
             'image_files' => function (self $model) {
                 return TicketImages::find()->where(['ticket_id' => $this->ticket_id])->all();
             }
+            'attachment',
         ];
     }
 }
