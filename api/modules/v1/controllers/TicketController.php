@@ -8,6 +8,7 @@ use api\modules\v1\models\Ticket;
 use api\modules\v1\models\Stall;
 use api\modules\v1\models\Events;
 use api\modules\v1\models\TicketEvents;
+use api\modules\v1\models\StallNextView;
 use api\modules\v1\models\User;
 use api\modules\v1\models\TicketImages;
 use api\modules\v1\models\TicketHistory;
@@ -487,8 +488,15 @@ class TicketController extends CController
             'ticket_key',
          ];
          $this->checkRequiredParam($request, $params);
-         $ticketModel = Stall::find()
-          ->orwhere(['ticket_key' => $request['ticket_key']])
+         $result['ticket'] = Stall::find()
+          ->where(['ticket_key' => $request['ticket_key']])
+          ->orderBy(['slot_id' => SORT_DESC])
+          ->limit(5)
+          ->all();
+
+        $result['nextticket'] = StallNextView::find()
+          ->where(['<>', 'ticket_key', $request['ticket_key']])
+          ->andWhere(['ticket_status' => 1])
           ->orderBy(['slot_id' => SORT_DESC])
           ->limit(5)
           ->all();
@@ -497,7 +505,7 @@ class TicketController extends CController
             $this->commonError('Invalid Ticket');
          }
 
-         return $ticketModel;
+         return $result;
     }
 
     public function actionUpdateStallDetails()
