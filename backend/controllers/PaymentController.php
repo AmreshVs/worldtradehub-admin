@@ -76,7 +76,7 @@ class PaymentController extends CController
       
         if ($payDetail->status == "authorized") {
             $model = Ticket::find()->where(['ticket_key' => $request['order_key']])->one();
-            $model->ticket_status = 2;
+            $model->ticket_status = 3;
             $model->payment_response = json_encode($payDetail); 
             $model->payment_status = 2;
             $model->save(false);
