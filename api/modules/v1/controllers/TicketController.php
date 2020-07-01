@@ -213,7 +213,7 @@ class TicketController extends CController
       if($model == null) {
            $model = new Ticket();
       }
-      $model->stall_id = isset($request['stall_id']) ? $request['stall_id'] : ''; 
+      $model->slot_id = isset($request['stall_id']) ? $request['stall_id'] : ''; 
       $model->event_id = $EventModel->event_id;
       $model->user_id = $userIdentity->getId();
       $model->ticket_status = 3;
