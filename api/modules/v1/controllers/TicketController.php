@@ -100,8 +100,8 @@ class TicketController extends CController
           }
 
           if (array_key_exists('images', $files)) {
-           foreach ((array)$files['images'] as $dataKey => $dataValue) {
-                  $uploadData[$dataKey]['images'] = $dataValue;
+           foreach ((array)$files->images as $dataKey => $dataValue) {
+                  $uploadData[$dataKey]->images = $dataValue;
               }
           }
 
