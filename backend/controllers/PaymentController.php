@@ -78,7 +78,7 @@ class PaymentController extends CController
             $model = Ticket::find()->where(['ticket_key' => $request['order_key']])->one();
             $model->ticket_status = 2;
             $model->payment_response = json_encode($payDetail); 
-            $model->payment_success = 2;
+            $model->payment_status = 2;
             $model->save(false);
 
             $emailResponse = Events::find()
