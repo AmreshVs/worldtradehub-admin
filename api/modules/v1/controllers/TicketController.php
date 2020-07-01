@@ -124,18 +124,20 @@ class TicketController extends CController
               foreach ($files['images']['name'] as $key => $file) {
               //  echo $key;
                   $modelUpload->images = UploadedFile::getInstance($modelUpload, 'images['.$key.']');
-                  $uploadHelper = UploadHelper::getInstance();
-                  $uploadHelper->setPath($uploadHelper::TICKET_FILES);
-                  $upload = UploadedFile::getInstance($modelUpload, 'images['.$key.']');
+                  if($modelUpload->images != '') {
+                    $uploadHelper = UploadHelper::getInstance();
+                    $uploadHelper->setPath($uploadHelper::TICKET_FILES);
+                    $upload = UploadedFile::getInstance($modelUpload, 'images['.$key.']');
 
-                  $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
+                    $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
 
-                  $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
-                  $upload->saveAs($path);
-                  $modelImage = new TicketImages();
-                  $modelImage->image_path  = $uploadHelper->getRealPath($path);
-                  $modelImage->ticket_id = $model->ticket_id;
-                  $modelImage->save(false);
+                    $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
+                    $upload->saveAs($path);
+                    $modelImage = new TicketImages();
+                    $modelImage->image_path  = $uploadHelper->getRealPath($path);
+                    $modelImage->ticket_id = $model->ticket_id;
+                    $modelImage->save(false);
+                  }
                   $i++;
               }
 
@@ -485,7 +487,11 @@ class TicketController extends CController
             'ticket_key',
          ];
          $this->checkRequiredParam($request, $params);
-         $ticketModel = Stall::find()->where(['ticket_key' => $request['ticket_key']])->one();
+         $ticketModel = Stall::find()
+          ->orwhere(['ticket_key' => $request['ticket_key']])
+          ->orderBy(['slot_id' => SORT_DESC])
+          ->limit(5)
+          ->all();
 
          if($ticketModel == null) {
             $this->commonError('Invalid Ticket');
@@ -563,18 +569,21 @@ class TicketController extends CController
               foreach ($files['images']['name'] as $key => $file) {
               //  echo $key;
                   $modelUpload->images = UploadedFile::getInstance($modelUpload, 'images['.$key.']');
-                  $uploadHelper = UploadHelper::getInstance();
-                  $uploadHelper->setPath($uploadHelper::TICKET_FILES);
-                  $upload = UploadedFile::getInstance($modelUpload, 'images['.$key.']');
+                  if($modelUpload->images != '') {
+                    TicketImages::deleteAll(['ticket_id' => $model->ticket_id]);
+                    $uploadHelper = UploadHelper::getInstance();
+                    $uploadHelper->setPath($uploadHelper::TICKET_FILES);
+                    $upload = UploadedFile::getInstance($modelUpload, 'images['.$key.']');
 
-                  $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
+                    $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
 
-                  $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
-                  $upload->saveAs($path);
-                  $modelImage = new TicketImages();
-                  $modelImage->image_path  = $uploadHelper->getRealPath($path);
-                  $modelImage->ticket_id = $model->ticket_id;
-                  $modelImage->save();
+                    $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
+                    $upload->saveAs($path);
+                    $modelImage = new TicketImages();
+                    $modelImage->image_path  = $uploadHelper->getRealPath($path);
+                    $modelImage->ticket_id = $model->ticket_id;
+                    $modelImage->save();
+                  }
                   $i++;
               }
 
