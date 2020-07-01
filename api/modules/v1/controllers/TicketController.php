@@ -117,7 +117,7 @@ class TicketController extends CController
             if (!$modelUpload->validate()) {
                 return $modelUpload;
             }
-
+            return $files;
             if (array_key_exists('images', $files)) {
               $i = 0;
               //print_r($files['images']); die;
@@ -169,7 +169,7 @@ class TicketController extends CController
       $model->user_id = $userIdentity->getId();
       $model->ticket_status = 3;
       $model->save(false);
-      $this->setMessage('Details added successfully');
+      //$this->setMessage('Details added successfully');
      
       $result['ticket_key'] = $model->ticket_key; 
       // if($modelUser->register_type == 1) {
