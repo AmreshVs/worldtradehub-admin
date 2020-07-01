@@ -491,8 +491,7 @@ class TicketController extends CController
          $result['ticket'] = Stall::find()
           ->where(['ticket_key' => $request['ticket_key']])
           ->orderBy(['slot_id' => SORT_DESC])
-          ->limit(5)
-          ->all();
+          ->one();
 
         $result['nextticket'] = StallNextView::find()
           ->where(['<>', 'ticket_key', $request['ticket_key']])
@@ -501,9 +500,9 @@ class TicketController extends CController
           ->limit(5)
           ->all();
 
-         if($ticketModel == null) {
-            $this->commonError('Invalid Ticket');
-         }
+         // if($ticketModel == null) {
+         //    $this->commonError('Invalid Ticket');
+         // }
 
          return $result;
     }
