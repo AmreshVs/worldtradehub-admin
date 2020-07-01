@@ -389,7 +389,7 @@ class TicketController extends CController
                     'payment_status' => TicketPending::PAYMENT_SUCCESS,
                     'ticket_status' => 3
                 ])->asArray()->all();
-            }
+            
 
         $this->setMessage('Upcomming Event get successfully');
         return $result;
