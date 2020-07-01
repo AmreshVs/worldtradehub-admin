@@ -18,6 +18,7 @@ use yii\web\UploadedFile;
 class UploadHelper
 {
     const TICKET = 'TICKET';
+    const TICKETT = 'TICKETTEST';
     const EVENT = 'EVENT';
     const SITE_IMAGES = 'SITE_IMAGES';
     const COVER_IMAGES = 'COVER_IMAGES';

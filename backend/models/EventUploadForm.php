@@ -23,7 +23,7 @@ class EventUploadForm extends Model
         return [
             [
                 ['image'], 
-                'file',
+                'image',
                 'skipOnEmpty' => true, 
                 'maxSize' => 1024 * 1024 * 10, 
                 'mimeTypes' => ['image/png', 'image/jpg', 'image/jpeg']

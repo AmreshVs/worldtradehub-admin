@@ -131,6 +131,8 @@ class TicketController extends CController
             if (!$modelUpload->validate()) {
                 return $modelUpload;
             }
+          
+
            // return $_FILES;
             if (array_key_exists('images', $files)) {
               $i = 0;
@@ -157,18 +159,7 @@ class TicketController extends CController
 
             }
         // die('wrk');
-
-            if($modelUpload->image != ''){
-              $uploadHelper = UploadHelper::getInstance();
-              $uploadHelper->setPath($uploadHelper::TICKET);
-              $upload = UploadedFile::getInstance($modelUpload, 'logo_image_path');
-
-              $name = sprintf('%s%s', time(), Com::generateRandomString(5, true));
-
-              $path = sprintf('%s%s%s.%s', $uploadHelper->getPath(), DIRECTORY_SEPARATOR, $name, $upload->extension);
-              $upload->saveAs($path);
-              $model->logo_image_path = $uploadHelper->getRealPath($path);
-            }
+           
 
             if($modelUpload->attachment != ''){
               $uploadHelper = UploadHelper::getInstance();
@@ -390,7 +381,7 @@ class TicketController extends CController
                     ->leftJoin(['E' => Events::tableName()], 'T.event_id = E.event_id')
                     ->where([
                         'E.event_status' => Events::ACTIVE,
-                        'T.ticket_status' => 1,
+                        'T.ticket_status' => 3,
                         'T.user_id' => $userIdentity->getId(),
                         'T.payment_status' => TicketPending::PAYMENT_SUCCESS,
                         //'T.ticket_status' => 1
