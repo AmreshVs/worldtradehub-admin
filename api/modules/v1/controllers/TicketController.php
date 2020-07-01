@@ -117,7 +117,7 @@ class TicketController extends CController
             if (!$modelUpload->validate()) {
                 return $modelUpload;
             }
-
+print_r($_FILES); die;
             if (array_key_exists('images', $files)) {
               $i = 0;
               //print_r($files['images']); die;
