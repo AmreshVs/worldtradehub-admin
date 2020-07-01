@@ -48,22 +48,23 @@ class StallNextView extends \common\models\Ticket
             'cover_image_path',
             'company_name',
             'short_desc',
-            'website',
-            'meet_id',
-            'zoom_id',
-            'whatsapp_number',
-            'fb_url',
-            'youtupe_link',
-            'company_desc',
-            'whytoconsider',
-            'features',
-            'youtube_links',
-            'features',
-            'locality',
-            'shipment',
-            'image_files' => function (self $model) {
-                return TicketImages::find()->where(['ticket_id' => $this->ticket_id])->all();
-            }
+            'package_type' => 'dimond',
+            // 'website',
+            // 'meet_id',
+            // 'zoom_id',
+            // 'whatsapp_number',
+            // 'fb_url',
+            // 'youtupe_link',
+            // 'company_desc',
+            // 'whytoconsider',
+            // 'features',
+            // 'youtube_links',
+            // 'features',
+            // 'locality',
+            // 'shipment',
+            // 'image_files' => function (self $model) {
+            //     return TicketImages::find()->where(['ticket_id' => $this->ticket_id])->all();
+            // }
         ];
     }
 }
