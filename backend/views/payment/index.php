@@ -23,7 +23,6 @@ $logo = $uploadHelper->get(Configuration::get(Configuration::APP_LOGO_PATH));
                <div class="col-sm-12">
                  <div class="pay">
                     <img src="/backend/web/theme/images/razorpay.png">
-       
                         <form  action="<?= Url::to('/admin/payment/payment-success?env=dev') ?>" method="POST">
                         <script
                             src="https://checkout.razorpay.com/v1/checkout.js"
