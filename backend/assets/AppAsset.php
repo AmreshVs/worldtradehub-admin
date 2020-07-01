@@ -63,7 +63,8 @@ class AppAsset extends AssetBundle
         'lib/jstree/themes/default/style.min.css',
         'css/iziToast.min.css',
 
-        'scss/style-override.css'
+        'scss/style-override.css',
+        'css/summernote-bs4.css',
 
     ];
 
@@ -115,6 +116,8 @@ class AppAsset extends AssetBundle
         'js/socket.io.js',
         'lib/jstree/jstree.min.js',
         'js/iziToast.min.js',
+           'js/summernote-bs4.js',
+        'js/summernote-clear.js',
 
     ];
 

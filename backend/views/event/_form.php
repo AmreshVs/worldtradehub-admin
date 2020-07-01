@@ -12,12 +12,7 @@ use common\helpers\UploadHelper;
 
 $form = CActiveForm::begin()->setModel($model);
 ?>
-<style type="text/css">
-    .ck-content figure.image.my-contact-side-image {
-      float: right;
-      width: 100px;
-}
-</style>
+
 <div class="card-body">
     <h4 class="card-title"><?= $this->title; ?></h4>
     <hr>
@@ -26,7 +21,7 @@ $form = CActiveForm::begin()->setModel($model);
             <?= $form->field($model, 'event_title')->textInput(); ?>
         </div>
         <div class="col-md-12">
-                 <?= $form->field($model, 'event_desc')->textArea(['id' => 'editor']); ?>
+                 <?= $form->field($model, 'event_desc')->textArea(['class' => 'summernote']); ?>
 
         </div>
     </div>
@@ -100,19 +95,29 @@ $form = CActiveForm::begin()->setModel($model);
             format: 'YYYY-MM-DD HH:mm:ss',
         });
         
-         ClassicEditor
-            .create( document.querySelector( '#editor' ), {
-            image: {
-               resizeUnit: 'px'
-            }
-            ckfinder: {
-                uploadUrl: '/admin/event/upload'
-            },
-            styles: [
-              // Pottentially some other style can go here. E.g. the `full` or `side`.
-              { name: 'contact', icon: 'right', title: 'My contact style', className: 'my-contact-side-image' }
-            ]
-        });
+           $('.summernote').summernote({
+            tooltip: false,
+        height: 150,
+       toolbar: [
+            //['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture','video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+            ['fontname', ['fontname']],
+            ['height', ['height']],
+      
+        ], 
+        /*callbacks: { 
+            onBlur: function(e) { 
+                $(this).summernote('formatPara'); 
+            } 
+        }*/
+    });
+
+
 
 
     });
