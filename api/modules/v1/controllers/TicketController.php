@@ -167,7 +167,7 @@ class TicketController extends CController
             
       //$model->event_id = $EventModel->event_id;
       $model->user_id = $userIdentity->getId();
-      $model->ticket_status = 1;
+      $model->ticket_status = 3;
       $model->save(false);
       $this->setMessage('Details added successfully');
      
@@ -203,38 +203,55 @@ class TicketController extends CController
       if ($modelUser === null) {
         $this->userNotFound();
       }
-      $model = Ticket::find()->where([
-        'event_id' => $EventModel->event_id,
-        'user_id' => $userIdentity->getId(),
-        'payment_status' => Ticket::PAYMENT_PENDING,
-        'ticket_status' => 3
-      ])->one();
-
-      if($model == null) {
-           $model = new Ticket();
-      }
-      $model->slot_id = isset($request['stall_id']) ? $request['stall_id'] : ''; 
-      $model->event_id = $EventModel->event_id;
-      $model->user_id = $userIdentity->getId();
-      $model->ticket_status = 3;
-      $model->payment_status = $model::PAYMENT_PENDING;
-      $model->save(false);
-
-      $result['ticket_key'] = $model->ticket_key; 
-      if($modelUser->register_type == 1) {
-        if($modelUser->country_id == User::COUNTRY_INDIA) {
-           $result['exhibitor_platinum_price'] = $EventModel->exhibitor_platinum_price;
-           $result['exhibitor_diamond_price'] = $EventModel->exhibitor_diamond_price;
-           $result['exhibitor_gold_price'] = $EventModel->exhibitor_gold_price;
-        } else {
-          $result['exhibitor_silver_price'] = $EventModel->exhibitor_silver_price;
-        }
+      if(isset($request['stall_id'])) {
+          $model = Ticket::find()->where([
+            'event_id' => $EventModel->event_id,
+            'user_id' => $userIdentity->getId(),
+            'payment_status' => Ticket::PAYMENT_SUCCESS,
+            'ticket_status' => 3
+         ])->one();
+          if($model == null) {
+              $this->commonError('Invalid Tickets');
+          }
+          $model->ticket_status = 1;
+          $model->slot_id = $request['stall_id'];
+          $model->save(false);
 
       } else {
-         $result['visitor_price'] = $EventModel->visitors_package_price;
-      }
+          $model = Ticket::find()->where([
+            'event_id' => $EventModel->event_id,
+            'user_id' => $userIdentity->getId(),
+            'payment_status' => Ticket::PAYMENT_PENDING,
+            'ticket_status' => 3
+         ])->one();
+
+        if($model == null) {
+             $model = new Ticket();
+        }
+       // $model->slot_id = isset($request['stall_id']) ? $request['stall_id'] : ''; 
+        $model->event_id = $EventModel->event_id;
+        $model->user_id = $userIdentity->getId();
+        $model->ticket_status = 3;
+        $model->payment_status = $model::PAYMENT_PENDING;
+        $model->save(false);
+
+        $result['ticket_key'] = $model->ticket_key; 
+        if($modelUser->register_type == 1) {
+          if($modelUser->country_id == User::COUNTRY_INDIA) {
+             $result['exhibitor_platinum_price'] = $EventModel->exhibitor_platinum_price;
+             $result['exhibitor_diamond_price'] = $EventModel->exhibitor_diamond_price;
+             $result['exhibitor_gold_price'] = $EventModel->exhibitor_gold_price;
+          } else {
+            $result['exhibitor_silver_price'] = $EventModel->exhibitor_silver_price;
+          }
+
+        } else {
+           $result['visitor_price'] = $EventModel->visitors_package_price;
+        }
 
       return $result;
+      }
+      
     //  $Ticket_model->slot_name = $request['stall_name'];
 
     }
