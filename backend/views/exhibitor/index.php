@@ -17,7 +17,7 @@ $this->title = yii::t('backend','Exhibitor Management');
 <div class="card user-icon">
     <div class="custom-card-body">
         <h3 class="custom-card-title"><?= $this->title ?>
-            <?php  Html::a('<i class="fa fa-plus-circle"></i>'.' '. Yii::t('backend', 'Export'), 'javascript:void(0)',
+            <?=  Html::a('<i class="fa fa-plus-circle"></i>'.' '. Yii::t('backend', 'Export'), 'javascript:void(0)',
                 ['class' => 'btn btn-info d-none d-lg-block m-l-15 pull-right export'])  ?></h3>
             <?php  
                 echo  CGridView::widget([
