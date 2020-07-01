@@ -13,6 +13,7 @@ use common\helpers\MailerQueueHelper;
 use Yii;
 use yii\web\Application;
 use yii\web\NotFoundHttpException;
+use PhpOffice\PhpSpreadsheet\Spreadsheet;
 
 /**
  * class UserController
@@ -287,6 +288,61 @@ class UserController extends CController
 
         skip:
         return $this->asJson($result);
+    }
+
+    /**
+     * @throws \Throwable
+     * @throws \yii\base\ExitException
+     *
+     * @Title("Export New")
+     */
+    public function actionExport()
+    {
+        $searchModel = new UserSearch();
+        
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+                
+        $model = $dataProvider->query->all();
+        
+        $thead = [];
+        $tbody = [];
+
+        $theading = [
+            'User Name',
+            'Email',
+            'mobile_number',
+        ];
+
+        $spreadsheet = new Spreadsheet();
+        $sheet = $spreadsheet->getActiveSheet();
+        
+        $writer = new \PhpOffice\PhpSpreadsheet\Writer\csv($spreadsheet);
+        
+        $index = 1;
+        foreach ($theading as $key => $value) {
+            $sheet->setCellValueByColumnAndRow($index, 1,$theading[$key]);
+            $index++;
+        }
+        
+        $fileName = 'Vendor-Order-Report'.'-'.date('Y-m-d').'.csv';
+        
+        $positionValue = 2;
+        foreach ($model as $key => $value) {
+            $sheet->setCellValue("A$positionValue",  $value['user_name'])
+                ->setCellValue("B$positionValue", $value['Email'])
+                ->setCellValue("C$positionValue", round($value['mobile_number'],  2));
+            
+            ++$positionValue;
+        }
+
+        // We'll be outputting an excel file
+        header('Content-type: text/x-csv');
+
+        // It will be called file.xls
+        header("Content-Disposition: attachment; filename=.$fileName");
+        $writer->save('php://output');
+        
+        exit;
     }
 
 }

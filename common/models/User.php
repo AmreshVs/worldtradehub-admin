@@ -39,6 +39,8 @@ class User extends BaseUser implements IdentityInterface
     const DEVICE_TYPE_ANDROID = 1;
     const DEVICE_TYPE_IOS = 2;
 
+    const COUNTRY_INDIA = 101;
+
     /**
      * @return array
      */

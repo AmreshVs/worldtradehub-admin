@@ -12,6 +12,10 @@ use yii\db\ActiveQuery;
  */
 class Ticket extends BaseTicket
 {
+    const PAYMENT_PENDING = 1;
+    const PAYMENT_SUCCESS = 2;
+
+    
     public $event_title, $username, $register_type;
 	 /**
      * @return array

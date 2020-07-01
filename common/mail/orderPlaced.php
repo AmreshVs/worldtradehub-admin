@@ -40,6 +40,7 @@ $this->title = 'Thank you for your Booking!';
         </td>
     </tr>
 </table>
+<?php /*
 <table cellpadding="0" cellspacing="0" width="100%" border="0" style="background-color:#fff; margin-bottom:20px; border: 1px solid #d3d4d8;">
     <tr>
         <th colspan="3" style="padding:15px 15px 0px 15px; text-align:left; 
@@ -66,6 +67,7 @@ $this->title = 'Thank you for your Booking!';
         </td>
     </tr>
 </table>
+*/ ?>
 <table cellpadding="0" cellspacing="0" width="100%" border="0" 
     style="margin-bottom:20px; border-top: 1px solid #d3d4d8;">
     <tr>
@@ -108,8 +110,8 @@ $this->title = 'Thank you for your Booking!';
      
     <tr style="text-align:right; font-weight:500; color:#fff; text-transform:uppercase; font-size:13px">
         <td style="border-right:1px solid #1189BC;"></td>
-        <td width="80" style="padding:12px 15px; background:#f5af19">Sub Total</td>
-        <td width="100" style="padding:12px 15px; background:#f5af19; font-size:18px"><?= $email['subscription_price'] ?></td>					
+        <td width="80" style="padding:12px 15px; background:#f5af19">Total</td>
+        <td width="100" style="padding:12px 15px; background:#f5af19; font-size:18px"><?= $email['subscription_price']. '(incl GST 18%)' ?></td>					
     </tr>
     </table>
 </table>

@@ -157,38 +157,45 @@ class TicketController extends CController
       $userIdentity = Yii::$app->getUser()->getIdentity();
 
       $params = [
-            "ticket_key",
-            "stall_id",
-      //      "stall_name",
-    
-            //'slot_id',
-            //'logo_image_path',
+            "event_key",
         ];
       $this->checkRequiredParam($request, $params);
-
-      $Ticket_model = Ticket::find()->where(['ticket_key' => $request['ticket_key']])->one();
-      if($Ticket_model == null) {
-            $this->commonError('Invalid Ticket');
+      
+      $EventModel = Events::find()->where(['event_key' => $request['event_key']])->one();
+      if($EventModel == null) {
+            $this->commonError('Invalid Events');
       }
-      $Ticket_model->slot_id = $request['stall_id'];
-      $Ticket_model->save(false);
-
       $modelUser = User::findOne(['user_id' => $userIdentity->getId(),'status' => User::ACTIVE]);
 
       if ($modelUser === null) {
         $this->userNotFound();
       }
-      $EventModel = Events::find()->where(['event_id' => $Ticket_model->event_id])->one();
-      if($EventModel == null) {
-            $this->commonError('Invalid Events');
+      $model = Ticket::find()->where([
+        'event_id' => $EventModel->event_id,
+        'user_id' => $userIdentity->getId(),
+        'payment_status' => Ticket::PAYMENT_PENDING,
+        'ticket_status' => 3
+      ])->one();
+
+      if($model == null) {
+           $model = new Ticket();
       }
 
-      $result['ticket_key'] = $Ticket_model->ticket_key; 
+      $model->event_id = $EventModel->event_id;
+      $model->user_id = $userIdentity->getId();
+      $model->ticket_status = 3;
+      $model->payment_status = $model::PAYMENT_PENDING;
+      $model->save(false);
+
+      $result['ticket_key'] = $model->ticket_key; 
       if($modelUser->register_type == 1) {
-         $result['exhibitor_platinum_price'] = $EventModel->exhibitor_platinum_price;
-         $result['exhibitor_diamond_price'] = $EventModel->exhibitor_diamond_price;
-         $result['exhibitor_gold_price'] = $EventModel->exhibitor_gold_price;
-         $result['exhibitor_silver_price'] = $EventModel->exhibitor_silver_price;
+        if($modelUser->country_id == User::COUNTRY_INDIA) {
+           $result['exhibitor_platinum_price'] = $EventModel->exhibitor_platinum_price;
+           $result['exhibitor_diamond_price'] = $EventModel->exhibitor_diamond_price;
+           $result['exhibitor_gold_price'] = $EventModel->exhibitor_gold_price;
+        } else {
+          $result['exhibitor_silver_price'] = $EventModel->exhibitor_silver_price;
+        }
 
       } else {
          $result['visitor_price'] = $EventModel->visitors_package_price;
@@ -204,7 +211,7 @@ class TicketController extends CController
          $request = Yii::$app->request->post();
          $params = [
             "package_type",
-            'ticket_key',
+            'event_key',
          ];
          $this->checkRequiredParam($request, $params);
          $Ticket_model = Ticket::find()->where(['ticket_key' => $request['ticket_key']])->one();

@@ -32,6 +32,14 @@ class Events extends \common\models\Events
                 return $model != null ? 1 : 0 ;
             },
             'visitors_package_price',
+            'pending_stall_booking' => function (Self $model) {
+                return TicketPending::find()->where([
+                    'event_id' => $model->event_id,
+                    'user_id' => Yii::$app->getUser()->getIdentity()->getId(),
+                    'payment_status' => TicketPending::PAYMENT_SUCCESS,
+                    'ticket_status' => 1
+                ])->all();
+            }
         ];
     }
 

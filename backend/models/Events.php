@@ -1,6 +1,7 @@
 <?php
 namespace backend\models;
 
+use Yii;
 /**
  * Class Events
  * @package backend\models
@@ -29,4 +30,17 @@ class Events extends \common\models\Events
             ], 'required'],            
         ];
     }
+
+    /**
+     * 
+     * @return array
+     */
+    public function attributeLabels()
+    {
+        return [
+            'exhibitor_silver_price' => Yii::t('backend', 'Foreign Traders Price'),
+        ];
+    }
+
 }
+
