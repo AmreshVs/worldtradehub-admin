@@ -33,12 +33,17 @@ class Events extends \common\models\Events
             },
             'visitors_package_price',
             'pending_stall_booking' => function (Self $model) {
-                return TicketPending::find()->select(['ticket_key'])->where([
-                    'event_id' => $model->event_id,
-                    'user_id' => Yii::$app->getUser()->getIdentity()->getId(),
-                    'payment_status' => TicketPending::PAYMENT_SUCCESS,
-                    'ticket_status' => 3
-                ])->asArray()->all();
+                if(Yii::$app->getUser()->getIdentity()->register_type == 1 ) {
+                    return TicketPending::find()->select(['ticket_key'])->where([
+                        'event_id' => $model->event_id,
+                        'user_id' => Yii::$app->getUser()->getIdentity()->getId(),
+                        'payment_status' => TicketPending::PAYMENT_SUCCESS,
+                        'ticket_status' => 3
+                    ])->asArray()
+                    ->all();
+                } else {
+                    return [];
+                }
             }
         ];
     }

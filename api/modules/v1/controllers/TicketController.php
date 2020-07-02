@@ -374,19 +374,22 @@ class TicketController extends CController
                         //'T.ticket_status' => 1
                     ])
                     ->all();
-
-        $result['pending_stall_booking'] =  TicketEvents::find()
-                    ->alias('T')
-                    ->select(['E.*', 'T.ticket_key'])
-                    ->leftJoin(['E' => Events::tableName()], 'T.event_id = E.event_id')
-                    ->where([
-                        'E.event_status' => Events::ACTIVE,
-                        'T.ticket_status' => 3,
-                        'T.user_id' => $userIdentity->getId(),
-                        'T.payment_status' => TicketPending::PAYMENT_SUCCESS,
-                        //'T.ticket_status' => 1
-                    ])->all();
-            
+        if(Yii::$app->getUser()->getIdentity()->register_type == 1 ) {
+          $result['pending_stall_booking'] =  TicketEvents::find()
+                      ->alias('T')
+                      ->select(['E.*', 'T.ticket_key'])
+                      ->leftJoin(['E' => Events::tableName()], 'T.event_id = E.event_id')
+                      ->where([
+                          'E.event_status' => Events::ACTIVE,
+                          'T.ticket_status' => 3,
+                          'T.user_id' => $userIdentity->getId(),
+                          'T.payment_status' => TicketPending::PAYMENT_SUCCESS,
+                          //'T.ticket_status' => 1
+                      ])->all();
+          } else {
+              $result['pending_stall_booking'] = [];
+          }
+              
 
         $this->setMessage('Upcomming Event get successfully');
         return $result;
