@@ -32,7 +32,7 @@ header.topbar div.navbar-collapse { height: 60px; }
 .mdi-toggle-switch { font: normal normal normal 24px/1 "Material Design Icons"; line-height: inherit; font-size: 19px; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; transform: translate(0, 0); }
 div.custom-dashboard i.ti-shopping-cart { background: #ffbc34; display: inline-block; border-radius: 60px; box-shadow: 0px 0px 2px #616161; padding: 0.5em 0.6em; }
 div.custom-dashboard i.ti-user { background: #f62d51; display: inline-block; border-radius: 60px; box-shadow: 0px 0px 2px #616161; padding: 0.5em 0.6em; }
-div.custom-dashboard i.fa-building { background: #23acc5; display: inline-block; border-radius: 60px; box-shadow: 0px 0px 2px #616161; padding: 0.5em 0.6em; }
+div.custom-dashboard i.fa-building { background: #3077e1; display: inline-block; border-radius: 60px; box-shadow: 0px 0px 2px #616161; padding: 0.5em 0.6em; }
 div.custom-dashboard i.icon-wallet { background: #009efb; display: inline-block; border-radius: 60px; box-shadow: 0px 0px 2px #616161; padding: 0.5em 0.6em; }
 a.asc:after { content: "\f160"; font-family: FontAwesome; }
 a.desc:after { content: "\f161"; font-family: FontAwesome; }
@@ -53,27 +53,27 @@ table .select2-container--default .select2-selection--single { height: 38px; bor
 .custom-card-title { margin-bottom: .75rem; }
 
 /*colour changes*/
-a { color: #23acc5; }
+a { color: #3077e1; }
 a:hover { color: #854819; }
-.btn-info { background: #23acc5 }
+.btn-info { background: #3077e1 }
 .btn-info.focus, .btn-info:focus, .btn-info:not(:disabled):not(.disabled).active:focus, .btn-info:not(:disabled):not(.disabled):active:focus, .show>.btn-info.dropdown-toggle:focus { box-shadow: inherit !important; }
-.btn-info:hover { background: #23acc5; border-color: #23acc5 }
-.form-material .form-control, .form-material .form-control.focus, .form-material .form-control:focus { background-image: linear-gradient(#23acc5, #23acc5), linear-gradient(#e9ecef, #e9ecef); }
-.loader__figure { border: 0 solid #23acc5; }
-.loader__label { color: #23acc5; }
+.btn-info:hover { background: #3077e1; border-color: #3077e1 }
+.form-material .form-control, .form-material .form-control.focus, .form-material .form-control:focus { background-image: linear-gradient(#3077e1, #3077e1), linear-gradient(#e9ecef, #e9ecef); }
+.loader__figure { border: 0 solid #3077e1; }
+.loader__label { color: #3077e1; }
 th a { color: #6c757d; }
 th a:hover { color: #6c757d; }
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary, .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary { background: #08cc20 }
-td a { color: #23acc5; }
-td a:hover { color: #23acc5 }
-.page-item.active .page-link { background-color: #23acc5; border-color: #23acc5; }
+td a { color: #3077e1; }
+td a:hover { color: #3077e1 }
+.page-item.active .page-link { background-color: #3077e1; border-color: #3077e1; }
 .page-link { color: #000 }
 .page-link:hover { color: #6c757d }
-.card { padding: 10px; border: 1px solid #ddd; }
-.custom-radio .custom-control-input:checked~.custom-control-label::before { background-color: #23acc5; box-shadow: inset 0px 0px 0px 3px #fff; border: 1px solid #23acc5; }
-.dropdown-item.active, .dropdown-item:active { background-color: #23acc5; }
-.select2-container--default .select2-results__option--highlighted[aria-selected], .bg-primary { background-color: #23acc5 !important; }
-.select2-container--default .select2-selection--multiple .select2-selection__choice { background-color: #23acc5; border: 1px solid #23acc5; }
+.card { padding: 10px;}
+.custom-radio .custom-control-input:checked~.custom-control-label::before { background-color: #3077e1; box-shadow: inset 0px 0px 0px 3px #fff; border: 1px solid #3077e1; }
+.dropdown-item.active, .dropdown-item:active { background-color: #3077e1; }
+.select2-container--default .select2-results__option--highlighted[aria-selected], .bg-primary { background-color: #3077e1 !important; }
+.select2-container--default .select2-selection--multiple .select2-selection__choice { background-color: #3077e1; border: 1px solid #3077e1; }
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove { color: #fff; }
 .btn-success { background-color: #4f4f50 }
 .btn-info:not(:disabled):not(.disabled).active, .btn-info:not(:disabled):not(.disabled):active, .show>.btn-info.dropdown-toggle, .btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show>.btn-success.dropdown-toggle, .btn-success:hover { background-color: #4f4f50; border-color: #4f4f50 }
@@ -88,15 +88,15 @@ td a:hover { color: #23acc5 }
 .select2-container--default .select2-selection--single .select2-selection__arrow { height: 38px; }
 .btn { padding: 10px 25px; }
 .sidebar-nav ul li a i { position: absolute; left: 0px; top: 50%; margin-top: -10px; }
-.has-success .col-form-label, .has-success .custom-control, .has-success .form-check-label, .has-success .form-control-feedback, .has-success .form-control-label { color: #23acc5 }
+.has-success .col-form-label, .has-success .custom-control, .has-success .form-check-label, .has-success .form-control-feedback, .has-success .form-control-label { color: #3077e1 }
 .card .card-title { display: inline-block; width: 100%; }
 .custom-dashboard .card { border-radius: 2px; border: none; }
-.custom-dashboard .card i { font-size: 25px; width: 50px; height: 50px; position: absolute; top: -10px; right: 10px; background: #ffffff !important; padding: 0 !important; text-align: center; line-height: 50px; color: #23acc5; }
+.custom-dashboard .card i { font-size: 25px; width: 50px; height: 50px; position: absolute; top: -10px; right: 10px; background: #ffffff !important; padding: 0 !important; text-align: center; line-height: 50px; color: #3077e1; }
 .custom-dashboard .card .card-body { text-align: left; padding: 15px; }
 .custom-dashboard .card .card-body h3 { margin-bottom: 0; font-size: 20px; }
 .custom-dashboard .card .card-body h4 { font-size: 18px; font-weight: 900; }
 .login-register { padding: 6% 0; }
-.login-box { box-shadow: 0px 0px 30px 0px #c6c6c6; border-radius: 5px; padding: 0; }
+.login-box { box-shadow: 0px 0px 20px -8px #000; border-radius: 5px; padding: 0; }
 .jq-toast-wrap.top-right { top: 80px; right: 10px; }
 .card-title + a.pull-right.custom_link { margin-top: -30px; position: relative; z-index: 1 }
 .overflow-space { display: inline-block; width: 100%; overflow: auto; }
@@ -114,7 +114,7 @@ td a:hover { color: #23acc5 }
 *
 *@author Gautam Elangovan 
 **/
-.btn-success { color: #fff; background-color: #23acc5; }
+.btn-success { color: #fff; background-color: #3077e1; }
 .custom-dashboard .card .card { margin: 0px; padding: 0px; }
 .custom-card-body .card-title { padding: 0 10px }
 .custom-space { white-space: nowrap; }
@@ -137,7 +137,7 @@ body { background: #f7f7f7 !important; }
 .img_pixel { display: inline-block; width: 100%; position: relative; }
 .img_information { }
 .img_pixel .img_information { position: absolute; right: 0; bottom: 0; font-size: 14px; color: #ff4242 }
-.skin-default-dark .left-sidebar .sidebar-nav ul li li a.active { background: #23acc5; color: #fff; }
+.skin-default-dark .left-sidebar .sidebar-nav ul li li a.active { background: #3077e1; color: #fff; }
 .grid-view .table { border: 1px solid #ddd; }
 
 /*uigrandienets*/
@@ -146,8 +146,8 @@ body { background: #f7f7f7 !important; }
 .bg3 { background: #00467F; background: -webkit-linear-gradient(to right, #A5CC82, #00467F); background: linear-gradient(to right, #A5CC82, #00467F); }
 .bg4 { background: #403A3E; background: -webkit-linear-gradient(to right, #BE5869, #403A3E); background: linear-gradient(to right, #BE5869, #403A3E); }
 .navbar-nav .dropdown-toggle { display: inline-block; color: #03211c; position: relative; font-size: 16px; padding-left: 40px; }
-.navbar-nav .dropdown-toggle i { display: inline-block; position: absolute; left: 0; top: 10px; font-size: 22px; color: #23acc5; }
-.login-header { background: #464646; text-align: center; padding: 25px 20px; }
+.navbar-nav .dropdown-toggle i { display: inline-block; position: absolute; left: 0; top: 10px; font-size: 22px; color: #3077e1; }
+.login-header { background: #3077e1; text-align: center; padding: 25px 20px; }
 .navbar-nav .dropdown-toggle.acc { height: 40px; line-height: 45px; }
 .grid-view .table .form-control { min-height: 34px; }
 .navbar-nav .bootstrap-select .dropdown-toggle { padding: 0; border: none; height: 40px; line-height: 40px; padding-right: 10px; background: #fff !important; border: none !important; box-shadow: none !important; outline: inherit !important; position: relative; }
