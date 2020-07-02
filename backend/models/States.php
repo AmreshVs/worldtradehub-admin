@@ -7,7 +7,7 @@ namespace backend\models;
  */
 class States extends \common\models\States
 {
-	public function getName($id)
+	public static function getName($id)
 	{
 		$model = self::findOne(['id' => $id]);
 		return ($model == null ? '-' : $model->name);
