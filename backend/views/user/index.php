@@ -144,7 +144,7 @@ runOnLoad(function () {
     });
 
      $('body').on('click', '.export', function () {
-        location.href = 'user/export/'+ location.search;
+        location.href = '/admin/user/export?'+ location.search;
     });
 
 

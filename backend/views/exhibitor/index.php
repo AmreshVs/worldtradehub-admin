@@ -144,7 +144,7 @@ runOnLoad(function () {
     });
 
      $('body').on('click', '.export', function () {
-        location.href = 'exhibitor/export/'+ location.search;
+        location.href = '/admin/exhibitor/export?'+ location.search;
     });
 })
 </script>
