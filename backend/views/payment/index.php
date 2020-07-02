@@ -19,6 +19,7 @@ $logo = $uploadHelper->get(Configuration::get(Configuration::APP_LOGO_PATH));
                 </div>
             </div>
 
+
             <div class="row">
                <div class="col-sm-12">
                  <div class="pay">
@@ -26,7 +27,7 @@ $logo = $uploadHelper->get(Configuration::get(Configuration::APP_LOGO_PATH));
                         <form  action="<?= Url::to('/admin/payment/payment-success?env=dev') ?>" method="POST">
                         <script
                             src="https://checkout.razorpay.com/v1/checkout.js"
-                            data-key="rzp_test_SJUiLCFql9rqkF"
+                            data-key="rzp_live_k4nhX2mqNwYxPZ"
                             data-amount="<?= $model['subscription_price'] * 100 ?>"
                             data-buttontext="Pay with Razorpay"
                             data-name="World Trade Hub"

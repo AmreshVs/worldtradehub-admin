@@ -88,7 +88,7 @@ class PaymentHelper {
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
 
-            curl_setopt($ch, CURLOPT_USERPWD, 'rzp_test_SJUiLCFql9rqkF' . ':' . 'vTCjkFrgCV5Wq72HoGhHnW5S');
+            curl_setopt($ch, CURLOPT_USERPWD, 'rzp_live_k4nhX2mqNwYxPZ' . ':' . 'LhIIhEkybsAgdmLnjIUrB9Gy');
 
             $result = curl_exec($ch);
             if (curl_errno($ch)) {
