@@ -14,14 +14,14 @@ $logo = $uploadHelper->get(Configuration::get(Configuration::APP_LOGO_PATH));
 
 
             <div class="row">
-                <div class="col-sm-12">
-                        <h3 class="title-border wow fadeInUp upper">Choose Your Payment Methode</h3>
+                <div class="col-sm-12 text-center">
+                    <h3 class="title-border wow fadeInUp upper">Choose Your Payment Method</h3>
                 </div>
             </div>
 
 
             <div class="row">
-               <div class="col-sm-12">
+               <div class="col-sm-12 text-center">
                  <div class="pay">
                     <img src="/backend/web/theme/images/razorpay.png">
                         <form  action="<?= Url::to('/admin/payment/payment-success?env=dev') ?>" method="POST">
@@ -46,7 +46,7 @@ $logo = $uploadHelper->get(Configuration::get(Configuration::APP_LOGO_PATH));
 
 <script type="text/javascript">
     runOnLoad(function() {
+        $(":submit").addClass('btn btn-primary');
         $('.razorpay-payment-button').click();
-        
     });
 </script>
