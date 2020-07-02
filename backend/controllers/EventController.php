@@ -71,8 +71,8 @@ class EventController extends CController
         $post =  Yii::$app->getRequest()->post();
         $appLanguages = Language::getAppLanguages();
         if ($model->load($post) && $model->validate()) {
-                $fileHelper = FileUploadHelper::getInstance()->convertFileArray();
-                $uploadedFile = $fileHelper->getFileInstance($modelUploadForm, 'event_image');
+               // $fileHelper = FileUploadHelper::getInstance()->convertFileArray();
+                $uploadedFile = UploadedFile::getInstance($modelUploadForm, 'event_image');
                
                 if (!empty($uploadedFile)) {
                     $uploadHelper = UploadHelper::getInstance();
@@ -108,11 +108,11 @@ class EventController extends CController
         $model = $this->findModel($id); 
         $modelUploadForm = new EventsUploadForm();      
         $post =  Yii::$app->getRequest()->post(); 
-      //  print_r($post); die;
-        if ($model->load($post) && $model->validate()) {
        
-            $fileHelper = FileUploadHelper::getInstance()->convertFileArray();
-            $uploadedFile = $fileHelper->getFileInstance($modelUploadForm, 'event_image');
+        if ($model->load($post) && $model->validate()) {
+           
+           // $fileHelper = FileUploadHelper::getInstance()->convertFileArray();
+            $uploadedFile = UploadedFile::getInstance($modelUploadForm, 'event_image');
                
             if (!empty($uploadedFile)) {
                 $uploadHelper = UploadHelper::getInstance();
