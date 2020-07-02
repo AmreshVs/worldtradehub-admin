@@ -94,6 +94,11 @@ class PaymentController extends CController
                     ->one();
             $user = User::find()->where(['user_id' => $model->user_id])->one();
 
+            if($user->register_type == 2) {
+                $model->ticket_status = 1;
+                $model->save(false);
+            }
+
 
             // MailerQueueHelper::getInstance()
             //         ->setTo($user->email)
