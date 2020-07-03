@@ -9,17 +9,16 @@ use yii\helpers\Url;
 /* @var $model \backend\models\Cms */
 /* @var $dataProvider \backend\models\CmsSearch */
 
-$this->title = yii::t('backend','Event Management');
+$this->title = yii::t('backend','Events');
 ?>
 
 <div class="card cms">
     <div class="row">
         <div class="card-body">
             <div class="card-title">
-                <h3><?= $this->title ?>
-                    <?= Html::a('<i class="fa fa-plus-circle"></i>'.' '. Yii::t('backend', 'Create'), ['create'],
-                        ['class' => 'btn btn-info d-none d-lg-block m-l-15 pull-right']) ?>
-                </h3>
+                <h3 class="d-inline-block"><?= $this->title ?></h3>
+                <?= Html::a('<i class="fa fa-plus-circle"></i>'.' '. Yii::t('backend', 'Create'), ['create'],
+                    ['class' => 'btn btn-info d-none d-lg-block m-l-15 pull-right mb-2']) ?>
             </div>
             <?php  
                 echo  CGridView::widget([

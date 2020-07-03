@@ -307,26 +307,6 @@ $lang = Yii::$app->language;
                 <!-- User profile and search -->
                 <!-- ============================================================== -->
 
-        
-
-
-<li class="language-drop">
-    <?= Html::dropDownList('language', $user->getPrimaryKey(),  
-        $language, ['options' => [
-                        $lang => [
-                            'selected' => true
-                        ]
-                    ],
-                        'class' => 'selectpicker',
-                        'id' => 'change-lang'
-                    ]) ?>
-<!--                            <select class="selectpicker"  data-style="btn-language" id="change-lang">
-        <option value="en"  data-content='<span class="flag-icon flag-english"></span> English'>EN</option>
-        <option value="no"  data-content='<span class="flag-icon flag-arab"></span> Norwegian'>norwegian</option>
-    </select>-->
-</li>
-        
-             
                     <li class="nav-item dropdown">
                         <a class="dropdown-toggle acc waves-effect waves-dark" href="#"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
