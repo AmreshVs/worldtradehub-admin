@@ -198,7 +198,11 @@ class TicketController extends CController
             
       //$model->event_id = $EventModel->event_id;
       $model->user_id = $userIdentity->getId();
-      $model->ticket_status = 3;
+      if($model->company_name != ''){
+        $model->ticket_status = 1;
+      }else {
+        $model->ticket_status = 3;  
+      }
       $model->save(false);
       //$this->setMessage('Details added successfully');
      
@@ -601,6 +605,8 @@ class TicketController extends CController
                   $uploadData[$dataKey]['images'] = $dataValue;
               }
           }
+
+
 
             $_FILES = ['EventUploadForm' => $uploadData];
             if (array_key_exists('logo_image_path', $files)) {
