@@ -36,7 +36,7 @@ class AddressController extends CController
      */
     public function actionGetCountry()
     {
-        $model = Countries::find()->select(['name', 'id'])->asArray()->all();
+        $model = Countries::find()->select(['name', 'id', 'phonecode'])->asArray()->all();
         //$CountryArr = ArrayHelper::map($model,'id', 'name');
         $this->setMessage('Country get successfully');
         return $model;
