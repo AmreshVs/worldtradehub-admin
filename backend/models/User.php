@@ -54,15 +54,15 @@ class User extends \common\models\User
             ],
             [['mobile_number', 'email'],'unique'],
             ['email', 'email'],
-            [['mobile_number'],'integer'],
-            [
-                ['mobile_number'],
-                'match', 
-                'pattern'     => '/^[0-9]{7,15}$/',
-                'message'     => Yii::t('backend', 'Mobile accept only 7 to 15 digit numbers'),
-                'skipOnEmpty' => true,
-                'skipOnError' => true   
-            ],
+            //[['mobile_number'],'integer'],
+            // [
+            //     ['mobile_number'],
+            //     'match', 
+            //     'pattern'     => '/^[0-9]{7,15}$/',
+            //     'message'     => Yii::t('backend', 'Mobile accept only 7 to 15 digit numbers'),
+            //     'skipOnEmpty' => true,
+            //     'skipOnError' => true   
+            // ],
 /*            ['mobile_number', 'validateNumber'],*/
             ['referral_code', 'safe']
         ];
