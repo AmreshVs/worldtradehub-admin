@@ -144,10 +144,12 @@ $uploadHelper = \common\helpers\UploadHelper::getInstance();
                 <tr>
                     <td valign="middle"
                         style="padding:0px 20px 20px 0px; text-align:center; color:#666; font-size:13px">
+                    <?php /*
                         <p style="margin:0px 0px 15px 0px">
                             Questions? The <b><?= $appName ?></b> team is always here to help.
                             <br>Contact <b><?= $appSupportEmail ?></b> and we&apos;ll get back to you soon.
                         </p>
+                        */ ?>
                         &copy; <?= date('Y') ?> <?= $appName ?>. All rights reserved.
                     </td>
                 </tr>

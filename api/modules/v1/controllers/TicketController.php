@@ -13,6 +13,7 @@ use api\modules\v1\models\User;
 use api\modules\v1\models\TicketImages;
 use api\modules\v1\models\TicketHistory;
 use api\modules\v1\models\TicketPending;
+use api\modules\v1\models\TicketInterst;
 
 
 use yii\data\ActiveDataProvider;
@@ -26,6 +27,7 @@ use backend\models\EventUploadForm;
 use common\helpers\UploadHelper;
 use common\helpers\Com;
 use common\helpers\ModelHelper;
+use common\helpers\MailerQueueHelper;
 
 
 
@@ -676,6 +678,68 @@ class TicketController extends CController
       $this->setMessage('Details added successfully');
 
       return [];
+    }
+
+    public function actionAddInterst()
+    {
+        $request = Yii::$app->request->get();
+         $params = [
+            'ticket_key',
+         ];
+         $this->checkRequiredParam($request, $params);
+         $userIdentity = Yii::$app->getUser()->getIdentity();
+         $model = Ticket::find()->where(['ticket_key' => $request['ticket_key']])->one();
+
+         if($model == null) {
+            $this->commonError('Invalid Ticket');
+         }
+
+        $ticketUser =  User::findOne(['user_id' => $model->user_id,'status' => User::ACTIVE]);
+
+
+        $EventModel = Events::find()->where(['event_id' => $model->event_id])->one();
+        if($EventModel == null) {
+              $this->commonError('Invalid Events');
+        }
+        $modelUser = User::findOne(['user_id' => $userIdentity->getId(),'status' => User::ACTIVE]);
+
+        if ($modelUser === null) {
+          $this->userNotFound();
+        }
+
+        $TicketInterst = TicketInterst::find()->where([
+          'ticket_id' => $model->ticket_id,
+          'user_id' => $userIdentity->getId(),
+        ])->one();
+
+        if($TicketInterst === null){
+            $TicketInterst = new TicketInterst();
+            $TicketInterst->user_id = $userIdentity->getId();
+            $TicketInterst->ticket_id = $model->ticket_id;
+            $TicketInterst->status = 1;
+        }elseif($TicketInterst->status == 2){
+          $TicketInterst->status = 1;
+        }else{
+          $TicketInterst->status = 2;
+        }
+        $TicketInterst->save(false);
+
+        $mailerQueueHelper = MailerQueueHelper::getInstance()
+                ->setTo('saravananr668@gmail.com')
+                ->setSubject('Someone Interst Your Stall')
+                ->setView(
+                    'interst',
+                    [
+                        'ticketUser'=> $ticketUser,
+                        'modelUser'=> $modelUser,
+                        'ticket' => $model,
+                        'EventModel' => $EventModel
+                    ])
+                ->push();
+    
+        $this->setMessage('Thanks for your interst');
+        return [];
+
     }
    
 

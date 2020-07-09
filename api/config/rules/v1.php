@@ -75,6 +75,9 @@ return [
 
             'OPTIONS update-stall-details' => 'options',
             'POST update-stall-details' => 'update-stall-details',
+
+            'OPTIONS add-interst' => 'options',
+            'GET add-interst' => 'add-interst',
     
         ]
     ],

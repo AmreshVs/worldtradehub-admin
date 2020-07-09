@@ -62,7 +62,7 @@ class Mailer
         ]);
 
         $transport->messageConfig = [
-            'from' => Configuration::get(Configuration::SMTP_USERNAME) => Configuration::get(Configuration::APP_NAME)],
+            'from' => [Configuration::get(Configuration::SMTP_USERNAME) => Configuration::get(Configuration::APP_NAME)],
         ];
     }
 
